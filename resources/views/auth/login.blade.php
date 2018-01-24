@@ -34,13 +34,13 @@ if(Auth::check()){
                             <span class="input-group-addon">
                                 <i class="now-ui-icons ui-1_email-85"></i>
                             </span>
-                            <input type="text" class="form-control form-control-danger" placeholder="Emain Address..." name="email" value="{{ old('email') }}">
+                            <input type="text" class="form-control form-control-danger" placeholder="Emain Address..." name="email" value="{{ old('email') }}" autocomplete="off"/>
                         </div>
                         <div class="input-group form-group-no-border input-lg" style="margin-bottom: 20px;">
                             <span class="input-group-addon">
                                 <i class="now-ui-icons ui-1_lock-circle-open"></i>
                             </span>
-                            <input type="password" placeholder="Password..." name="password" class="form-control" />
+                            <input type="password" placeholder="Password..." name="password" class="form-control" autocomplete="new-password"/>
                         </div>
                         @if ($errors->has('email'))
                         <p class="text-danger" style="font-size:11px; margin-bottom: 0px;">
