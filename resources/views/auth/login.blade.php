@@ -42,10 +42,19 @@ if(Auth::check()){
                             </span>
                             <input type="password" placeholder="Password..." name="password" class="form-control" />
                         </div>
-
+                        @if ($errors->has('email'))
                         <p class="text-danger" style="font-size:11px; margin-bottom: 0px;">
-                                        "Can not login, username/password is incorrect"
-                                    </p>
+                            {{ $errors->first('email') }}
+                        </p>
+                        @endif
+
+                        @if ($errors->has('password'))
+                        <p class="text-danger" style="font-size:11px; margin-bottom: 0px;">
+                            {{ $errors->first('password') }}
+                        </p>
+                        @endif
+
+
 
                     </div>
                     <div class="footer text-center" style="padding-top:20px">
