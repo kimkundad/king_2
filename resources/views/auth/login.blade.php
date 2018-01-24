@@ -20,7 +20,7 @@ if(Auth::check()){
                 <form class="form" method="" action="">
                     <div class="header header-primary text-center">
                         <div class="logo-container">
-                            <img src="{{asset('/assets/img/now-logo.png')}}" alt="">
+                            <img src="{{asset('/assets/img/logo/linchak-logo.png')}}" alt=""  >
                         </div>
                     </div>
                     <div class="content">
