@@ -1,77 +1,109 @@
-@extends('layouts.app')
+@extends('layouts.template-login')
+<?php
+if(Auth::check()){
+  return Redirect::to('dashboard');
+}else{
+
+}
+ ?>
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
 
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+<div class="page-header" filter-color="orange">
+    <div class="page-header-image" style="background-image:url({{asset('/assets/img/login.jpg')}})"></div>
+    <div class="container">
+        <div class="col-md-4 content-center">
+            <div class="card card-login card-plain">
+                <form class="form" method="" action="">
+                    <div class="header header-primary text-center">
+                        <div class="logo-container" style="margin-bottom: 20px;">
+                            <img src="{{asset('/assets/img/logo/linchak-logo.png')}}" alt=""  >
+                        </div>
+                    </div>
+                    <div class="content">
+                      <div class="input-group form-group-no-border input-lg">
+                          <span class="input-group-addon">
+                              <i class="now-ui-icons users_single-02"></i>
+                          </span>
+                          <input type="text" class="form-control" placeholder="UserName...">
+                      </div>
+                        <div class="input-group form-group-no-border input-lg">
+                            <span class="input-group-addon">
+                                <i class="now-ui-icons ui-1_email-85"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Emain Address...">
                         </div>
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="input-group form-group-no-border input-lg">
+                            <span class="input-group-addon">
+                                <i class="now-ui-icons ui-1_lock-circle-open"></i>
+                            </span>
+                            <input type="password" placeholder="Password..." class="form-control" />
                         </div>
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                        <div class="input-group form-group-no-border input-lg" style="margin-bottom: 0px;">
+                            <span class="input-group-addon">
+                                <i class="now-ui-icons ui-1_lock-circle-open"></i>
+                            </span>
+                            <input type="password" placeholder="Confirm Password..." class="form-control" />
                         </div>
+                    </div>
+                    <div class="footer text-center" style="padding-top:15px">
+                        <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block">Get Started</a>
 
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                        <a href="#pablo" style="margin-top:10px;" class="btn btn-facebook btn-round btn-lg btn-block"><i class="fa fa-facebook"></i> Connect with Facebook</a>
+                    </div>
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#">
+                            Creative Tim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            MIT License
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                &copy;
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>, Designed by
+                <a href="#" target="_blank">Invision</a>. Coded by
+                <a href="#" target="_blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer>
+
+
+
 </div>
+
+
+
+
 @endsection

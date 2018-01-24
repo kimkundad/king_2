@@ -40,7 +40,7 @@ if(Auth::check()){
                     <div class="footer text-center">
                         <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block">Get Started</a>
 
-                        <a href="#pablo" style="margin-top:15px;" class="btn btn-facebook btn-round btn-lg btn-block"><i class="fa fa-facebook"></i> Connect with Linkedin</a>
+                        <a href="#pablo" style="margin-top:15px;" class="btn btn-facebook btn-round btn-lg btn-block"><i class="fa fa-facebook"></i> Connect with Facebook</a>
                     </div>
                     <div class="pull-left">
                         <h6>
