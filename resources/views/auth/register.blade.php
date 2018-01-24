@@ -1,7 +1,7 @@
 @extends('layouts.template-login')
 <?php
 if(Auth::check()){
-  return Redirect::to('dashboard');
+  return Redirect::to('home');
 }else{
 
 }
