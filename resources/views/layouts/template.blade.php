@@ -31,13 +31,7 @@
                     <h1 class="h1-seo">Now UI Kit.</h1>
                     <h3>A beautiful Bootstrap 4 UI kit. Yours free.</h3>
                 </div>
-                <h6 class="category category-absolute">Designed by
-                    <a href="#" >
-                        <img src="{{asset('/assets/img/invision-white-slim.png')}}" class="invision-logo" />
-                    </a>. Coded by
-                    <a href="#" >
-                        <img src="{{asset('/assets/img/creative-tim-white-slim2.png')}}" class="creative-tim-logo" />
-                    </a>.</h6>
+              
             </div>
         </div>
 
