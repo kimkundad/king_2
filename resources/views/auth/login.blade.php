@@ -60,7 +60,7 @@ if(Auth::check()){
                     <div class="footer text-center" style="padding-top:20px">
 
                         <button type="submit" class="btn btn-primary btn-round btn-lg btn-block">Get Started</button>
-                        <a href="#pablo" style="margin-top:10px;" class="btn btn-facebook btn-round btn-lg btn-block"><i class="fa fa-facebook"></i> Connect with Facebook</a>
+                        <a href="{{url('/redirect')}}" style="margin-top:10px;" class="btn btn-facebook btn-round btn-lg btn-block"><i class="fa fa-facebook"></i> Connect with Facebook</a>
                     </div>
                     <div class="pull-left">
                         <h6>

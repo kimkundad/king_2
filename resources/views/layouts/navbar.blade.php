@@ -21,7 +21,7 @@
 
         <div class="navbar-translate">
             <a class="navbar-brand" href="{{url('/')}}" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom">
-                Now Ui Kit
+                LinChak
             </a>
             <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-bar bar1"></span>
