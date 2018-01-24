@@ -13,25 +13,50 @@
 	  @yield('stylesheet')
 </head>
 
-<body class="index-page sidebar-collapse" style="background-image: url('{{asset('/assets/img/Fonds.jpeg')}}'); background-attachment: fixed;">
+<body class="index-page sidebar-collapse" >
 
 
 
 
-    <!-- Navbar  -->
+    <!-- Navbar    -->
 @include('layouts.navbar-expand')
     <!-- End Navbar -->
     <div class="wrapper">
         <div class="page-header clear-filter" filter-color="orange">
-            <div class="page-header-image" data-parallax="true" >
+            <div class="page-header-image" data-parallax="true" style="background-image: url('{{asset('/assets/img/header.jpg')}}');">
             </div>
             <div class="container">
-
-
-              @yield('content')
-
+                <div class="content-center brand">
+                    <img class="n-logo" src="{{asset('/assets/img/now-logo.png')}}" alt="">
+                    <h1 class="h1-seo">Now UI Kit.</h1>
+                    <h3>A beautiful Bootstrap 4 UI kit. Yours free.</h3>
+                </div>
+                <h6 class="category category-absolute">Designed by
+                    <a href="#" >
+                        <img src="{{asset('/assets/img/invision-white-slim.png')}}" class="invision-logo" />
+                    </a>. Coded by
+                    <a href="#" >
+                        <img src="{{asset('/assets/img/creative-tim-white-slim2.png')}}" class="creative-tim-logo" />
+                    </a>.</h6>
             </div>
         </div>
+
+
+
+
+        <div class="main">
+
+
+          @yield('content')
+
+
+
+
+
+        </div>
+
+
+
 
     </div>
 
