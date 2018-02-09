@@ -13,7 +13,7 @@
 	  @yield('stylesheet')
 </head>
 
-<body class="landing-page sidebar-collapse" >
+<body class="template-page sidebar-collapse" >
 
 
 
