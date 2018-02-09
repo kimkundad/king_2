@@ -12,22 +12,22 @@
           <div id="images">
 
                         <div class="row">
-                            <div class="col-sm-3 col-xs-6">
+                            <div class="col-md-4 col-sm-3 col-xs-6">
                                 <p class="category">Image</p>
                                 <img src="{{url('assets/img/logo-of-adidas.jpg')}}" alt="Rounded Image" class="rounded">
                                 <div class="space-50"></div>
                             </div>
-                            <div class="col-sm-3 col-xs-6">
+                            <div class="col-md-4 col-sm-3 col-xs-6">
                                 <p class="category">Image</p>
                                 <img src="{{url('assets/img/logo-of-adidas.jpg')}}" alt="Rounded Image" class="rounded">
                                 <div class="space-50"></div>
                             </div>
-                            <div class="col-sm-3 col-xs-6">
+                            <div class="col-md-4 col-sm-3 col-xs-6">
                                 <p class="category">Image</p>
                                 <img src="{{url('assets/img/logo-of-adidas.jpg')}}" alt="Rounded Image" class="rounded">
                                 <div class="space-50"></div>
                             </div>
-                            <div class="col-sm-3 col-xs-6">
+                            <div class="col-md-4 col-sm-3 col-xs-6">
                                 <p class="category">Image</p>
                                 <img src="{{url('assets/img/logo-of-adidas.jpg')}}" alt="Rounded Image" class="rounded">
                                 <div class="space-50"></div>
