@@ -30,7 +30,7 @@
             </div>
             <div class="container">
                 <div class="content-center">
-                  <br><br>
+            
                   <h3>A beautiful Bootstrap 4 UI kit. Yours free.</h3>
                   <h6 class="category category-absolute">Designed by
                     <a href="#" >
