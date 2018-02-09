@@ -1,5 +1,11 @@
 <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+
+
+    @if($template == 1)
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+    @else
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top  " color-on-scroll="400">
+    @endif
       <div class="container">
           <div class="navbar-translate">
               <a class="navbar-brand" href="" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" target="_blank">

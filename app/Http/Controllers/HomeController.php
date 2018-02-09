@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $data['template'] = 1;
+        return view('home', $data);
+    }
+    public function shop()
+    {
+      $data['template'] = 2;
+      return view('shop', $data);
     }
 }
