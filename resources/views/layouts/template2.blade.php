@@ -13,7 +13,7 @@
 	  @yield('stylesheet')
 </head>
 
-<body class="landing-page sidebar-collapse" >
+<body class="index-page sidebar-collapse" >
 
 
 
@@ -23,23 +23,16 @@
     <!-- End Navbar -->
     <div class="wrapper">
 
-
-
-        <div class="page-header page-header-small">
+        <div class="page-header page-header-small" filter-color="orange">
             <div class="page-header-image" data-parallax="true" style="background-image: url('{{asset('/assets/img/header.jpg')}}');">
             </div>
             <div class="container">
-                <div class="content-center">
-                  <br><br>
-                  <h3>A beautiful Bootstrap 4 UI kit. Yours free.</h3>
-                  <h6 class="category category-absolute">Designed by
-                    <a href="#" >
-                        <img src="./assets/img/invision-white-slim.png" class="invision-logo">
-                    </a>. Coded by
-                    <a href="#" >
-                        <img src="./assets/img/creative-tim-white-slim2.png" class="creative-tim-logo">
-                    </a>.</h6>
+                <div class="content-center brand">
+                    <img class="n-logo" src="{{asset('/assets/img/now-logo.png')}}" alt="">
+                    <h1 class="h1-seo">Now UI Kit.</h1>
+            
                 </div>
+
             </div>
         </div>
 
