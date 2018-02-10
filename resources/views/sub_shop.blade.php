@@ -112,6 +112,17 @@ font-weight: 500;
                                             <i class="now-ui-icons sport_user-run"></i>
                                         </a>
                                     </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#disabled" role="tablist">
+                                        <i class="fa fa-exclamation"></i>
+                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#link" role="tablist">
+                                        <i class="fa fa-suitcase"></i>
+                                    </a>
+                                </li>
+
                                 </ul>
                             </div>
                         </div>
