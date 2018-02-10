@@ -7,37 +7,36 @@
 .mar-bot{
   margin-bottom: 20px;
 }
+.avatar {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+
+    margin-right: 5px;
+}
 </style>
 
-  <div class="section section-basic">
-    <div class="space-50"></div>
+  <div class="section section-tabs" style="padding: 20px 0;">
+
       <div class="container">
 
 
           <div id="images">
 
                         <div class="row">
-                            <div class="col-4 col-md-3">
+                            <div class="col-xs-3">
+                              <div class="avatar">
                                 <img src="{{url('assets/img/RUOK__Twitter_400x400_V1-400x400.png')}}" alt="Rounded Image" class="rounded mar-bot">
+                              </div>
+
                             </div>
-                            <div class="col-8 col-md-3">
-                              <h4>บริษัท แมคไทย จำกัด</h4>
+                            <div class="col-xs-9" style="margin-left:15px;">
+                              <h3>บริษัท แมคไทย จำกัด</h3>
 
                               <p class="text-muted">
                                 +66 (0) 2696 4900
                               </p>
-                              <p class="text-muted">
-                                97/11 อาคารบิ๊กซี ราชดำริห์ ห้องเลขที่ ออฟฟิศ 1 ชั้นที่ 5 ถนนราชดำริห์ แขวงลุมพินี เขตปทุมวัน กรุงเทพฯ 10330
-                              </p>
-                              <p class="text-muted">
-                                520000.00
-                              </p>
-                              <p class="text-muted">
-                                แขวงลุมพินี เขตปทุมวัน กรุงเทพฯ 10330
-                              </p>
-                              <p class="text-muted">
-                                จันทร์ - ศุกร์ เวลา 08.30 น. - 17.30 น.
-                              </p>
+
                             </div>
 
                         </div>
@@ -46,17 +45,8 @@
                     </div>
 
 
-          <div class="space-70"></div>
-          <div class="row" id="checkRadios">
-              <div class="col-sm-6 col-lg-3">
 
-
-              </div>
-              <div class="col-sm-6 col-lg-3">
-
-
-              </div>
-          </div>
+        
       </div>
   </div>
 
