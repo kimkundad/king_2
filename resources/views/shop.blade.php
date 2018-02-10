@@ -30,11 +30,17 @@
 
                             </div>
                             <div class="col-8 col-md-9" >
-                              <h3>บริษัท แมคไทย จำกัด</h3>
+                              <h5>บริษัท แมคไทย จำกัด</h5>
 
-                              <p class="text-muted">
-                                +66 (0) 2696 4900
-                              </p>
+                              <div class="button-container" style="    margin-top: 10px;">
+                                  <a href="#button" class="btn btn-primary btn-round ">Follow</a>
+                                  <a href="#button" class="btn btn-default btn-round  btn-icon" rel="tooltip" title="" data-original-title="Follow me on Twitter">
+                                      <i class="fa fa-twitter"></i>
+                                  </a>
+                                  <a href="#button" class="btn btn-default btn-round  btn-icon" rel="tooltip" title="" data-original-title="Follow me on Instagram">
+                                      <i class="fa fa-instagram"></i>
+                                  </a>
+                              </div>
 
                             </div>
 
