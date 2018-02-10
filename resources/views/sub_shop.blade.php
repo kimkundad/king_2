@@ -319,7 +319,7 @@ font-weight: 500;
         var center = new google.maps.LatLng(13.753777208133778, 100.56428253650665);
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 17,
+          zoom: 10,
           center: center,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
