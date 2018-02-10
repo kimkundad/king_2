@@ -201,7 +201,7 @@ font-weight: 500;
                                 <div class="col-md-10 ml-auto mr-auto">
                                     <div class="row collections">
                                         <div class="col-md-12">
-                                          <div id="map" style="width:100%; border:0; height: 100%;" frameborder="0"></div>
+                                          <div id="map" style="width:100%; border:0; height:316px;" frameborder="0"></div>
                                         </div>
 
                                     </div>
@@ -319,7 +319,7 @@ font-weight: 500;
         var center = new google.maps.LatLng(13.753777208133778, 100.56428253650665);
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
+          zoom: 14,
           center: center,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
