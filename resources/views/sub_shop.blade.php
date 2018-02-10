@@ -175,6 +175,8 @@ font-weight: 500;
                                       </tr>
                                     </tbody>
                                     </table>
+                                    <h5>Location</h5>
+                                    <div id="map" style="width:100%; border:0; height:316px;" frameborder="0"></div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="profile" role="tabpanel">
@@ -299,7 +301,7 @@ font-weight: 500;
                     </div>
 
 
-                    <div id="map" style="width:100%; border:0; height:316px;" frameborder="0"></div>
+
 
 
 
@@ -328,7 +330,7 @@ font-weight: 500;
         var center = new google.maps.LatLng(13.753, 100.564);
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
+          zoom: 14,
           center: center,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
