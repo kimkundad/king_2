@@ -14,13 +14,25 @@
     margin-right: 5px;
 }
 .category-1{
-      margin-bottom: 5px;
-      color: #9A9A9A;
+  margin-bottom: 5px;
+color: #17a2b8;
+font-size: 0.9em;
+font-weight: 500;
 }
 .h5-set{
-  font-size: 1.3em;
+      font-weight: bold;
+  color: #9A9A9A;
+  font-size: 1.1em;
   margin-bottom: 0px;
-  margin-top: 10px;
+  margin-top: 5px;
+}
+.table td, .table th {
+    padding: .6rem;
+
+}
+.profile-page .gallery {
+    margin-top: 45px;
+    padding-bottom: 50px;
 }
 </style>
 
@@ -66,57 +78,127 @@
 
 
 
-  <div class="section section-basic">
+  <div class="section ">
                 <div class="container">
 
 
-                    <div id="buttons">
 
 
-                      <table class="table">
-
-                        <tbody>
-                          <tr>
-                            <th scope="row">
-                              <h5 class="h5-set">ชื่อ</h5>
-                              <p class="category-1">Little Reveurs</p>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row">
-                              <h5 class="h5-set">เบอร์โทรศัพ์</h5>
-                              <p class="category-1">080-111-3193</p>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row">
-                              <h5 class="h5-set">กลุ่มสินค้า</h5>
-                              <p class="category-1">กิ๊ฟช็อป</p>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row">
-                              <h5 class="h5-set">ร้านค้าประเภท</h5>
-                              <p class="category-1">กิ๊ฟช็อป</p>
-                            </th>
-                          </tr>
-                          <tr>
-                            <th scope="row">
-                              <h5 class="h5-set">ที่อยู่</h5>
-                              <p class="category-1">31/99 โพธิ์ทองแมนชั่น ซอยพหลโยธิน34 แขวงเสนานิคม เขตจตุจักร กรุงเทพฯ 10900</p>
-                            </th>
-                          </tr>
-
-                          <tr>
-                            <th scope="row">
-                              <h5 class="h5-set">รายละเอียด</h5>
-                              <p class="category-1">Little Reveurs ขายตุ๊กตา น่ารัก น่ากอด ขนนุ่ม ขนฟู เหมาะสำหรับเป็นของขวัญในทุกโอกาสพิเศษ</p>
-                            </th>
-                          </tr>
-                        </tbody>
-                        </table>
 
 
+
+
+
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                          
+                            <div class="nav-align-center">
+                                <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#profile" role="tablist">
+                                            <i class="now-ui-icons design_image"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="tab" href="#home" role="tablist">
+                                            <i class="now-ui-icons location_world"></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="tab" href="#messages" role="tablist">
+                                            <i class="now-ui-icons sport_user-run"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Tab panes -->
+                        <div class="col-md-12">
+                            <div class="space-50"></div>
+                        <div class="tab-content gallery">
+                            <div class="tab-pane active" id="home" role="tabpanel">
+                                <div class="col-md-10 ml-auto mr-auto">
+                                  <table class="table">
+
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">ชื่อ</h5>
+                                          <p class="category-1">Little Reveurs</p>
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">เบอร์โทรศัพ์</h5>
+                                          <p class="category-1">080-111-3193</p>
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">กลุ่มสินค้า</h5>
+                                          <p class="category-1">กิ๊ฟช็อป</p>
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">ร้านค้าประเภท</h5>
+                                          <p class="category-1">กิ๊ฟช็อป</p>
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">ที่อยู่</h5>
+                                          <p class="category-1">31/99 โพธิ์ทองแมนชั่น ซอยพหลโยธิน34 แขวงเสนานิคม เขตจตุจักร กรุงเทพฯ 10900</p>
+                                        </th>
+                                      </tr>
+
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">รายละเอียด</h5>
+                                          <p class="category-1">Little Reveurs ขายตุ๊กตา น่ารัก น่ากอด ขนนุ่ม ขนฟู เหมาะสำหรับเป็นของขวัญในทุกโอกาสพิเศษ</p>
+                                        </th>
+                                      </tr>
+                                    </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="profile" role="tabpanel">
+                                <div class="col-md-10 ml-auto mr-auto">
+                                    <div class="row collections">
+                                        <div class="col-md-6">
+                                            <img src="../assets/img/bg6.jpg" class="img-raised">
+                                            <img src="../assets/img/bg11.jpg" alt="" class="img-raised">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                                            <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="messages" role="tabpanel">
+                                <div class="col-md-10 ml-auto mr-auto">
+                                    <div class="row collections">
+                                        <div class="col-md-6">
+                                            <img src="../assets/img/bg3.jpg" alt="" class="img-raised">
+                                            <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                                            <img src="../assets/img/bg6.jpg" class="img-raised">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
 
 
 
