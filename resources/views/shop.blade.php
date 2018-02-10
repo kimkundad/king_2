@@ -8,7 +8,7 @@
   margin-bottom: 20px;
 }
 .avatar {
-  
+
     overflow: hidden;
 
     margin-right: 5px;
@@ -23,13 +23,13 @@
           <div id="images">
 
                         <div class="row">
-                            <div class="col-xs-3">
+                            <div class="col-4 col-md-3">
                               <div class="avatar">
                                 <img src="{{url('assets/img/RUOK__Twitter_400x400_V1-400x400.png')}}" alt="Rounded Image" class="rounded mar-bot">
                               </div>
 
                             </div>
-                            <div class="col-xs-9" style="margin-left:15px;">
+                            <div class="col-8 col-md-9" >
                               <h3>บริษัท แมคไทย จำกัด</h3>
 
                               <p class="text-muted">
