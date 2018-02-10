@@ -200,7 +200,7 @@ font-weight: 500;
                             <div class="tab-pane" id="exclamation" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
                                     <div class="row collections">
-                                        <div class="col-md-12">
+                                        <div class="col-md-6 ml-auto mr-auto">
                                           <div id="map" style="width:100%; border:0; height:316px;" frameborder="0"></div>
                                         </div>
 
