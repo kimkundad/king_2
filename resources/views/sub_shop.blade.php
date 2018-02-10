@@ -311,23 +311,37 @@ font-weight: 500;
 @section('scripts')
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
 
-
+<script language=javascript src='https://maps.google.com/maps/api/js?key=AIzaSyClVRSTOcxX7RK5Zagc0HbsXPpJBTgfv1Q&callback=initMap'></script>
+<script src="{{url('assets/js/markerclusterer.js')}}"></script>
 <script>
-      function initMap() {
-        var uluru = {lat: 13.753777208133778, lng: 100.56428253650665};
+    function initialize() {
+        var center = new google.maps.LatLng(13.753777208133778, 100.56428253650665);
+
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
+          zoom: 17,
+          center: center,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
         });
+
+        var markers = [];
         var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
+            position: new google.maps.LatLng(13.753777208133778, 100.56428253650665)
         });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClVRSTOcxX7RK5Zagc0HbsXPpJBTgfv1Q&callback=initMap">
-    </script>
+        markers.push(marker);
+
+        var options = {
+            imagePath: 'images/m'
+        };
+
+        var markerCluster = new MarkerClusterer(map, markers, options);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+
 
 @stop('scripts')
