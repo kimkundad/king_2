@@ -201,7 +201,7 @@ font-weight: 500;
                                 <div class="col-md-10 ml-auto mr-auto">
                                     <div class="row collections">
                                         <div class="col-md-12">
-                                          <div id="map" style="width:100%; border:0; height:316px;" frameborder="0"></div>
+                                          <div id="map" style="width:100%; border:0; height: 100%;" frameborder="0"></div>
                                         </div>
 
                                     </div>
