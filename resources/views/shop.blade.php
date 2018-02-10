@@ -29,15 +29,15 @@
                               </div>
 
                             </div>
-                            <div class="col-8 col-md-9" >
-                              <h5>บริษัท แมคไทย จำกัด</h5>
+                            <div class="col-8 col-md-9" style="padding-left: 1px;">
+                              <h6 style="font-size: 1.2em;">บริษัท แมคไทย จำกัด</h6>
 
                               <div class="button-container" style="    margin-top: 10px;">
-                                  <a href="#button" class="btn btn-primary btn-round ">Follow</a>
-                                  <a href="#button" class="btn btn-default btn-round  btn-icon" rel="tooltip" title="" data-original-title="Follow me on Twitter">
+                                  <a href="#button" class="btn btn-primary btn-round btn-sm">Follow</a>
+                                  <a href="#button" class="btn btn-default btn-round btn-sm btn-icon" rel="tooltip" title="" data-original-title="Follow me on Twitter">
                                       <i class="fa fa-twitter"></i>
                                   </a>
-                                  <a href="#button" class="btn btn-default btn-round  btn-icon" rel="tooltip" title="" data-original-title="Follow me on Instagram">
+                                  <a href="#button" class="btn btn-default btn-round btn-sm btn-icon" rel="tooltip" title="" data-original-title="Follow me on Instagram">
                                       <i class="fa fa-instagram"></i>
                                   </a>
                               </div>
