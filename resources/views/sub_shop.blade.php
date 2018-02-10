@@ -316,17 +316,17 @@ font-weight: 500;
 <script src="{{url('assets/js/markerclusterer.js')}}"></script>
 <script>
     function initMap() {
-        var center = new google.maps.LatLng(13.753777208133778, 100.56428253650665);
+        var center = new google.maps.LatLng(13.753, 100.564);
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
+          zoom: 10,
           center: center,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
         var markers = [];
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(13.753777208133778, 100.56428253650665)
+            position: new google.maps.LatLng(13.753, 100.564)
         });
         markers.push(marker);
 
