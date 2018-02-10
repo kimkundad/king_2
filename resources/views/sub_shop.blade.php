@@ -337,7 +337,7 @@ font-weight: 500;
         var markerCluster = new MarkerClusterer(map, markers, options);
     }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+    google.maps.event.addDomListener(window, 'load', initMap);
 </script>
 
 
