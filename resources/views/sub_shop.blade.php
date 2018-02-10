@@ -315,7 +315,7 @@ font-weight: 500;
 <script  language=javascript src='https://maps.google.com/maps/api/js?key=AIzaSyClVRSTOcxX7RK5Zagc0HbsXPpJBTgfv1Q&callback=initMap'></script>
 <script src="{{url('assets/js/markerclusterer.js')}}"></script>
 <script>
-    function initialize() {
+    function initMap() {
         var center = new google.maps.LatLng(13.753777208133778, 100.56428253650665);
 
         var map = new google.maps.Map(document.getElementById('map'), {
