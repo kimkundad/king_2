@@ -12,35 +12,34 @@
   <div class="section section-basic">
     <div class="space-50"></div>
       <div class="container">
-          <h3 class="title">Basic Elements</h3>
+
 
           <div id="images">
 
                         <div class="row">
-                            <div class="col-6 col-md-3">
+                            <div class="col-4 col-md-3">
                                 <img src="{{url('assets/img/RUOK__Twitter_400x400_V1-400x400.png')}}" alt="Rounded Image" class="rounded mar-bot">
                             </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/logo-of-adidas.jpg')}}" alt="Rounded Image" class="rounded mar-bot">
+                            <div class="col-8 col-md-3">
+                              <h4>บริษัท แมคไทย จำกัด</h4>
+
+                              <p class="text-muted">
+                                +66 (0) 2696 4900
+                              </p>
+                              <p class="text-muted">
+                                97/11 อาคารบิ๊กซี ราชดำริห์ ห้องเลขที่ ออฟฟิศ 1 ชั้นที่ 5 ถนนราชดำริห์ แขวงลุมพินี เขตปทุมวัน กรุงเทพฯ 10330
+                              </p>
+                              <p class="text-muted">
+                                520000.00
+                              </p>
+                              <p class="text-muted">
+                                แขวงลุมพินี เขตปทุมวัน กรุงเทพฯ 10330
+                              </p>
+                              <p class="text-muted">
+                                จันทร์ - ศุกร์ เวลา 08.30 น. - 17.30 น.
+                              </p>
                             </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/mcdonalds.png')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/cnn-logo.png')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/logo-of-adidas.jpg')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/cnn-logo.png')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/RUOK__Twitter_400x400_V1-400x400.png')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/logo-of-adidas.jpg')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
+
                         </div>
                         <div class="row">
                         </div>
