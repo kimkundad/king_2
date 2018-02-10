@@ -78,7 +78,7 @@ font-weight: 500;
 
 
 
-  <div class="section ">
+  <div class="section section-basic ">
                 <div class="container">
 
 
@@ -89,7 +89,7 @@ font-weight: 500;
 
 
 
-
+                  <br>
 
 
 
@@ -97,7 +97,7 @@ font-weight: 500;
 
                     <div class="row">
                         <div class="col-md-12">
-                          
+
                             <div class="nav-align-center">
                                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
                                     <li class="nav-item">
