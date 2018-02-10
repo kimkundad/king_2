@@ -34,6 +34,16 @@ font-weight: 500;
     margin-top: 45px;
     padding-bottom: 50px;
 }
+.img-circle {
+    border-radius: 50%;
+}
+.avatar2 {
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 5px;
+}
 </style>
 
   <div class="section section-tabs" style="padding: 20px 0;">
@@ -191,16 +201,81 @@ font-weight: 500;
                             </div>
                             <div class="tab-pane" id="messages" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
-                                    <div class="row collections">
-                                        <div class="col-md-6">
-                                            <img src="../assets/img/bg3.jpg" alt="" class="img-raised">
-                                            <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                                  <div class="content table-responsive table-full-width">
+
+
+
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>ชื่อผู้ใช้</th>
+                                  <th>แหล่งที่มา</th>
+                                  <th>Email</th>
+
+
+                                </tr>
+                              </thead>
+                                <tbody>
+
+                                                                                                            <tr id="5">
+                                      <td>
+                                        <div class="avatar2">
+                                          <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                                         </div>
-                                        <div class="col-md-6">
-                                            <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
-                                            <img src="../assets/img/bg6.jpg" class="img-raised">
-                                        </div>
-                                    </div>
+                                      </td>
+                                      <td>Fair St</td>
+                                      <td>facebook</td>
+                                      <td>fair____@hotmail.com</td>
+
+
+                                    </tr>
+                                                                          <tr id="4">
+                                      <td><div class="avatar2">
+                                        <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                      </div></td>
+                                      <td>Praewrawee Muannirut</td>
+                                      <td>facebook</td>
+                                      <td>tao_02081992@hotmail.com</td>
+
+
+                                    </tr>
+                                                                          <tr id="3">
+                                      <td><div class="avatar2">
+                                        <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                      </div></td>
+                                      <td>Tu Kanjana Sridet</td>
+                                      <td>facebook</td>
+                                      <td>ying_tu34@hotmail.com</td>
+
+
+                                    </tr>
+                                                                          <tr id="2">
+                                      <td><div class="avatar2">
+                                        <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                      </div></td>
+                                      <td>Shuvit Funsok</td>
+                                      <td>facebook</td>
+                                      <td>ighostzaa@gmail.com</td>
+
+
+                                    </tr>
+                                                                          <tr id="1">
+                                      <td><div class="avatar2">
+                                        <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                      </div></td>
+                                      <td>kim kundad</td>
+                                      <td>email</td>
+                                      <td>kim.kundad@gmail.com</td>
+
+
+                                    </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
                                 </div>
                             </div>
                         </div>
