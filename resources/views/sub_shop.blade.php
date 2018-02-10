@@ -113,7 +113,7 @@ font-weight: 500;
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#disabled" role="tablist">
+                                    <a class="nav-link" data-toggle="tab" href="#exclamation" role="tablist">
                                         <i class="fa fa-exclamation"></i>
                                     </a>
                                     </li>
@@ -196,6 +196,18 @@ font-weight: 500;
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="tab-pane" id="exclamation" role="tabpanel">
+                                <div class="col-md-10 ml-auto mr-auto">
+                                    <div class="row collections">
+                                        <div class="col-md-12">
+                                          <div id="map" style="width:100%; border:0; height:316px;" frameborder="0"></div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="tab-pane" id="messages" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
                                   <div class="content table-responsive table-full-width">
@@ -295,3 +307,35 @@ font-weight: 500;
 
 
 @endsection
+
+@section('scripts')
+
+<script language="javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyClVRSTOcxX7RK5Zagc0HbsXPpJBTgfv1Q&amp;callback=initMap"></script>
+<script src="{{url('assets/js/markerclusterer.js')}}"></script>
+<script>
+    function initialize() {
+        var center = new google.maps.LatLng(13.753777208133778, 100.56428253650665);
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: center,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        var markers = [];
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(13.753777208133778, 100.56428253650665)
+        });
+        markers.push(marker);
+
+        var options = {
+            imagePath: 'images/m'
+        };
+
+        var markerCluster = new MarkerClusterer(map, markers, options);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+@stop('scripts')
