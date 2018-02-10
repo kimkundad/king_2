@@ -312,7 +312,7 @@ font-weight: 500;
 
 
 
-<script language=javascript src='https://maps.google.com/maps/api/js?key=AIzaSyClVRSTOcxX7RK5Zagc0HbsXPpJBTgfv1Q&callback=initMap'></script>
+<script async defer language=javascript src='https://maps.google.com/maps/api/js?key=AIzaSyClVRSTOcxX7RK5Zagc0HbsXPpJBTgfv1Q&callback=initMap'></script>
 <script src="{{url('assets/js/markerclusterer.js')}}"></script>
 <script>
     function initialize() {
