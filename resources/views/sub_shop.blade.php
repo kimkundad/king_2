@@ -56,7 +56,7 @@ font-weight: 500;
                         <div class="row">
                             <div class="col-12">
 
-                              <p class="category">Tabs with Icons on Card</p>
+                              <p class="category" style="color: #2c2c2c;">Tabs with Icons on Card</p>
                               <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
 
                             </div>
