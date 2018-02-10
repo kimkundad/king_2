@@ -8,8 +8,7 @@
   margin-bottom: 20px;
 }
 .avatar {
-    width: 150px;
-    height: 150px;
+  
     overflow: hidden;
 
     margin-right: 5px;
@@ -46,7 +45,7 @@
 
 
 
-        
+
       </div>
   </div>
 
