@@ -50,6 +50,15 @@ font-weight: 500;
 .hide{
   display: none;
 }
+.btn, .navbar .navbar-nav>a.btn {
+    font-size: 12px;
+  }
+  .btn-file{
+        margin: 0px 0px;
+  }
+  .input-group-btn .btn {
+    margin: 0px 0px;
+}
 </style>
 
   <div class="section " style="padding: 20px 0;">
@@ -82,6 +91,7 @@ font-weight: 500;
                 <input type="hidden" name="pro_id" class="form-control" value="" required>
                 </div>
                 <div class="">
+                  <br>
                     <button type="submit" class="btn btn-info btn-fill btn-wd">อัพโหลดรูปภาพ</button>
                 </div>
 
