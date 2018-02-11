@@ -42,4 +42,10 @@ class HomeController extends Controller
       $data['template'] = 2;
       return view('album', $data);
     }
+
+    public function new_album()
+    {
+      $data['template'] = 2;
+      return view('new_album', $data);
+    }
 }

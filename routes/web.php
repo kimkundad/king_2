@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/shop', 'HomeController@shop')->name('shop');
   Route::get('/sub_shop', 'HomeController@sub_shop')->name('sub_shop');
   Route::get('/album', 'HomeController@album')->name('album');
+  Route::get('/new_album', 'HomeController@new_album')->name('new_album');
 
 
   });
