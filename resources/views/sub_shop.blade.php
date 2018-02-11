@@ -44,6 +44,9 @@ font-weight: 500;
     border-radius: 50%;
     margin-right: 5px;
 }
+.text-muted {
+    font-size: 12px;
+}
 </style>
 
   <div class="section section-tabs" style="padding: 20px 0;">
@@ -183,17 +186,39 @@ font-weight: 500;
                                 <div class="col-md-10 ml-auto mr-auto">
                                     <div class="row collections">
                                         <div class="col-md-6">
-                                            <p class="category">Tabs with Icons on Card</p>
+                                          <a href="{{url('album')}}">
+                                            <p class="category" style="margin-bottom: 0.2rem;">Tabs with Icons on Card </p>
+                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> 1 ม.ค. 2513</p>
                                             <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
-
-                                            <p class="category">Tabs with Icons on Card</p>
-                                            <img src="{{url('assets/img/bg11.jpg')}}" alt="" class="img-raised mar-bot">
+                                          </a>
                                         </div>
                                         <div class="col-md-6">
-                                          <p class="category">Tabs with Icons on Card</p>
-                                            <img src="{{url('assets/img/bg7.jpg')}}" alt="" class="img-raised mar-bot">
-                                            <p class="category">Tabs with Icons on Card</p>
-                                            <img src="{{url('assets/img/bg6.jpg')}}" class="img-raised mar-bot">
+                                          <a href="{{url('album')}}">
+                                            <p class="category" style="margin-bottom: 0.2rem;">Tabs with Icons on Card </p>
+                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> 1 ม.ค. 2513</p>
+                                            <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
+                                          </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <a href="{{url('album')}}">
+                                            <p class="category" style="margin-bottom: 0.2rem;">Tabs with Icons on Card </p>
+                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> 1 ม.ค. 2513</p>
+                                            <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
+                                          </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <a href="{{url('album')}}">
+                                            <p class="category" style="margin-bottom: 0.2rem;">Tabs with Icons on Card </p>
+                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> 1 ม.ค. 2513</p>
+                                            <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
+                                          </a>
+                                        </div>
+                                        <div class="col-md-6">
+                                          <a href="{{url('album')}}">
+                                            <p class="category" style="margin-bottom: 0.2rem;">Tabs with Icons on Card </p>
+                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> 1 ม.ค. 2513</p>
+                                            <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
+                                          </a>
                                         </div>
                                     </div>
                                 </div>

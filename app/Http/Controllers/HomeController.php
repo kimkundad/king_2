@@ -37,4 +37,9 @@ class HomeController extends Controller
       $data['template'] = 2;
       return view('sub_shop', $data);
     }
+    public function album()
+    {
+      $data['template'] = 2;
+      return view('album', $data);
+    }
 }
