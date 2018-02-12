@@ -18,7 +18,7 @@
                   <div class="col-md-6">
                       <div class="card">
                           <div class="header">
-                              <h4 class="title">แก้ไขข้อมูล {{$brander->branders_name}}</h4>
+                              <h4 class="title">ข้อมูล {{$brander->branders_name}}</h4>
 
                           </div>
 

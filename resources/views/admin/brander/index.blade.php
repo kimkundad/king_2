@@ -29,7 +29,7 @@
                                 <div class="row">
                                     <div class="col-xs-12">
                                       <a href="{{url('admin/brander/'.$u->id)}}">
-                                        <img src="{{url('admin/assets/blog/'.$u->image_shop)}}" class="img-responsive">
+                                        <img src="{{url('admin/assets/product/'.$u->branders_image)}}" class="img-responsive">
                                       </a>
                                     </div>
 
