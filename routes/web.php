@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/album', 'HomeController@album')->name('album');
   Route::get('/new_album', 'HomeController@new_album')->name('new_album');
   Route::get('admin/dashboard', 'DashboardController@index');
+  Route::resource('admin/brander', 'BranderController');
 
   });
 

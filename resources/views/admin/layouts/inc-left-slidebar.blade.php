@@ -18,14 +18,10 @@
                     </a>
                 </li>
 
-
-
-
-
-                <li {{ (Request::is('admin/user_shop*') ? 'class=active' : '') }}>
-                    <a href="{{url('admin/user_shop')}}">
+                <li {{ (Request::is('admin/brander*') ? 'class=active' : '') }}>
+                    <a href="{{url('admin/brander')}}">
                         <i class="ti-briefcase"></i>
-                        <p>User Shop</p>
+                        <p>User Brand</p>
                     </a>
                 </li>
 
@@ -50,6 +46,7 @@
                               <p>Stock List</p>
                           </a>
                       </li>
+
 
           <!--      <li>
                     <a href="table.html">
@@ -90,6 +87,6 @@
                 </li>
             </ul>
     	</div>
-<div class="sidebar-background" style="background-image: url({{secure_asset('assets/img/sidebar-5.jpg')}}) "></div>
+
 
     </div>
