@@ -35,7 +35,9 @@ border-radius: 0%;
 img {
 vertical-align: middle;
 border-style: none;
+border-radius: 5px 5px 5px 5px;
 }
+
 </style>
 @stop('stylesheet')
 
@@ -152,10 +154,6 @@ border-style: none;
 
 
 
-
-
-
-
                   <div class="col-md-6">
                       <div class="card">
                           <div class="header">
@@ -169,34 +167,34 @@ border-style: none;
                                               <div class="col-md-12" >
 
                                                 <div id="treeBasic">
-                              										<ul>
-                              											<li class="colored">
-                              												 {{$brander->branders_name}}
-                              												<ul>
-                              													<li data-jstree='{ "selected" : true }'>
-                              														<a href="#">Shop {{$brander->branders_name}} 1</a>
-                              													</li>
-                              													<li data-jstree='{ "opened" : true }'>
-                              														 Shop {{$brander->branders_name}} 2
-                              														<ul>
-                              															<li data-jstree='{ "disabled" : true }'>
-                              																 Product 1
-                              															</li>
-                              															<li data-jstree='{ "type" : "file" }'>
-                              																 Child Node
-                              															</li>
+                                                  <ul>
+                                                    <li class="colored">
+                                                       {{$brander->branders_name}}
+                                                      <ul>
+                                                        <li data-jstree='{ "selected" : true }'>
+                                                          <a href="#">Shop {{$brander->branders_name}} 1</a>
+                                                        </li>
+                                                        <li data-jstree='{ "opened" : true }'>
+                                                           Shop {{$brander->branders_name}} 2
+                                                          <ul>
+                                                            <li data-jstree='{ "disabled" : true }'>
+                                                               Product 1
+                                                            </li>
+                                                            <li data-jstree='{ "type" : "file" }'>
+                                                               Child Node
+                                                            </li>
                                                             <li data-jstree='{ "icon" : "fa fa-picture-o" }'>
-                                  														 Custom Icon
-                                  													</li>
-                              														</ul>
-                              													</li>
+                                                               Custom Icon
+                                                            </li>
+                                                          </ul>
+                                                        </li>
 
 
-                              												</ul>
-                              											</li>
+                                                      </ul>
+                                                    </li>
 
-                              										</ul>
-                              									</div>
+                                                  </ul>
+                                                </div>
 
 
                                               </div>
@@ -205,6 +203,56 @@ border-style: none;
 
                       </div>
                   </div>
+
+
+
+
+                  <div class="col-md-6">
+                      <div class="card">
+
+
+
+
+                          <div class="content">
+                                          <div class="row">
+
+                                            <div class="col-md-12">
+                                              <a href="{{url('admin/shop/create')}}" class="btn btn-success btn-fill btn-wd"> สร้าง Shop ใหม่</a>
+                                              <br><br>
+                                            </div>
+
+
+                                              <div class="col-md-4 col-sm-6 col-xs-6" >
+                                                <label>Shop 1</label>
+                                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}"  class="img-responsive"><br>
+                                              </div>
+                                              <div class="col-md-4 col-sm-6 col-xs-6" >
+                                                <label>Shop 2</label>
+                                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}"  class="img-responsive"><br>
+                                              </div>
+                                              <div class="col-md-4 col-sm-6 col-xs-6" >
+                                                <label>Shop 1</label>
+                                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}"  class="img-responsive"><br>
+                                              </div>
+                                              <div class="col-md-4 col-sm-6 col-xs-6" >
+                                                <label>Shop 2</label>
+                                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}"  class="img-responsive"><br>
+                                              </div>
+
+
+                                          </div>
+                          </div>
+
+                      </div>
+                  </div>
+
+
+
+
+
+
+
+
 
 
 
