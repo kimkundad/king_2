@@ -97,7 +97,8 @@ class BranderController extends Controller
           ->first();
 
       $data['brander'] = $brander;
-
+      $data['url'] = url('admin/brander/'.$id);
+      $data['method'] = "put";
       $data['header'] = 'ข้อมูลของ '.$brander->branders_name;
       return view('admin.brander.show',$data);
     }
