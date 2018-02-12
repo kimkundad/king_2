@@ -32,7 +32,7 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link btn btn-neutral" href="">
+                      <a class="nav-link btn btn-neutral" href="{{url('admin/dashboard')}}">
                           <i class="now-ui-icons arrows-1_share-66"></i>
                           <p>Upgrade to PRO</p>
                       </a>
