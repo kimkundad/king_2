@@ -359,6 +359,32 @@ border-radius: 0%;
 <script src="{{url('admin/assets/js/bootstrap-notify.js')}}"></script>
 
 <script>
+        $(document).ready(function () {
+            $("#fileAvatar").on("change", previewFile);
+            $('#btn_submit').click(() => {
+                const file = document.querySelector('#fileAvatar').files[0];
+                if (file) {
+                    window.location = 'step-4.html';
+                }
+            });
+        });
+
+        function previewFile() {
+            const file = document.querySelector('#fileAvatar').files[0];
+            const preview = document.querySelector('#imgAvatar');
+            const reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+            if (file) {
+                reader.readAsDataURL(file); //reads the data as a URL
+            }
+        }
+    </script>
+
+
+<script>
 $(document).ready(function() {
     $('.js-example-basic-single').select2();
 });

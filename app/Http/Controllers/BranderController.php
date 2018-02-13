@@ -25,6 +25,7 @@ class BranderController extends Controller
             ->orderBy('id', 'desc')
             ->get();
 
+
       $data['objs'] = $brander;
       $data['header'] = "Brand";
       return view('admin.brander.index', $data);
@@ -89,6 +90,16 @@ class BranderController extends Controller
      */
     public function show($id)
     {
+      $shop = DB::table('shops')->select(
+          'shops.*'
+          )
+          ->where('shops.user_id', Auth::user()->id)
+          ->orderBy('shops.id', 'desc')
+          ->get();
+
+      $data['shop'] = $shop;
+
+
       $brander = DB::table('branders')->select(
           'branders.*'
           )

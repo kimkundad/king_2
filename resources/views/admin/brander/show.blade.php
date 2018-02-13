@@ -101,14 +101,6 @@ border-radius: 5px 5px 5px 5px;
                                                   </div>
 
 
-
-
-
-
-
-
-
-
                                                   <div class="col-md-12" style="text-align: center">
                                     <label for="imgAvatar"></label>
                                     <img width="150" id="imgAvatar" name="imgAvatar" src="{{url('admin/assets/img/thumb_upload.png')}}" width="250px" alt="">
@@ -128,15 +120,6 @@ border-radius: 5px 5px 5px 5px;
 
                                 </div>
 
-
-
-
-
-
-
-
-
-
                                               </div>
 
 
@@ -151,7 +134,6 @@ border-radius: 5px 5px 5px 5px;
 
                       </div>
                   </div>
-
 
 
                   <div class="col-md-6">
@@ -171,10 +153,17 @@ border-radius: 5px 5px 5px 5px;
                                                     <li class="colored">
                                                        {{$brander->branders_name}}
                                                       <ul>
+
+                                                        @if($shop)
+                                                        @foreach($shop as $u)
                                                         <li data-jstree='{ "selected" : true }'>
-                                                          <a href="#">Shop {{$brander->branders_name}} 1</a>
+                                                          <a href="#">Shop {{$u->shop_name}} 1</a>
                                                         </li>
-                                                        <li data-jstree='{ "opened" : true }'>
+                                                        @endforeach
+                                                      @endif
+
+
+                                                    <!--    <li data-jstree='{ "opened" : true }'>
                                                            Shop {{$brander->branders_name}} 2
                                                           <ul>
                                                             <li data-jstree='{ "disabled" : true }'>
@@ -187,7 +176,7 @@ border-radius: 5px 5px 5px 5px;
                                                                Custom Icon
                                                             </li>
                                                           </ul>
-                                                        </li>
+                                                        </li> -->
 
 
                                                       </ul>
@@ -205,13 +194,8 @@ border-radius: 5px 5px 5px 5px;
                   </div>
 
 
-
-
                   <div class="col-md-6">
                       <div class="card">
-
-
-
 
                           <div class="content">
                                           <div class="row">
@@ -221,23 +205,17 @@ border-radius: 5px 5px 5px 5px;
                                               <br><br>
                                             </div>
 
+                                            @if($shop)
+                                            @foreach($shop as $u)
 
                                               <div class="col-md-4 col-sm-6 col-xs-6" >
-                                                <label>Shop 1</label>
-                                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}"  class="img-responsive"><br>
+                                                <a href="{{url('admin/shop/'.$u->id)}}">
+                                                <label>{{$u->shop_name}}</label>
+                                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}"  class="img-responsive">
+                                              </a><br>
                                               </div>
-                                              <div class="col-md-4 col-sm-6 col-xs-6" >
-                                                <label>Shop 2</label>
-                                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}"  class="img-responsive"><br>
-                                              </div>
-                                              <div class="col-md-4 col-sm-6 col-xs-6" >
-                                                <label>Shop 1</label>
-                                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}"  class="img-responsive"><br>
-                                              </div>
-                                              <div class="col-md-4 col-sm-6 col-xs-6" >
-                                                <label>Shop 2</label>
-                                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}"  class="img-responsive"><br>
-                                              </div>
+                                              @endforeach
+                                            @endif
 
 
                                           </div>

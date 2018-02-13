@@ -44,7 +44,7 @@
               @if($objs)
                 @foreach($objs as $u)
                                       <tr id="{{$u->ids}}">
-                                        <td><a href="{{url('admin/shop/'.$u->ids)}}">{{$u->shop_code}}</a></td>
+                                        <td><img src="{{url('admin/assets/blog/'.$u->image_shop)}}" style="height:32px;"> <a href="{{url('admin/shop/'.$u->ids)}}"> {{$u->shop_code}}</a></td>
                                         <td><a href="{{url('admin/shop/'.$u->ids)}}">{{$u->shop_name}}</a></td>
                                         <td>{{$u->branders_name}}</td>
                                         <td>{{$u->shop_phone}}</td>

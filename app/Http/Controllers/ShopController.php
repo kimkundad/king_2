@@ -28,7 +28,7 @@ class ShopController extends Controller
           ->orderBy('shops.id', 'desc')
           ->paginate(10);
 
-          $data['objs'] = $shop;
+    $data['objs'] = $shop;
 
     $data['objs'] = $shop;
     $data['header'] = "Shop";
@@ -226,8 +226,89 @@ class ShopController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $image = $request->file('image');
+
+        if($image == NULL){
+
+          $this->validate($request, [
+           'branders_id' => 'required',
+           'shop_email' => 'required',
+           'shop_name' => 'required',
+           'address' => 'required',
+           'shop_phone' => 'required',
+           'provience_id' => 'required',
+           'lat' => 'required',
+           'lng' => 'required',
+           'shop_sale' => 'required',
+           'shop_code' => 'required',
+           'channel' => 'required',
+           'shop_area' => 'required'
+          ]);
+
+          $package = shop::find($id);
+          $package->user_id = Auth::user()->id;
+          $package->shop_name = $request['shop_name'];
+          $package->shop_address = $request['address'];
+          $package->shop_phone = $request['shop_phone'];
+          $package->provience_id = $request['provience_id'];
+          $package->lat = $request['lat'];
+          $package->lng = $request['lng'];
+          $package->shop_sale = $request['shop_sale'];
+          $package->shop_code = $request['shop_code'];
+          $package->channel = $request['channel'];
+          $package->shop_area = $request['shop_area'];
+          $package->detail_shop = $request['detail_shop'];
+          $package->save();
+
+         return redirect(url('admin/shop/'.$id.'/edit'))->with('edit_success','คุณทำการแก้ไขอสังหา สำเร็จ');
+
+        }else{
+
+          $this->validate($request, [
+           'image' => 'required|mimes:jpg,jpeg,png,gif|max:8048',
+           'shop_name' => 'required',
+           'branders_id' => 'required',
+           'shop_email' => 'required',
+           'address' => 'required',
+           'shop_phone' => 'required',
+           'provience_id' => 'required',
+           'lat' => 'required',
+           'lng' => 'required',
+           'shop_sale' => 'required',
+           'shop_code' => 'required',
+           'channel' => 'required',
+           'shop_area' => 'required'
+          ]);
+
+
+          $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+           $img = Image::make($image->getRealPath());
+           $img->resize(500, 500, function ($constraint) {
+           $constraint->aspectRatio();
+         })->save('admin/assets/blog/'.$input['imagename']);
+
+
+         $package = shop::find($id);
+         $package->user_id = Auth::user()->id;
+         $package->shop_name = $request['shop_name'];
+         $package->shop_address = $request['address'];
+         $package->shop_phone = $request['shop_phone'];
+         $package->provience_id = $request['provience_id'];
+         $package->lat = $request['lat'];
+         $package->lng = $request['lng'];
+         $package->shop_sale = $request['shop_sale'];
+         $package->shop_code = $request['shop_code'];
+         $package->channel = $request['channel'];
+         $package->shop_area = $request['shop_area'];
+         $package->detail_shop = $request['detail_shop'];
+         $package->image_shop = $input['imagename'];
+         $package->save();
+
+         return redirect(url('admin/shop/'.$id.'/edit'))->with('edit_success','คุณทำการแก้ไขอสังหา สำเร็จ');
+
+
+        }
+      }
 
     /**
      * Remove the specified resource from storage.
