@@ -183,10 +183,11 @@ font-weight: 500;
                                 <div class="col-md-10 ml-auto mr-auto">
                                     <div class="row collections">
                                         <div class="col-md-6">
+                                          <a href="{{url('sub_shop')}}">
                                             <p class="category">Tabs with Icons on Card</p>
 
                                             <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
-
+                                          </a>
                                             <p class="category">Tabs with Icons on Card</p>
                                             <img src="{{url('assets/img/bg11.jpg')}}" alt="" class="img-raised mar-bot">
                                         </div>
