@@ -39,6 +39,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('admin/dashboard', 'DashboardController@index');
   Route::resource('admin/brander', 'BranderController');
   Route::resource('admin/shop', 'ShopController');
+  Route::resource('admin/category', 'CategoryController');
 
   });
 
