@@ -373,8 +373,8 @@ $(document).ready(function() {
         mapTypeId: google.maps.MapTypeId.ROADMAP };
 
       function initialize() {
-var myOptions = {
-                center: new google.maps.LatLng({{ old( 'lat', {{$objs->lat}}) }}, {{ old( 'lng', {{$objs->lat}}) }} ),
+        var myOptions = {
+                center: new google.maps.LatLng(13.7211075, 100.5904873 ),
                 zoom: 10,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
@@ -382,16 +382,31 @@ var myOptions = {
             geocoder = new google.maps.Geocoder();
             var map = new google.maps.Map(document.getElementById("map_canvas"),
             myOptions);
+
+
+            var myLatlng = new google.maps.LatLng({{$objs->lat}},{{$objs->lng}});
+            var myOptions = {
+                zoom: 17,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+                }
+             map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+             var marker = new google.maps.Marker({
+                 position: myLatlng,
+                 map: map
+            });
+
+
             google.maps.event.addListener(map, 'click', function(event) {
                 placeMarker(event.latLng);
             });
 
             var marker;
             function placeMarker(location) {
-                if(marker){
-                    marker.setPosition(location);
+                if(marker){ //on vérifie si le marqueur existe
+                    marker.setPosition(location); //on change sa position
                 }else{
-                    marker = new google.maps.Marker({
+                    marker = new google.maps.Marker({ //on créé le marqueur
                         position: location,
                         map: map
                     });
@@ -400,6 +415,15 @@ var myOptions = {
                 document.getElementById('lng').value=location.lng();
                 getAddress(location);
             }
+
+
+
+
+
+
+
+
+
 
       function getAddress(latLng) {
         geocoder.geocode( {'latLng': latLng},
