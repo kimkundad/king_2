@@ -19,6 +19,7 @@ class CategoryController extends Controller
       $shop = DB::table('categories')->select(
             'categories.*'
             )
+            ->where('user_id', Auth::user()->id)
             ->orderBy('id', 'asc')
             ->get();
 
@@ -87,7 +88,20 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+      $obj = DB::table('categories')->select(
+          'categories.*'
+          )
+          ->where('id', $id)
+          ->where('user_id', Auth::user()->id)
+          ->orderBy('id', 'asc')
+          ->first();
+
+
+    $data['objs'] = $obj;
+    $data['method'] = "put";
+    $data['url'] = url('admin/category/'.$id);
+    $data['header'] = "แก้ไขหมวดหมู่";
+    return view('admin.category.edit', $data);
     }
 
     /**
@@ -100,6 +114,35 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+      DB::table('categories')
+      ->where('id', $id)
+      ->where('user_id', Auth::user()->id)
+      ->update(['cat_name' => $request['cat_name']]);
+
+       return redirect(url('admin/category'))->with('edit_success','Edit successful');
+    }
+
+    public function del_cat($id)
+    {
+        //
+        $get_pro = DB::table('products')->select(
+            'products.*'
+            )
+            ->where('cat_id',$id)
+            ->get();
+
+            foreach ($get_pro as $obj) {
+              DB::table('products')
+              ->where('cat_id', $obj->cat_id)
+              ->update(['cat_id' => 1]);
+            }
+
+      $obj = DB::table('categories')
+      ->where('categories.id', $id)
+      ->delete();
+
+
+      return redirect(url('admin/category'))->with('del_category','คุณทำการลบอสังหา สำเร็จ');
     }
 
     /**

@@ -72,10 +72,10 @@ return "$strDay $strMonthThai $strYear";
                                                 <ul class="dropdown-menu">
                                                   <li><a href="{{url('admin/category/'.$u->id)}}">ดูข้อมูล</a></li>
                                                   <li><a href="{{url('admin/category/'.$u->id.'/edit')}}">แก้ไข</a></li>
-                                                  <li><a href="#">ลบข้อมูล</a></li>
-
+                                                  <li><a href="{{url('admin/category/del/'.$u->id)}}">ลบข้อมูล</a></li>
                                                 </ul>
                                           </div>
+
                                           </td>
                                       </tr>
                                       @endforeach

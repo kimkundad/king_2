@@ -141,6 +141,7 @@ class ShopController extends Controller
 
           $product = DB::table('products')->select(
                 'products.*',
+                'products.id as ids',
                 'categories.*'
                 )
                 ->leftjoin('categories','categories.id', 'products.cat_id')

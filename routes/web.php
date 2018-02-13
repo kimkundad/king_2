@@ -40,6 +40,11 @@ Route::group(['middleware' => 'auth'], function () {
   Route::resource('admin/brander', 'BranderController');
   Route::resource('admin/shop', 'ShopController');
   Route::resource('admin/category', 'CategoryController');
+  Route::resource('admin/product', 'ProductController');
+  Route::post('upload_more_pic', 'ProductController@upload_more_pic');
+  Route::get('admin/category/del/{id}', 'CategoryController@del_cat');
+  Route::post('property_image_del', 'ProductController@property_image_del');
+  Route::post('api/post_status', 'ProductController@post_status');
 
   });
 

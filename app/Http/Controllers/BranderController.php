@@ -97,6 +97,22 @@ class BranderController extends Controller
           ->orderBy('shops.id', 'desc')
           ->get();
 
+
+          foreach ($shop as $obj) {
+
+                            $options = DB::table('products')->select('product_name')->where('shop_id',$obj->id)->get();
+                            $optionsRes = [];
+                            foreach ($options as $j) {
+
+                              $optionsRes[] = $j->product_name;
+
+                            }
+                            $obj->options = $optionsRes;
+
+                        }
+
+      //dd($shop);
+
       $data['shop'] = $shop;
 
 

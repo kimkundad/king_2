@@ -150,14 +150,31 @@ border-radius: 5px 5px 5px 5px;
 
                                                 <div id="treeBasic">
                                                   <ul>
-                                                    <li class="colored">
+                                                    <li class="colored" data-jstree='{ "opened" : true }'>
                                                        {{$brander->branders_name}}
                                                       <ul>
 
                                                         @if($shop)
                                                         @foreach($shop as $u)
-                                                        <li data-jstree='{ "selected" : true }'>
-                                                          <a href="#">Shop {{$u->shop_name}} 1</a>
+                                                        <li data-jstree='{ "opened" : true }'>
+                                                           Shop : {{$u->shop_name}}
+
+                                                           <ul>
+                                                             @if($u->options)
+                                                             @foreach($u->options as $j)
+
+                                                             <li data-jstree='{ "icon" : "{{url('img/icon.png')}}" }'>
+                                   														 {{$j}}
+                                   													</li>
+
+                                                             @endforeach
+                                                           @endif
+
+                               														</ul>
+
+
+
+
                                                         </li>
                                                         @endforeach
                                                       @endif

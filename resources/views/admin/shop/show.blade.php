@@ -152,10 +152,19 @@ h5, .h5 {
                     <div class=" col-lg-8 col-md-7">
                       <div class="card">
                           <div class="header">
+
+                              <div class="col-md-6" style="padding-left: 0px;">
                               <h4 class="title">สินค้าของ {{$objs->shop_name}}</h4>
-                              <p class="category">คุณสามารถบริหารจัดการสินค้าของ <span>{{$objs->shop_name}}</span></p>
+                              <br>
+                              </div>
+
+                              <div class="col-md-6" style="padding-left: 0px; ">
+                                <a class="btn btn-default btn-sm" href="{{url('admin/shop/create')}}" role="button" style="padding-left: 0px; ">
+                                <i class="fa fa-plus"></i> เพิ่ม shop ใหม่</a>
+                                </div>
+
                           </div>
-                          <div class="content table-responsive table-full-width">
+                          <div class="content table-responsive table-full-width" style="min-height:350px; padding-bottom: 120px;">
 
                             <table class="table table-striped">
                               <thead>
@@ -164,7 +173,7 @@ h5, .h5 {
                                   <th>ชื่อสินค้า</th>
                                   <th>หมวดหมู่</th>
                                   <th>คงเหลือ</th>
-                                  <th>สถานะ</th>
+                                  <th>ปิด/เปิด</th>
                                   <th>จัดการ</th>
                                 </tr>
                               </thead>
@@ -173,7 +182,7 @@ h5, .h5 {
 
             @if($product)
               @foreach($product as $products)
-                                    <tr id="{{$products->id}}">
+                                    <tr id="{{$products->ids}}">
                                       <td>{{$products->product_code}}</td>
                                       <td>{{$products->product_name}}</td>
                                       <td>{{$products->cat_name}}</td>
@@ -188,13 +197,17 @@ h5, .h5 {
                                       </td>
                                       <td>
 
-                                        <a style="float:left; margin-right:5px;" title="แก้ไขหมวดหมู่" class="btn btn-primary btn-xs" href="{{url('product/'.$products->id.'/edit')}}" role="button"><i class="fa fa-cog "></i> </a>
-
-                                        <form  action="" method="post" onsubmit="return(confirm('Do you want Delete'))">
-                                          <input type="hidden" name="_method" value="DELETE">
-                                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                          <button type="submit" title="ลบหมวดหมู่" class="btn btn-danger btn-xs"><i class="fa fa-times "></i></button>
-                                        </form>
+                                        <div class="dropdown">
+                                              <a href="#" class="btn dropdown-toggle btn-sm" data-toggle="dropdown">
+                                                  จัดการ
+                                                  <b class="caret"></b>
+                                              </a>
+                                              <ul class="dropdown-menu">
+                                                <li><a href="{{url('admin/product/'.$products->ids)}}">ดูข้อมูล</a></li>
+                                                <li><a href="{{url('admin/product/'.$products->ids.'/edit')}}">แก้ไข</a></li>
+                                                <li><a href="{{url('admin/product/del/'.$products->ids)}}">ลบข้อมูล</a></li>
+                                              </ul>
+                                        </div>
 
                                         </td>
                                     </tr>
@@ -247,7 +260,7 @@ $("[name='my-checkbox']").on('switchChange.bootstrapSwitch',function(){
 
     $.ajax({
             type:'POST',
-            url:'{{secure_asset('api/post_status')}}',
+            url:'{{asset('api/post_status')}}',
             headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
             data: { "product_id" : product_id },
             success: function(data){
@@ -269,7 +282,7 @@ $("[name='my-checkbox']").on('switchChange.bootstrapSwitch',function(){
                       }
                   });
 
-
+//http://localhost/king_2/public/api/post_status
 
               }
             }
