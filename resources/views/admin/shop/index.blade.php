@@ -57,14 +57,22 @@
                           />
                                         </td>
                                         <td>
-                                          <a style="float:left; margin-right:5px;" title="ดูข้อมูล" class="btn btn-warning btn-xs" href="{{url('admin/shop/'.$u->ids)}}" role="button"><i class="ti-blackboard"></i> </a>
-                                          <a style="float:left; margin-right:5px;" title="แก้ไข" class="btn btn-primary btn-xs" href="{{url('admin/shop/'.$u->ids.'/edit')}}" role="button"><i class="fa fa-cog "></i> </a>
 
-                                          <form  action="{{url('admin/shop/'.$u->ids)}}" method="post" onsubmit="return(confirm('Do you want Delete'))">
-                                            <input type="hidden" name="_method" value="DELETE">
-                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                            <button type="submit" title="ลบหมวดหมู่" class="btn btn-danger btn-xs"><i class="fa fa-times "></i></button>
-                                          </form>
+                                          <div class="dropdown">
+                                                <a href="#" class="btn dropdown-toggle btn-sm" data-toggle="dropdown">
+                                                    จัดการ
+                                                    <b class="caret"></b>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                  <li><a href="{{url('admin/shop/'.$u->ids)}}">ดูข้อมูล</a></li>
+                                                  <li><a href="{{url('admin/shop/'.$u->ids.'/edit')}}">แก้ไข</a></li>
+                                                  <li><a href="#">ลบข้อมูล</a></li>
+
+                                                </ul>
+                                          </div>
+
+
+
 
                                           </td>
                                       </tr>
