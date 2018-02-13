@@ -38,6 +38,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('/new_album', 'HomeController@new_album')->name('new_album');
   Route::get('admin/dashboard', 'DashboardController@index');
   Route::resource('admin/brander', 'BranderController');
+  Route::resource('admin/shop', 'ShopController');
 
   });
 

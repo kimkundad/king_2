@@ -25,6 +25,13 @@
                     </a>
                 </li>
 
+                <li {{ (Request::is('admin/shop*') ? 'class=active' : '') }}>
+                    <a href="{{url('admin/shop')}}">
+                        <i class="ti-announcement"></i>
+                        <p>User Shop</p>
+                    </a>
+                </li>
+
                 <li {{ (Request::is('admin/category*') ? 'class=active' : '') }}>
                     <a href="{{url('admin/category')}}">
                         <i class="ti-direction-alt"></i>
@@ -84,7 +91,7 @@
                         <i class="ti-lock" style="font-size: 20px;"></i>
                         <p>Sign Out</p>
                     </a>
-                </li>
+       </li>
             </ul>
     	</div>
 
