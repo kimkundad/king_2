@@ -375,7 +375,7 @@ $(document).ready(function() {
 
       function initialize() {
 var myOptions = {
-                center: new google.maps.LatLng({{ old( 'lat', 13.7211075) }}, {{ old( 'lng', 100.5904873) }} ),
+                center: new google.maps.LatLng({{ old( 'lat', {{$objs->lat}}) }}, {{ old( 'lng', {{$objs->lat}}) }} ),
                 zoom: 10,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             };
