@@ -22,12 +22,12 @@
 
 
 
-                          <div class="content table-responsive table-full-width">
+                          <div class="content table-responsive table-full-width" style="min-height:350px;">
 
                             <a class="btn btn-default " href="{{url('admin/shop/create')}}" role="button" style="margin-left:12px;">
                             <i class="fa fa-plus"></i> เพิ่ม shop ใหม่</a>
                             <br><br>
-                              <table class="table table-striped">
+                              <table class="table table-striped" >
                                 <thead>
                                   <tr>
                                     <th>ID</th>
