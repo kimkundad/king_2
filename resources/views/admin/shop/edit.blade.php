@@ -363,7 +363,6 @@ $(document).ready(function() {
     $('.js-example-basic-single').select2();
 });
 
-
 </script>
 
 <script type="text/javascript" src='https://maps.google.com/maps/api/js?key=AIzaSyClVRSTOcxX7RK5Zagc0HbsXPpJBTgfv1Q&libraries=places&sensor=false'></script>
