@@ -611,6 +611,26 @@ $.notify({
 </script>
 @endif
 
+
+@if ($message = Session::get('add_employee_success'))
+<script type="text/javascript">
+type = ['success'];
+color = Math.floor((Math.random() * 4) + 1);
+$.notify({
+    icon: "ti-gift",
+    message: "ยินดีด้วย ได้ทำกาแก้ไขข้อมูลพนักงาน สำเร็จเรียบร้อยแล้วค่ะ"
+
+  },{
+      type: type[0],
+      timer: 2000,
+      placement: {
+          from: 'top',
+          align: 'right'
+      }
+  });
+</script>
+@endif
+
 @if ($message = Session::get('delete_employee_success'))
 <script type="text/javascript">
 type = ['success'];
