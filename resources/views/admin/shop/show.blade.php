@@ -59,6 +59,15 @@ h5, .h5 {
                               <h5>เบอร์โทรศัพ์
                                   <p class="category">{{$objs->shop_phone}}</p>
                               </h5>
+                              <h5>จังหวัด
+                                  <p class="category">{{$objs->PROVINCE_NAME}}</p>
+                              </h5>
+                              <h5>พื้นที่
+                                  <p class="category">{{$objs->shop_area}}</p>
+                              </h5>
+                              <h5>Channel
+                                  <p class="category">{{$objs->channel}}</p>
+                              </h5>
 
                               <h5>รายละเอียด
                                   <p class="category">{{$objs->detail_shop}}</p>
@@ -165,15 +174,15 @@ h5, .h5 {
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Sales Amount</p>
-                                            0
+                                            <p>ยอดขายรายเดือน</p>
+                                            {{number_format($objs->shop_sale)}}
                                         </div>
                                     </div>
                                 </div>
                                 <div class="footer">
                                     <hr>
                                     <div class="stats">
-                                        <i class="ti-calendar"></i> ยอดขายปลีก 0
+                                        <i class="ti-calendar"></i> รหัสสาขา {{$objs->shop_code}}
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +202,7 @@ h5, .h5 {
                                     <div class="col-xs-7">
                                         <div class="numbers">
                                             <p>จำนวนสินค้า</p>
-                                            {{$total_product}}
+                                            {{number_format($total_product)}}
                                         </div>
                                     </div>
                                 </div>
@@ -220,8 +229,8 @@ h5, .h5 {
                               </div>
 
                               <div class="col-md-6" style="padding-left: 0px; ">
-                                <a class="btn btn-default btn-sm" href="{{url('admin/shop/create')}}" role="button" style="padding-left: 0px; ">
-                                <i class="fa fa-plus"></i> เพิ่ม shop ใหม่</a>
+                                <a class="btn btn-default btn-sm" href="{{url('admin/product_new/'.$objs->p_id)}}" role="button" style="padding-left: 0px; ">
+                                <i class="fa fa-plus"></i> เพิ่ม สินค้าใหม่</a>
                                 </div>
 
                           </div>
@@ -247,7 +256,7 @@ h5, .h5 {
                                       <td>{{$products->product_code}}</td>
                                       <td>{{$products->product_name}}</td>
                                       <td>{{$products->cat_name}}</td>
-                                      <td>{{$products->product_sum}}</td>
+                                      <td>{{number_format($products->product_sum)}}</td>
                                       <td>
 
                                         <input type="checkbox" name="my-checkbox" id="switch-size" data-size="mini"
@@ -318,7 +327,7 @@ h5, .h5 {
 
                               <div class="col-md-6" style="padding-left: 0px; ">
                                 <a class="btn btn-default btn-sm" href="{{url('admin/new_album/'.$objs->p_id)}}" role="button" style="padding-left: 0px; ">
-                                <i class="fa fa-plus"></i> เพิ่ม อัลบัมรูป ใหม่</a>
+                                <i class="fa fa-plus"></i> เพิ่ม อัลบัมรูปใหม่</a>
                                 </div>
 
                           </div>

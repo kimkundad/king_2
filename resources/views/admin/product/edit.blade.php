@@ -61,6 +61,14 @@ img {
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
+
+                  <div class="col-md-12">
+                    <a href="{{url('admin/shop/'.$objs->shop_id)}}" class="btn btn-danger btn-fill ">กลับสู่ shop</a>
+                    <a href="{{url('admin/product/'.$objs->pro_id)}}" class="btn btn-info btn-fill ">หน้าหลักสินค้า</a>
+                    <br><br>
+                  </div>
+
+
                   <div class="col-md-6">
                       <div class="card">
                           <div class="header">

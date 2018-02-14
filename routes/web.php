@@ -66,7 +66,8 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('admin/new_employee/{id}', 'EmployeeController@new_employee');
   Route::get('admin/employee_del/{id}', 'EmployeeController@employee_del');
 
-
+  Route::get('admin/product_new/{id}', 'ProductController@product_new');
+  Route::post('admin/product_add', 'ProductController@product_add');
 
 
   });

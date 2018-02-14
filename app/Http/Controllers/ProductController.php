@@ -76,6 +76,39 @@ class ProductController extends Controller
         return view('admin.product.create', $data);
     }
 
+    public function product_new($id){
+
+      $shop = DB::table('categories')->select(
+          'categories.*'
+          )
+          ->where('user_id', Auth::user()->id)
+          ->orderBy('id', 'asc')
+          ->get();
+
+        $data['objs'] = $shop;
+
+
+
+        $shop_id = DB::table('shops')->select(
+              'shops.*'
+              )
+              ->where('user_id', Auth::user()->id)
+              ->where('id', $id)
+              ->first();
+
+        $id_s = $shop_id->id;
+
+        $data['shop_id'] = $shop_id;
+        $data['id_s'] = $id_s;
+
+
+        $data['method'] = "post";
+        $data['url'] = url('admin/product');
+        $data['header'] = "สร้างสินค้า ของคุณใหม่";
+        return view('admin.product.create2', $data);
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -127,7 +160,33 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = DB::table('products')->select(
+            'products.*',
+            'products.id as idp',
+            'categories.*',
+            'shops.*',
+            'shops.id as ids'
+            )
+            ->leftjoin('categories','categories.id', 'products.cat_id')
+            ->leftjoin('shops','shops.id', 'products.shop_id')
+            ->where('products.id', $id)
+            ->where('products.user_id', Auth::user()->id)
+            ->orderBy('products.id', 'desc')
+            ->first();
+
+
+            $img_all = DB::table('product_images')->select(
+                'product_images.*'
+                )
+                ->where('product_id', $id)
+                ->get();
+            $data['img_all'] = $img_all;
+
+
+            $data['product'] = $product;
+            $data['header'] = $product->product_name;
+
+            return view('admin.product.show',$data);
     }
 
 
