@@ -22,9 +22,9 @@
 
 
 
-                          <div class="content table-responsive table-full-width" style="min-height:350px; padding-bottom: 120px;">
+                          <div class="content table-responsive table-full-width" style=" padding-bottom: 120px;">
 
-                            <a class="btn btn-default btn-sm" href="{{url('admin/shop/create')}}" role="button" style="margin-left:12px;">
+                            <a class="btn btn-default " href="{{url('admin/shop/create')}}" role="button" style="margin-left:12px;">
                             <i class="fa fa-plus"></i> เพิ่ม shop ใหม่</a>
                             <br><br>
                               <table class="table table-striped" >
@@ -44,7 +44,7 @@
               @if($objs)
                 @foreach($objs as $u)
                                       <tr id="{{$u->ids}}">
-                                        <td><img src="{{url('admin/assets/blog/'.$u->image_shop)}}" style="height:32px;"> <a href="{{url('admin/shop/'.$u->ids)}}"> {{$u->shop_code}}</a></td>
+                                        <td><a href="{{url('admin/shop/'.$u->ids)}}"> {{$u->shop_code}}</a></td>
                                         <td><a href="{{url('admin/shop/'.$u->ids)}}">{{$u->shop_name}}</a></td>
                                         <td>{{$u->branders_name}}</td>
                                         <td>{{$u->shop_phone}}</td>

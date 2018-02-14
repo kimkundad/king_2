@@ -71,18 +71,15 @@ img {
 
 
 
-                  <div class="col-md-12">
-                    <a href="{{url('admin/shop/'.$shop_id->shop_id)}}" class="btn btn-danger btn-fill btn-wd">กลับสู่ shop</a>
-                    <br><br>
-                  </div>
+
 
 
                   <div class="col-md-6">
                       <div class="card">
                           <div class="header">
-                              <h4 class="title">รูปภาพประกอบ</h4>
+                              <h4 class="title">ไฟล์งานประกอบ</h4>
 
-                              <p class="category" style="margin-top:10px;">*ต้องทำการอัพรูป 2 รูปขึ้นไปเท่านั้น</p>
+                              <p class="category" style="margin-top:10px;">*เลือก upload ได้ 1 ไฟล์งานเท่านั้น</p>
                           </div>
 
 
@@ -95,8 +92,8 @@ img {
                                           <div class="row">
                                             <div class="col-md-12" style="padding-right: 15px;">
                                             <div class="form-group{{ $errors->has('album_name') ? ' has-error' : '' }}">
-                                                <label>ชื่อ album*</label>
-                                                <input type="text" class="form-control border-input" name="album_name" value="{{$shop_id->name}}">
+                                                <label>ชื่อ ไฟล์งาน*</label>
+                                                <input type="text" class="form-control border-input" name="album_name" >
                                                 @if ($errors->has('album_name'))
                                                     <span class="help-block">
                                                         <strong>กรุณาใส่ ชื่อ album ของคุณด้วย</strong>
@@ -112,17 +109,17 @@ img {
                             <div class="form-group">
 
 
-                <label for="exampleInputFile">เลือกรูป (ต้องเลือก 2 รูปขึ้นไป)</label>
+                <label for="exampleInputFile">เลือกไฟล์งาน (ต้องเลือก 1 ไฟล์งานเท่านั้น)</label>
 
-                <input id="file-0a" class="file " type="file" name="product_image[]" accept="image/*" multiple>
-                <input type="hidden" name="shop_id" class="form-control" value="{{ $shop_id->shop_id }}" required>
+                <input id="file-0a" class="file " type="file" name="file">
+                <input type="hidden" name="shop_id" class="form-control" value="{{ $shop_id }}" required>
 
 
 
                 </div>
 
                 <div class="">
-                    <button type="submit" class="btn btn-info btn-fill btn-wd">อัพโหลดรูปภาพ</button>
+                    <button type="submit" class="btn btn-info btn-fill btn-wd">อัพโหลดไฟล์งาน</button>
                 </div>
 
 
@@ -133,7 +130,21 @@ img {
               </form>
 
 
+
+
+
+
+
+
+
+
+
+
                             </div>
+
+
+
+
 
 
                       </div>
@@ -143,61 +154,6 @@ img {
 
 
 
-
-
-
-
-
-
-                  <div class="col-md-6">
-
-                  <div class="content">
-
-
-
-<form  action="{{url('property_imageshop_del')}}" method="post" onsubmit="return(confirm('Do you want Delete'))">
-<input type="hidden" name="_method" value="POST">
- <input type="hidden" name="_token" value="{{ csrf_token() }}">
- <input type="hidden" name="a_id" value="{{$shop_id->id}}">
-<div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
-
-@if($img_all)
-@foreach($img_all as $img_u)
-<div class="isotope-item  col-md-6">
-<div class="thumbnail">
-  <div class="">
-    <a class="thumb-image" >
-      <img src="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" class="img-responsive" >
-    </a>
-    <br>
-    <div class="mg-thumb-options">
-      <div class="checkbox-custom checkbox-default">
-        <input type="checkbox" name="product_image[]" value="{{$img_u->id}}"  >
-
-      </div>
-    </div>
-  </div>
-
-  <div class="mg-description">
-
-    <small class="pull-right text-muted"></small>
-  </div>
-</div>
-</div>
-@endforeach
-@endif
-
-
-
-
-</div>
-<hr>
-<br>
-<button type="submit" class="btn btn-danger pull-right" style="margin-top:-15px;">ลบรูปภาพที่เลือกไว้</button>
-</form>
-
-                    </div>
-                  </div>
 
 
 

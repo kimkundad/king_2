@@ -153,6 +153,24 @@ class ShopController extends Controller
                 ->paginate(15);
 
 
+
+
+                $file_shop = DB::table('fileshops')->select(
+                      'fileshops.*'
+                      )
+                      ->where('shop_id', $id)
+                      ->orderBy('id', 'asc')
+                      ->paginate(15);
+
+
+                      $employee = DB::table('employees')->select(
+                            'employees.*'
+                            )
+                            ->where('shop_id', $id)
+                            ->orderBy('id', 'asc')
+                            ->paginate(15);
+
+
                 $total = DB::table('products')->select(
                       'products.*',
                       'categories.*'
@@ -178,7 +196,6 @@ class ShopController extends Controller
               'albums.*'
             )
             ->where('shop_id', $id)
-            ->where('user_id', Auth::user()->id)
             ->orderBy('id', 'desc')
             ->paginate(10);
 
@@ -190,6 +207,8 @@ class ShopController extends Controller
 
             //dd($albums);
 
+    $data['employee'] = $employee;
+    $data['file_shop'] = $file_shop;
     $data['albums'] = $albums;
     $data['count_pro'] = $count_pro;
     $data['total_product'] = $total;

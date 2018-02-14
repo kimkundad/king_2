@@ -86,6 +86,67 @@ h5, .h5 {
 
 
 
+                      <div class="card" style=" padding-bottom: 30px;">
+                            <div class="header">
+                                <h4 class="title">พนักงาน Shop</h4>
+                                <br>
+                                <a class="btn btn-default btn-sm" href="{{url('admin/new_employee/'.$objs->p_id)}}" role="button" style="padding-left: 0px; ">
+                                <i class="fa fa-plus"></i> เพิ่ม</a>
+                            </div>
+                            <div class="content">
+                                <ul class="list-unstyled team-members">
+
+                                  @if($employee)
+                                    @foreach($employee as $employees)
+                                            <li>
+                                                <div class="row">
+                                                    <div class="col-xs-3">
+                                                        <div class="avatar">
+                                                          @if($employees->sex == 1)
+                                                            <img src="{{url('admin/assets/img/avatar/1483537975.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                          @else
+                                                            <img src="{{url('admin/assets/img/avatar/1483556517.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                          @endif
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-6">
+                                                        {{$employees->name}}
+                                                        <br>
+                                                        <span class="text-muted" style="color: #048a36;"><small>{{$employees->phone}}</small></span>
+                                                    </div>
+                                                    <div class="col-xs-3 text-right">
+                                                      <div class="dropdown">
+                                                            <a href="#" class="btn dropdown-toggle btn-sm" data-toggle="dropdown">
+
+                                                                <b class="caret"></b>
+                                                            </a>
+                                                            <ul class="dropdown-menu" style="min-width: 80px;">
+
+                                                              <li style="padding: 0px 0px;"><a style="padding: 5px 10px;" href="{{url('admin/employee/'.$employees->id.'/edit')}}">แก้ไข</a></li>
+                                                              <li style="padding: 0px 0px;"><a style="padding: 5px 10px;" href="{{url('admin/employee_del/'.$employees->id)}}">ลบข้อมูล</a></li>
+                                                            </ul>
+                                                      </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </li>
+                                  @endforeach
+                                @endif
+
+
+                                        </ul>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -261,7 +322,7 @@ h5, .h5 {
                                 </div>
 
                           </div>
-                          <div class="content table-responsive table-full-width" style=" padding-bottom: 120px;">
+                          <div class="content table-responsive table-full-width" style=" padding-bottom: 70px;">
 
                             <table class="table table-striped">
                               <thead>
@@ -269,7 +330,7 @@ h5, .h5 {
                                   <th>อัลบัมรูป</th>
                                   <th>จำนวนรูป</th>
                                   <th>วันที่สร้าง</th>
-                                  <th>ปิด/เปิด</th>
+
                                   <th>จัดการ</th>
                                 </tr>
                               </thead>
@@ -283,14 +344,7 @@ h5, .h5 {
                                       <td>{{$album->sum_album}}</td>
                                       <td><?php echo DateThai($album->created_at); ?></td>
 
-                                      <td>
 
-                                        <input type="checkbox" name="my-checkbox" id="switch-size" data-size="mini"
-                       @if($album->albums_status == 1)
-                        checked="checked"
-                        @endif
-                        />
-                                      </td>
                                       <td>
 
                                         <div class="dropdown">
@@ -299,7 +353,7 @@ h5, .h5 {
                                                   <b class="caret"></b>
                                               </a>
                                               <ul class="dropdown-menu">
-                                              
+
                                                 <li><a href="{{url('admin/albums/'.$album->id.'/edit')}}">แก้ไข</a></li>
                                                 <li><a href="{{url('admin/albums/del/'.$album->id)}}">ลบข้อมูล</a></li>
                                               </ul>
@@ -314,6 +368,81 @@ h5, .h5 {
                             </table>
 
                                 {{ $product->links() }}
+
+
+                          </div>
+                      </div>
+                    </div>
+
+
+
+
+<div class="col-lg-4 col-md-5">
+</div>
+
+
+
+                    <div class=" col-lg-8 col-md-7">
+                      <div class="card">
+                          <div class="header">
+
+                              <div class="col-md-6" style="padding-left: 0px;">
+                              <h4 class="title">ไฟล์เอกสาร</h4>
+                              <br>
+                              </div>
+
+                              <div class="col-md-6" style="padding-left: 0px; ">
+                                <a class="btn btn-default btn-sm" href="{{url('admin/new_file/'.$objs->p_id)}}" role="button" style="padding-left: 0px; ">
+                                <i class="fa fa-plus"></i> เพิ่ม ไฟล์เอกสาร</a>
+                                </div>
+
+                          </div>
+                          <div class="content table-responsive table-full-width" style=" padding-bottom: 80px;">
+
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>#</th>
+                                  <th>ชื่อไฟล์</th>
+                                  <th>วันที่สร้าง</th>
+                                  <th>จัดการ</th>
+                                </tr>
+                              </thead>
+                                <tbody>
+
+                                  @if($file_shop)
+                                    @foreach($file_shop as $file_shops)
+                                                          <tr id="{{$file_shops->id}}">
+                                                            <td>{{$file_shops->id}}</td>
+                                                            <td>{{$file_shops->name_file}}</td>
+
+                                                            <td><?php echo DateThai($file_shops->created_at); ?></td>
+
+
+                                                            <td>
+
+                                                              <div class="dropdown">
+                                                                    <a href="#" class="btn dropdown-toggle btn-sm" data-toggle="dropdown">
+                                                                        จัดการ
+                                                                        <b class="caret"></b>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu">
+
+                                                                      <li><a href="{{asset('admin/assets/shop_file/'.$file_shops->file_sheet)}}" target="_blank">ดาวน์โหลด</a></li>
+                                                                      <li><a href="{{url('admin/fileshops/del/'.$file_shops->id)}}">ลบข้อมูล</a></li>
+                                                                    </ul>
+                                                              </div>
+
+                                                              </td>
+                                                          </tr>
+                                    @endforeach
+                                  @endif
+
+
+                                </tbody>
+                            </table>
+
+                            {{ $product->links() }}
 
 
                           </div>
@@ -425,7 +554,81 @@ $.notify({
 </script>
 @endif
 
+@if ($message = Session::get('add_album_file_success'))
+<script type="text/javascript">
+type = ['success'];
+color = Math.floor((Math.random() * 4) + 1);
+$.notify({
+    icon: "ti-gift",
+    message: "ยินดีด้วย ได้ทำการเพิ่มไฟล์ประกอบ สำเร็จเรียบร้อยแล้วค่ะ"
 
+  },{
+      type: type[0],
+      timer: 2000,
+      placement: {
+          from: 'top',
+          align: 'right'
+      }
+  });
+</script>
+@endif
+
+@if ($message = Session::get('delete_file'))
+<script type="text/javascript">
+type = ['success'];
+color = Math.floor((Math.random() * 4) + 1);
+$.notify({
+    icon: "ti-gift",
+    message: "ยินดีด้วย ได้ทำการลบ ไฟล์ประกอบ สำเร็จเรียบร้อยแล้วค่ะ"
+
+  },{
+      type: type[0],
+      timer: 2000,
+      placement: {
+          from: 'top',
+          align: 'right'
+      }
+  });
+</script>
+@endif
+
+@if ($message = Session::get('edit_employee_success'))
+<script type="text/javascript">
+type = ['success'];
+color = Math.floor((Math.random() * 4) + 1);
+$.notify({
+    icon: "ti-gift",
+    message: "ยินดีด้วย ได้ทำกาแก้ไขข้อมูลพนักงาน สำเร็จเรียบร้อยแล้วค่ะ"
+
+  },{
+      type: type[0],
+      timer: 2000,
+      placement: {
+          from: 'top',
+          align: 'right'
+      }
+  });
+</script>
+@endif
+
+@if ($message = Session::get('delete_employee_success'))
+<script type="text/javascript">
+type = ['success'];
+color = Math.floor((Math.random() * 4) + 1);
+$.notify({
+    icon: "ti-gift",
+    message: "ยินดีด้วย ได้ทำกาแก้ไขข้อมูลพนักงาน สำเร็จเรียบร้อยแล้วค่ะ"
+
+  },{
+      type: type[0],
+      timer: 2000,
+      placement: {
+          from: 'top',
+          align: 'right'
+      }
+  });
+</script>
+@endif
 
 
 @stop('scripts')

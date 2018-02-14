@@ -39,7 +39,7 @@ return "$strDay $strMonthThai $strYear";
 
                           <div class="content table-responsive table-full-width" style="min-height:350px; padding-bottom: 120px;">
 
-                            <a class="btn btn-default btn-sm" href="{{url('admin/category/create')}}" role="button" style="margin-left:12px;">
+                            <a class="btn btn-default " href="{{url('admin/category/create')}}" role="button" style="margin-left:12px;">
                             <i class="fa fa-plus"></i> เพิ่มหมวดหมู่</a>
                             <br><br>
                               <table class="table table-striped">
