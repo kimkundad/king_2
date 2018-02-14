@@ -46,6 +46,10 @@ Route::group(['middleware' => 'auth'], function () {
   Route::post('property_image_del', 'ProductController@property_image_del');
   Route::post('api/post_status', 'ProductController@post_status');
 
+  Route::resource('admin/albums', 'AlbumController');
+  Route::get('admin/new_album/{id}', 'AlbumController@new_album');
+
+
   });
 
 //Route::get('/home', 'HomeController@index')->name('home');

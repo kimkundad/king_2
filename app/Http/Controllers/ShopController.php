@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\province;
 use App\shop;
+use App\album;
+use App\album_photo;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\DB;
 
@@ -172,11 +174,23 @@ class ShopController extends Controller
                             ->count();
 
 
+            $albums = DB::table('albums')->select(
+              'albums.*'
+            )
+            ->where('shop_id', $id)
+            ->where('user_id', Auth::user()->id)
+            ->orderBy('id', 'desc')
+            ->paginate(10);
 
+            foreach ($albums as $album) {
 
+              $options = DB::table('album_photos')->select('album_photos.*')->where('album_id',$album->id)->count();
+              $album->sum_album = $options;
+            }
 
+            //dd($albums);
 
-
+    $data['albums'] = $albums;
     $data['count_pro'] = $count_pro;
     $data['total_product'] = $total;
 

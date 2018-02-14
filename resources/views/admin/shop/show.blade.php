@@ -228,6 +228,102 @@ h5, .h5 {
 
 
 
+                    <?php
+                    function DateThai($strDate)
+                    {
+                    $strYear = date("Y",strtotime($strDate))+543;
+                    $strMonth= date("n",strtotime($strDate));
+                    $strDay= date("j",strtotime($strDate));
+                    $strHour= date("H",strtotime($strDate));
+                    $strMinute= date("i",strtotime($strDate));
+                    $strSeconds= date("s",strtotime($strDate));
+                    $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+                    $strMonthThai=$strMonthCut[$strMonth];
+                    return "$strDay $strMonthThai $strYear";
+                    }
+                     ?>
+
+
+
+
+                    <div class=" col-lg-8 col-md-7">
+                      <div class="card">
+                          <div class="header">
+
+                              <div class="col-md-6" style="padding-left: 0px;">
+                              <h4 class="title">อัลบัมรูป</h4>
+                              <br>
+                              </div>
+
+                              <div class="col-md-6" style="padding-left: 0px; ">
+                                <a class="btn btn-default btn-sm" href="{{url('admin/new_album/'.$objs->p_id)}}" role="button" style="padding-left: 0px; ">
+                                <i class="fa fa-plus"></i> เพิ่ม อัลบัมรูป ใหม่</a>
+                                </div>
+
+                          </div>
+                          <div class="content table-responsive table-full-width" style=" padding-bottom: 120px;">
+
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>อัลบัมรูป</th>
+                                  <th>จำนวนรูป</th>
+                                  <th>วันที่สร้าง</th>
+                                  <th>ปิด/เปิด</th>
+                                  <th>จัดการ</th>
+                                </tr>
+                              </thead>
+                                <tbody>
+
+
+            @if($albums)
+              @foreach($albums as $album)
+                                    <tr id="{{$album->id}}">
+                                      <td>{{$album->name}}</td>
+                                      <td>{{$album->sum_album}}</td>
+                                      <td><?php echo DateThai($album->created_at); ?></td>
+
+                                      <td>
+
+                                        <input type="checkbox" name="my-checkbox" id="switch-size" data-size="mini"
+                       @if($album->albums_status == 1)
+                        checked="checked"
+                        @endif
+                        />
+                                      </td>
+                                      <td>
+
+                                        <div class="dropdown">
+                                              <a href="#" class="btn dropdown-toggle btn-sm" data-toggle="dropdown">
+                                                  จัดการ
+                                                  <b class="caret"></b>
+                                              </a>
+                                              <ul class="dropdown-menu">
+                                              
+                                                <li><a href="{{url('admin/albums/'.$album->id.'/edit')}}">แก้ไข</a></li>
+                                                <li><a href="{{url('admin/albums/del/'.$album->id)}}">ลบข้อมูล</a></li>
+                                              </ul>
+                                        </div>
+
+                                        </td>
+                                    </tr>
+              @endforeach
+            @endif
+
+                                </tbody>
+                            </table>
+
+                                {{ $product->links() }}
+
+
+                          </div>
+                      </div>
+                    </div>
+
+
+
+
+
 
                 </div>
             </div>
@@ -309,6 +405,27 @@ $.notify({
   });
 </script>
 @endif
+
+@if ($message = Session::get('add_album_photo_success'))
+<script type="text/javascript">
+type = ['success'];
+color = Math.floor((Math.random() * 4) + 1);
+$.notify({
+    icon: "ti-gift",
+    message: "ยินดีด้วย ได้ทำการเพิ่มอัลบัม สำเร็จเรียบร้อยแล้วค่ะ"
+
+  },{
+      type: type[0],
+      timer: 2000,
+      placement: {
+          from: 'top',
+          align: 'right'
+      }
+  });
+</script>
+@endif
+
+
 
 
 @stop('scripts')
