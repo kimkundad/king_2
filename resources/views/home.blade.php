@@ -12,37 +12,22 @@
   <div class="section section-basic">
     <div class="space-50"></div>
       <div class="container">
-          <h3 class="title">Basic Elements</h3>
+
 
           <div id="images">
 
                         <div class="row">
+                          @if($objs)
+                      @foreach($objs as $u)
                             <div class="col-6 col-md-3">
-                              <a href="{{url('shop')}}">
-                                <img src="{{url('assets/img/RUOK__Twitter_400x400_V1-400x400.png')}}" alt="Rounded Image" class="rounded mar-bot">
+                              <a href="{{url('/brander/'.$u->id)}}">
+                                <img src="{{url('admin/assets/product/'.$u->branders_image)}}" alt="Rounded Image" class="rounded mar-bot">
                               </a>
                             </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/logo-of-adidas.jpg')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/mcdonalds.png')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/cnn-logo.png')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/logo-of-adidas.jpg')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/cnn-logo.png')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/RUOK__Twitter_400x400_V1-400x400.png')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
-                            <div class="col-6 col-md-3">
-                                <img src="{{url('assets/img/logo-of-adidas.jpg')}}" alt="Rounded Image" class="rounded mar-bot">
-                            </div>
+
+                            @endforeach
+                      @endif
+
                         </div>
                         <div class="row">
                         </div>

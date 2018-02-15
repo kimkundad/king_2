@@ -182,6 +182,22 @@ class ProductController extends Controller
                 ->get();
             $data['img_all'] = $img_all;
 
+            $shop = DB::table('stocks')->select(
+              'stocks.*',
+              'stocks.id as st_id',
+              'stocks.created_at as created_stock',
+              'products.*',
+              'users.*'
+              )
+              ->leftjoin('products','products.id', 'stocks.product_id')
+              ->leftjoin('users','users.id', 'stocks.user_id')
+              ->where('products.id', $id)
+              ->orderBy('stocks.id', 'desc')
+              ->paginate(15);
+
+
+        $data['objs'] = $shop;
+
 
             $data['product'] = $product;
             $data['header'] = $product->product_name;

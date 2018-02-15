@@ -228,7 +228,7 @@ border-radius: 5px 5px 5px 5px;
                                               <div class="col-md-4 col-sm-6 col-xs-6" >
                                                 <a href="{{url('admin/shop/'.$u->id)}}">
                                                 <label>{{$u->shop_name}}</label>
-                                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}"  class="img-responsive">
+                                                <img src="{{url('admin/assets/blog/'.$u->image_shop)}}"  class="img-responsive">
                                               </a><br>
                                               </div>
                                               @endforeach

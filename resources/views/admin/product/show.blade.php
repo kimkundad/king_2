@@ -134,30 +134,72 @@ h5, .h5 {
                           <div class="header">
 
                               <div class="col-md-6" style="padding-left: 0px;">
-                              <h4 class="title">สินค้าของ </h4>
+                              <h4 class="title">จำนวนสินค้า {{number_format($product->product_sum)}} </h4>
                               <br>
                               </div>
 
                               <div class="col-md-6" style="padding-left: 0px; ">
-                                <a class="btn btn-default btn-sm" href="{{url('/')}}" role="button" style="padding-left: 0px; ">
-                                <i class="fa fa-plus"></i> เพิ่ม สินค้าใหม่</a>
+                                <a class="btn btn-default btn-sm" href="{{url('admin/stock_new/'.$product->idp)}}" role="button" style="padding-left: 0px; ">
+                                <i class="fa fa-plus"></i> เพิ่ม รายการใหม่</a>
                                 </div>
 
                           </div>
                           <div class="content table-responsive table-full-width" style="min-height:350px; padding-bottom: 120px;">
-
+                            <?php
+                                                      function DateThai($strDate)
+                                                      {
+                                                      $strYear = date("Y",strtotime($strDate))+543;
+                                                      $strMonth= date("n",strtotime($strDate));
+                                                      $strDay= date("j",strtotime($strDate));
+                                                      $strHour= date("H",strtotime($strDate));
+                                                      $strMinute= date("i",strtotime($strDate));
+                                                      $strSeconds= date("s",strtotime($strDate));
+                                                      $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+                                                      $strMonthThai=$strMonthCut[$strMonth];
+                                                      return "$strDay $strMonthThai $strYear";
+                                                      }
+                                                       ?>
                             <table class="table table-striped">
                               <thead>
                                 <tr>
-                                  <th>ID</th>
-                                  <th>ชื่อสินค้า</th>
-                                  <th>หมวดหมู่</th>
-                                  <th>คงเหลือ</th>
-                                  <th>ปิด/เปิด</th>
-                                  <th>จัดการ</th>
+                                  <th>วันที่</th>
+                                    <th>ชื่อสินค้า</th>
+                                    <th>จำนวนตัด</th>
+                                    <th>คงเหลือ</th>
+                                    <th>ผู้ใช้งาน</th>
+                                    <th>จัดการ</th>
                                 </tr>
                               </thead>
                                 <tbody>
+
+
+                                  @if($objs)
+                                      @foreach($objs as $u)
+                                                            <tr id="{{$u->st_id}}">
+
+                                                              <td><?php echo DateThai($u->created_stock); ?> </td>
+                                                              <td>{{$u->product_name}}</td>
+                                                              <td>{{$u->product_total}}</td>
+                                                              <td>{{$u->product_sum}}</td>
+                                                              <td>{{$u->name}}</td>
+
+                                                              <td>
+
+                                                                <div class="dropdown">
+                                                                      <a href="#" class="btn dropdown-toggle btn-sm" data-toggle="dropdown">
+                                                                          จัดการ
+                                                                          <b class="caret"></b>
+                                                                      </a>
+                                                                      <ul class="dropdown-menu">
+                                                                        <li><a href="{{url('admin/stock_edit/'.$u->st_id)}}">แก้ไข</a></li>
+                                                                        <li><a href="{{url('admin/stock/del/'.$u->st_id)}}">ลบข้อมูล</a></li>
+                                                                      </ul>
+                                                                </div>
+
+                                                                </td>
+                                                            </tr>
+                                      @endforeach
+                                    @endif
 
 
 
@@ -306,6 +348,43 @@ $.notify({
 </script>
 @endif
 
+@if ($message = Session::get('success_stock'))
+<script type="text/javascript">
+type = ['success'];
+color = Math.floor((Math.random() * 4) + 1);
+$.notify({
+    icon: "ti-gift",
+    message: "ยินดีด้วย ได้ทำการตัด stock สำเร็จเรียบร้อยแล้วค่ะ"
+
+  },{
+      type: type[color],
+      timer: 2000,
+      placement: {
+          from: 'top',
+          align: 'right'
+      }
+  });
+</script>
+@endif
+
+@if ($message = Session::get('error_stock'))
+<script type="text/javascript">
+type = ['danger'];
+
+$.notify({
+    icon: "ti-face-sad",
+    message: "จำนวนสินค้าของคุณไม่เพียงพอ ต่อการทำรายการ"
+
+  },{
+      type: type[0],
+      timer: 2000,
+      placement: {
+          from: 'top',
+          align: 'right'
+      }
+  });
+</script>
+@endif
 
 
 @stop('scripts')

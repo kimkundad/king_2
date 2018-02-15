@@ -39,8 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 
   Route::get('/home', 'HomeController@index')->name('home');
-  Route::get('/shop', 'HomeController@shop')->name('shop');
-  Route::get('/sub_shop', 'HomeController@sub_shop')->name('sub_shop');
+  Route::get('brander/{id}', 'HomeController@brander')->name('shop');
+  Route::get('sub_shop/{id}', 'HomeController@sub_shop')->name('sub_shop');
   Route::get('/album', 'HomeController@album')->name('album');
   Route::get('/new_album', 'HomeController@new_album')->name('new_album');
   Route::get('admin/dashboard', 'DashboardController@index');
@@ -68,6 +68,13 @@ Route::group(['middleware' => 'auth'], function () {
 
   Route::get('admin/product_new/{id}', 'ProductController@product_new');
   Route::post('admin/product_add', 'ProductController@product_add');
+
+  Route::resource('admin/stock', 'StockController');
+
+  Route::get('admin/stock_new/{id}', 'StockController@stock_new');
+  Route::post('admin/stock_add', 'StockController@stock_add');
+  Route::get('admin/stock_edit/{id}', 'StockController@stock_edit');
+  Route::post('admin/stock_edit2', 'StockController@stock_edit2');
 
 
   });

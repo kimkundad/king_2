@@ -56,12 +56,12 @@ font-weight: 500;
                         <div class="row">
                             <div class="col-4 col-md-3">
                               <div class="avatar">
-                                <img src="{{url('assets/img/RUOK__Twitter_400x400_V1-400x400.png')}}" alt="Rounded Image" class="rounded ">
+                                <img src="{{url('admin/assets/product/'.$brander->branders_image)}}" alt="{{$brander->branders_name}}" class="rounded ">
                               </div>
 
                             </div>
                             <div class="col-8 col-md-9" style="padding-left: 1px;">
-                              <h6 style="font-size: 1.2em;">บริษัท แมคไทย จำกัด</h6>
+                              <h6 style="font-size: 1.2em;">{{$brander->branders_name}}</h6>
 
                               <div class="button-container" style="    margin-top: 10px;">
                                   <a href="#button" class="btn btn-primary btn-round btn-sm">Follow</a>
@@ -135,44 +135,50 @@ font-weight: 500;
                         <div class="tab-content gallery">
                             <div class="tab-pane active" id="home" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
+
+                                  <h5>ข้อมูลของ {{$brander->branders_name}}</h5>
                                   <table class="table">
 
                                     <tbody>
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">ชื่อ</h5>
-                                          <p class="category-1">Little Reveurs</p>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">เบอร์โทรศัพ์</h5>
-                                          <p class="category-1">080-111-3193</p>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">กลุ่มสินค้า</h5>
-                                          <p class="category-1">กิ๊ฟช็อป</p>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">ร้านค้าประเภท</h5>
-                                          <p class="category-1">กิ๊ฟช็อป</p>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">ที่อยู่</h5>
-                                          <p class="category-1">31/99 โพธิ์ทองแมนชั่น ซอยพหลโยธิน34 แขวงเสนานิคม เขตจตุจักร กรุงเทพฯ 10900</p>
+                                          <h5 class="h5-set">ชื่อ Account</h5>
+                                          <p class="category-1">{{$brander->branders_name}}</p>
                                         </th>
                                       </tr>
 
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">รายละเอียด</h5>
-                                          <p class="category-1">Little Reveurs ขายตุ๊กตา น่ารัก น่ากอด ขนนุ่ม ขนฟู เหมาะสำหรับเป็นของขวัญในทุกโอกาสพิเศษ</p>
+                                          <h5 class="h5-set">กลุ่มสินค้า</h5>
+                                          <p class="category-1">{{$brander->branders_group}}</p>
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">ร้านค้าประเภท</h5>
+                                          <p class="category-1">{{$brander->branders_type}}</p>
+                                        </th>
+                                      </tr>
+
+                                      <?php
+                                                                function DateThai($strDate)
+                                                                {
+                                                                $strYear = date("Y",strtotime($strDate))+543;
+                                                                $strMonth= date("n",strtotime($strDate));
+                                                                $strDay= date("j",strtotime($strDate));
+                                                                $strHour= date("H",strtotime($strDate));
+                                                                $strMinute= date("i",strtotime($strDate));
+                                                                $strSeconds= date("s",strtotime($strDate));
+                                                                $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+                                                                $strMonthThai=$strMonthCut[$strMonth];
+                                                                return "$strDay $strMonthThai $strYear";
+                                                                }
+                                                                 ?>
+
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">วันที่สร้าง</h5>
+                                          <p class="category-1"><?php echo DateThai($brander->created_at); ?></p>
                                         </th>
                                       </tr>
                                     </tbody>
@@ -181,22 +187,26 @@ font-weight: 500;
                             </div>
                             <div class="tab-pane" id="profile" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
+                                  <h5>Shop ทั้งหมด</h5>
+                                  <hr>
                                     <div class="row collections">
-                                        <div class="col-md-6">
-                                          <a href="{{url('sub_shop')}}">
-                                            <p class="category">Tabs with Icons on Card</p>
 
-                                            <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
-                                          </a>
-                                            <p class="category">Tabs with Icons on Card</p>
-                                            <img src="{{url('assets/img/bg11.jpg')}}" alt="" class="img-raised mar-bot">
-                                        </div>
+                                      @if($shop)
+                                  @foreach($shop as $u)
                                         <div class="col-md-6">
-                                          <p class="category">Tabs with Icons on Card</p>
-                                            <img src="{{url('assets/img/bg7.jpg')}}" alt="" class="img-raised mar-bot">
-                                            <p class="category">Tabs with Icons on Card</p>
-                                            <img src="{{url('assets/img/bg6.jpg')}}" class="img-raised mar-bot">
+                                          <a href="{{url('sub_shop/'.$u->id)}}">
+                                            <p class="category">{{$u->shop_name}}</p>
+
+                                            <img src="{{url('admin/assets/blog/'.$u->image_shop)}}" alt="{{$u->shop_name}}" class="img-raised mar-bot">
+                                          </a>
+
                                         </div>
+
+                                        @endforeach
+                                  @endif
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -205,7 +215,7 @@ font-weight: 500;
                                   <div class="content table-responsive table-full-width">
 
 
-
+                            <h5>ผู้ใช้งานร่วม </h5>
                             <table class="table table-striped">
                               <thead>
                                 <tr>

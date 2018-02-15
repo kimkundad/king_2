@@ -16,7 +16,7 @@
 .category-1{
   margin-bottom: 5px;
 color: #17a2b8;
-font-size: 0.9em;
+font-size: 1em;
 font-weight: 500;
 }
 .h5-set{
@@ -47,6 +47,10 @@ font-weight: 500;
 .text-muted {
     font-size: 12px;
 }
+.author {
+    text-align: center;
+
+}
 </style>
 
   <div class="section section-tabs" style="padding: 20px 0;">
@@ -59,8 +63,11 @@ font-weight: 500;
                         <div class="row">
                             <div class="col-12">
 
-                              <p class="category" style="color: #2c2c2c;">Tabs with Icons on Card</p>
-                              <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
+                              <p class="category" style="color: #2c2c2c;">{{$objs->shop_name}}</p>
+
+                              <div class="author">
+                              <img src="{{url('admin/assets/blog/'.$objs->image_shop)}}" alt="{{$objs->shop_name}}" class="img-raised mar-bot">
+                              </div>
 
                             </div>
 
@@ -115,7 +122,7 @@ font-weight: 500;
                                             <i class="now-ui-icons sport_user-run"></i>
                                         </a>
                                     </li>
-                                  
+
                                     <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#link" role="tablist">
                                         <i class="fa fa-suitcase"></i>
@@ -137,39 +144,80 @@ font-weight: 500;
                                     <tbody>
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">ชื่อ</h5>
-                                          <p class="category-1">Little Reveurs</p>
+                                          <h5 class="h5-set">ชื่อ Shop</h5>
+                                          <p class="category-1">{{$objs->shop_name}}</p>
                                         </th>
                                       </tr>
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">เบอร์โทรศัพ์</h5>
-                                          <p class="category-1">080-111-3193</p>
+                                          <h5 class="h5-set">รหัส Shop</h5>
+                                          <p class="category-1">{{$objs->shop_code}}</p>
+                                        </th>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">เบอร์โทร</h5>
+                                          <p class="category-1">{{$objs->shop_phone}}</p>
+                                        </th>
+                                      </tr>
+
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">อีเมล shop</h5>
+                                          <p class="category-1">{{$objs->shop_email}}</p>
                                         </th>
                                       </tr>
                                       <tr>
                                         <th scope="row">
                                           <h5 class="h5-set">กลุ่มสินค้า</h5>
-                                          <p class="category-1">กิ๊ฟช็อป</p>
+                                          <p class="category-1">{{$objs->branders_group}}</p>
                                         </th>
                                       </tr>
                                       <tr>
                                         <th scope="row">
                                           <h5 class="h5-set">ร้านค้าประเภท</h5>
-                                          <p class="category-1">กิ๊ฟช็อป</p>
+                                          <p class="category-1">{{$objs->branders_type}}</p>
                                         </th>
                                       </tr>
                                       <tr>
                                         <th scope="row">
                                           <h5 class="h5-set">ที่อยู่</h5>
-                                          <p class="category-1">31/99 โพธิ์ทองแมนชั่น ซอยพหลโยธิน34 แขวงเสนานิคม เขตจตุจักร กรุงเทพฯ 10900</p>
+                                          <p class="category-1">{{$objs->shop_address}}</p>
+                                        </th>
+                                      </tr>
+
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">จังหวัด</h5>
+                                          <p class="category-1">{{$objs->PROVINCE_NAME}}</p>
+                                        </th>
+                                      </tr>
+
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">Channel</h5>
+                                          <p class="category-1">{{$objs->channel}}</p>
+                                        </th>
+                                      </tr>
+
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">ยอดขายรายเดือน</h5>
+                                          <p class="category-1">{{$objs->shop_sale}}</p>
+                                        </th>
+                                      </tr>
+
+                                      <tr>
+                                        <th scope="row">
+                                          <h5 class="h5-set">จำนวนสินค้า</h5>
+                                          <p class="category-1">{{number_format($total_product)}}</p>
                                         </th>
                                       </tr>
 
                                       <tr>
                                         <th scope="row">
                                           <h5 class="h5-set">รายละเอียด</h5>
-                                          <p class="category-1">Little Reveurs ขายตุ๊กตา น่ารัก น่ากอด ขนนุ่ม ขนฟู เหมาะสำหรับเป็นของขวัญในทุกโอกาสพิเศษ</p>
+                                          <p class="category-1">{{$objs->detail_shop}}</p>
                                         </th>
                                       </tr>
                                     </tbody>
@@ -249,13 +297,11 @@ font-weight: 500;
                                   <th>ชื่อผู้ใช้</th>
                                   <th>แหล่งที่มา</th>
                                   <th>Email</th>
-
-
                                 </tr>
                               </thead>
                                 <tbody>
 
-                                                                                                            <tr id="5">
+                                    <tr id="5">
                                       <td>
                                         <div class="avatar2">
                                           <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
@@ -264,50 +310,7 @@ font-weight: 500;
                                       <td>Fair St</td>
                                       <td>facebook</td>
                                       <td>fair____@hotmail.com</td>
-
-
                                     </tr>
-                                                                          <tr id="4">
-                                      <td><div class="avatar2">
-                                        <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                      </div></td>
-                                      <td>Praewrawee Muannirut</td>
-                                      <td>facebook</td>
-                                      <td>tao_02081992@hotmail.com</td>
-
-
-                                    </tr>
-                                                                          <tr id="3">
-                                      <td><div class="avatar2">
-                                        <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                      </div></td>
-                                      <td>Tu Kanjana Sridet</td>
-                                      <td>facebook</td>
-                                      <td>ying_tu34@hotmail.com</td>
-
-
-                                    </tr>
-                                                                          <tr id="2">
-                                      <td><div class="avatar2">
-                                        <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                      </div></td>
-                                      <td>Shuvit Funsok</td>
-                                      <td>facebook</td>
-                                      <td>ighostzaa@gmail.com</td>
-
-
-                                    </tr>
-                                                                          <tr id="1">
-                                      <td><div class="avatar2">
-                                        <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                      </div></td>
-                                      <td>kim kundad</td>
-                                      <td>email</td>
-                                      <td>kim.kundad@gmail.com</td>
-
-
-                                    </tr>
-
 
                                 </tbody>
                             </table>
@@ -352,7 +355,7 @@ font-weight: 500;
 <script src="{{url('assets/js/markerclusterer.js')}}"></script>
 <script>
     function initMap() {
-        var center = new google.maps.LatLng(13.753, 100.564);
+        var center = new google.maps.LatLng({{$objs->lat}}, {{$objs->lat}});
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
@@ -362,7 +365,7 @@ font-weight: 500;
 
         var markers = [];
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(13.753, 100.564)
+            position: new google.maps.LatLng({{$objs->lat}}, {{$objs->lat}})
         });
         markers.push(marker);
 

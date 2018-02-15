@@ -7,7 +7,9 @@
 
     	<div class="sidebar-wrapper">
             <div class="logo">
+              <a href="{{url('/')}}">
                 <img id="LockUserPicture" class="img-responsive" src="{{asset('admin/assets/img/logo/linchak-logo.png')}}" height="60px;">
+              </a>
             </div>
 
             <ul class="nav">
@@ -47,7 +49,7 @@
                 </li>
 
 
-                <li {{ (Request::is('admin/stock*') ? 'class=active' : '') }}>
+          <!--        <li {{ (Request::is('admin/stock*') ? 'class=active' : '') }}>
                     <a href="{{url('admin/stock')}}">
                         <i class="ti-view-list-alt"></i>
                               <p>Stock List</p>
@@ -55,7 +57,7 @@
                       </li>
 
 
-          <!--      <li>
+              <li>
                     <a href="table.html">
                         <i class="ti-view-list-alt"></i>
                         <p>Table List</p>

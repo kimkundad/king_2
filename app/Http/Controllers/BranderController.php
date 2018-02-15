@@ -94,22 +94,23 @@ class BranderController extends Controller
           'shops.*'
           )
           ->where('shops.user_id', Auth::user()->id)
+          ->where('shops.branders_id', $id)
           ->orderBy('shops.id', 'desc')
           ->get();
 
 
           foreach ($shop as $obj) {
 
-                            $options = DB::table('products')->select('product_name')->where('shop_id',$obj->id)->get();
-                            $optionsRes = [];
-                            foreach ($options as $j) {
+            $options = DB::table('products')->select('product_name')->where('shop_id',$obj->id)->get();
+              $optionsRes = [];
+                 foreach ($options as $j) {
 
-                              $optionsRes[] = $j->product_name;
+                  $optionsRes[] = $j->product_name;
 
-                            }
-                            $obj->options = $optionsRes;
+                    }
+                  $obj->options = $optionsRes;
 
-                        }
+                }
 
       //dd($shop);
 
