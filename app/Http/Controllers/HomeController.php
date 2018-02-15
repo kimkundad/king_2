@@ -69,6 +69,7 @@ class HomeController extends Controller
     public function sub_shop($id)
     {
 
+
       $shop = DB::table('shops')->select(
           'shops.*',
           'shops.id as p_id',
@@ -82,6 +83,38 @@ class HomeController extends Controller
 
       $data['objs'] = $shop;
 
+      $employee = DB::table('employees')->select(
+            'employees.*'
+            )
+            ->where('shop_id', $id)
+            ->orderBy('id', 'asc')
+            ->paginate(15);
+      $data['employee'] = $employee;
+
+      $albums = DB::table('albums')->select(
+        'albums.*'
+      )
+      ->where('shop_id', $id)
+      ->orderBy('id', 'desc')
+      ->get();
+
+      foreach ($albums as $album) {
+
+        $options = DB::table('album_photos')->select('album_photos.image')->where('album_id',$album->id)->first();
+        $album->sum_album = $options;
+      }
+      //dd($albums);
+
+      $product = DB::table('products')->select(
+            'products.*',
+            'products.id as ids',
+            'categories.*'
+            )
+            ->leftjoin('categories','categories.id', 'products.cat_id')
+            ->where('products.shop_id', $id)
+            ->orderBy('products.id', 'desc')
+            ->get();
+
 
       $total = DB::table('products')->select(
             'products.*',
@@ -91,6 +124,9 @@ class HomeController extends Controller
             ->where('products.shop_id', $id)
             ->orderBy('products.id', 'desc')
             ->sum('products.product_sum');
+
+      $data['product'] = $product;
+      $data['albums'] = $albums;
       $data['total_product'] = $total;
       $data['template'] = 2;
       return view('sub_shop', $data);

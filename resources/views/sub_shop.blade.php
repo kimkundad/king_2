@@ -137,8 +137,37 @@ font-weight: 500;
                         <div class="col-md-12">
                             <div class="space-50"></div>
                         <div class="tab-content gallery">
+
+                          <div class="tab-pane" id="link" role="tabpanel">
+                              <div class="col-md-10 ml-auto mr-auto">
+                                <h5>สินค้า ทั้งหมด</h5>
+                                <hr>
+                                <br>
+                                  <div class="row collections">
+
+                                    @if($product)
+                                      @foreach($product as $products)
+
+                                      <div class="col-md-6">
+                                        <br><br>
+                                        <a href="{{url('product/'.$products->ids)}}" >
+                                          <p class="category" style="margin-bottom: 0.2rem;">{{$products->product_name}} </p>
+                                          <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> <?php echo DateThai($products->created_at); ?></p>
+                                          <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class="img-raised mar-bot">
+                                        </a>
+                                      </div>
+                                      @endforeach
+                                    @endif
+
+                                  </div>
+                              </div>
+                          </div>
+
+
                             <div class="tab-pane active" id="home" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
+                                  <h5>ข้อมูลของ {{$objs->shop_name}}</h5>
+                                
                                   <table class="table">
 
                                     <tbody>
@@ -228,46 +257,29 @@ font-weight: 500;
                             </div>
                             <div class="tab-pane" id="profile" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
+                                  <h5>album ทั้งหมด</h5>
+                                  <hr>
+                                  <br>
                                     <div class="row collections">
                                       <div class="col-12 text-center">
                                           <a href="{{url('new_album')}}" class="btn btn-primary btn-round btn-white" >สร้าง album ใหม่</a>
                                           <br><br>
                                       </div>
+
+
+                                      @if($albums)
+                                        @foreach($albums as $album)
+
                                         <div class="col-md-6">
-                                          <a href="{{url('album')}}">
-                                            <p class="category" style="margin-bottom: 0.2rem;">Tabs with Icons on Card </p>
-                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> 1 ม.ค. 2513</p>
-                                            <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
+                                          <a href="{{url('album/'.$album->id)}}">
+                                            <p class="category" style="margin-bottom: 0.2rem;">{{$album->name}} </p>
+                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> <?php echo DateThai($album->created_at); ?></p>
+                                            <img src="{{url('admin/assets/gallery_shop/'.$album->sum_album->image)}}" alt="" class="img-raised mar-bot">
                                           </a>
                                         </div>
-                                        <div class="col-md-6">
-                                          <a href="{{url('album')}}">
-                                            <p class="category" style="margin-bottom: 0.2rem;">Tabs with Icons on Card </p>
-                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> 1 ม.ค. 2513</p>
-                                            <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
-                                          </a>
-                                        </div>
-                                        <div class="col-md-6">
-                                          <a href="{{url('album')}}">
-                                            <p class="category" style="margin-bottom: 0.2rem;">Tabs with Icons on Card </p>
-                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> 1 ม.ค. 2513</p>
-                                            <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
-                                          </a>
-                                        </div>
-                                        <div class="col-md-6">
-                                          <a href="{{url('album')}}">
-                                            <p class="category" style="margin-bottom: 0.2rem;">Tabs with Icons on Card </p>
-                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> 1 ม.ค. 2513</p>
-                                            <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
-                                          </a>
-                                        </div>
-                                        <div class="col-md-6">
-                                          <a href="{{url('album')}}">
-                                            <p class="category" style="margin-bottom: 0.2rem;">Tabs with Icons on Card </p>
-                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> 1 ม.ค. 2513</p>
-                                            <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot">
-                                          </a>
-                                        </div>
+                                        @endforeach
+                                      @endif
+
                                     </div>
                                 </div>
                             </div>
@@ -287,31 +299,59 @@ font-weight: 500;
                             <div class="tab-pane" id="messages" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
                                   <div class="content table-responsive table-full-width">
+                                    <?php
+                                    function DateThai($strDate)
+                                    {
+                                    $strYear = date("Y",strtotime($strDate))+543;
+                                    $strMonth= date("n",strtotime($strDate));
+                                    $strDay= date("j",strtotime($strDate));
+                                    $strHour= date("H",strtotime($strDate));
+                                    $strMinute= date("i",strtotime($strDate));
+                                    $strSeconds= date("s",strtotime($strDate));
+                                    $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+                                    $strMonthThai=$strMonthCut[$strMonth];
+                                    return "$strDay $strMonthThai $strYear";
+                                    }
+                                     ?>
 
-
-
+                                    <h5>รายชื่อพนักงาน</h5>
                             <table class="table table-striped">
                               <thead>
                                 <tr>
                                   <th>#</th>
-                                  <th>ชื่อผู้ใช้</th>
-                                  <th>แหล่งที่มา</th>
-                                  <th>Email</th>
+                                  <th>ชื่อพนักงาน</th>
+
+                                  <th>เบอร์โทร</th>
+                                  <th>เพศ</th>
+                                  <th>วันที่สร้าง</th>
                                 </tr>
                               </thead>
                                 <tbody>
-
+                                  @if($employee)
+                                    @foreach($employee as $employees)
                                     <tr id="5">
                                       <td>
                                         <div class="avatar2">
-                                          <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                          @if($employees->sex == 1)
+                                            <img src="{{url('admin/assets/img/avatar/1483537975.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                          @else
+                                            <img src="{{url('admin/assets/img/avatar/1483556517.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                          @endif
+
                                         </div>
                                       </td>
-                                      <td>Fair St</td>
-                                      <td>facebook</td>
-                                      <td>fair____@hotmail.com</td>
-                                    </tr>
+                                      <td>{{$employees->name}}</td>
+                                      <td>{{$employees->phone}}</td>
 
+                                      <td>@if($employees->sex == 1)
+                                        ชาย
+                                      @else
+                                        หญิง
+                                      @endif</td>
+                                      <td><?php echo DateThai($employees->created_at); ?></td>
+                                    </tr>
+                                    @endforeach
+                                  @endif
                                 </tbody>
                             </table>
 
