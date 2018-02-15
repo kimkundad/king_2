@@ -149,12 +149,13 @@ font-weight: 500;
                                       @foreach($product as $products)
 
                                       <div class="col-md-6">
-                                        <br><br>
+
                                         <a href="{{url('product/'.$products->ids)}}" >
                                           <p class="category" style="margin-bottom: 0.2rem;">{{$products->product_name}} </p>
                                           <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> <?php echo DateThai($products->created_at); ?></p>
                                           <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class="img-raised mar-bot">
                                         </a>
+                                        <br><br>
                                       </div>
                                       @endforeach
                                     @endif
