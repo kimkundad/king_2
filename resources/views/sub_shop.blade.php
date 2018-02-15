@@ -324,7 +324,7 @@ font-weight: 500;
 
                                   <th>เบอร์โทร</th>
                                   <th>เพศ</th>
-                                  <th style="width:70px;">วันที่สร้าง</th>
+                                  <th style="width:20%;">วันที่สร้าง</th>
                                 </tr>
                               </thead>
                                 <tbody>
