@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\album;
+use App\album_photo;
+use App\fileshop;
+use File;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -59,6 +64,62 @@ class HomeController extends Controller
 
       $data['template'] = 2;
       return view('shop', $data);
+    }
+
+
+    public function new_album($id){
+
+      $data['method'] = 'post';
+      $data['url'] = url('add_new_albums');
+
+      $data['shop_id'] = $id;
+      $data['template'] = 2;
+      return view('new_album', $data);
+
+    }
+
+    public function add_new_albums(Request $request){
+
+      $this->validate($request, [
+           'product_image' => 'required',
+           'album_name' => 'required',
+           'shop_id' => 'required'
+       ]);
+       $shop_id = $request['shop_id'];
+       $gallary = $request->file('product_image');
+
+
+       $package = new album;
+       $package->user_id = Auth::user()->id;
+       $package->shop_id = $request['shop_id'];
+       $package->name = $request['album_name'];
+       $package->save();
+
+       $the_id = $package->id;
+
+
+
+
+       if (sizeof($gallary) > 1) {
+
+        for ($i = 0; $i < sizeof($gallary); $i++) {
+
+          $path = 'admin/assets/gallery_shop/';
+          $filename = time()."-".$gallary[$i]->getClientOriginalName();
+          $gallary[$i]->move($path, $filename);
+
+
+          $admins[] = [
+              'album_id' => $the_id,
+              'image' => $filename,
+          ];
+
+
+        }
+        album_photo::insert($admins);
+      }
+      return redirect(url('album/'.$the_id))->with('add_album_photo_success','คุณทำการเพิ่มอสังหา สำเร็จ');
+
     }
 
 
@@ -156,9 +217,5 @@ class HomeController extends Controller
       return view('album', $data);
     }
 
-    public function new_album()
-    {
-      $data['template'] = 2;
-      return view('new_album', $data);
-    }
+
 }

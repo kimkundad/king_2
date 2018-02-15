@@ -263,7 +263,7 @@ font-weight: 500;
                                   <br>
                                     <div class="row collections">
                                       <div class="col-12 text-center">
-                                          <a href="{{url('new_album')}}" class="btn btn-primary btn-round btn-white" >สร้าง album ใหม่</a>
+                                          <a href="{{url('new_album/'.$objs->p_id)}}" class="btn btn-primary btn-round btn-white" >สร้าง album ใหม่</a>
                                           <br><br>
                                       </div>
 

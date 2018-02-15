@@ -72,23 +72,27 @@ font-weight: 500;
 
                             <div class="col-12">
                               <p class="category" style="color: #2c2c2c;">สร้าง อัลบั้ม ของคุณ</p>
+
+                              <form  method="POST" action="{{$url}}" enctype="multipart/form-data">
+                                  {{ csrf_field() }}
                               <div class="form-group">
-                                    <input type="text" value="" placeholder="ชื่ออัลบั้ม" class="form-control">
+                                    <input type="text" name="album_name" placeholder="ชื่ออัลบั้ม" class="form-control">
+                                    <input type="hidden" name="shop_id" value="{{$shop_id}}" >
                                 </div>
 
 
 
 
 
-          <form  method="POST" action="{{url('upload_more_pic')}}" enctype="multipart/form-data">
-                {{ csrf_field() }}
+
+
             <div class="row">
               <div class="col-md-12" style="padding-right: 15px;">
                             <div class="form-group">
                 <label for="exampleInputFile">Image input</label>
 
                 <input id="file-0a" class="file" type="file" name="product_image[]" accept="image/*" multiple>
-                <input type="hidden" name="pro_id" class="form-control" value="" required>
+
                 </div>
                 <div class="">
                   <br>
