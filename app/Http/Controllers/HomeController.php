@@ -135,7 +135,8 @@ class HomeController extends Controller
           'shops.*',
           'shops.id as p_id',
           'province.*',
-          'branders.*'
+          'branders.*',
+          'branders.id as bid'
           )
           ->leftjoin('province', 'province.PROVINCE_ID', '=', 'shops.provience_id')
           ->leftjoin('branders', 'branders.id', '=', 'shops.branders_id')

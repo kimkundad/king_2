@@ -62,6 +62,8 @@ font-weight: 500;
 
                         <div class="row">
                             <div class="col-12">
+                              <a class="btn btn-primary btn-round " href="{{url('brander/'.$objs->bid)}}" style="color: #FFFFFF;">กลับสู่ Shop</a>
+                              <br><br>
 
                               <p class="category" style="color: #2c2c2c;">{{$objs->shop_name}}</p>
 
