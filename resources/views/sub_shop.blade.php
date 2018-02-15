@@ -319,12 +319,12 @@ font-weight: 500;
                             <table class="table table-striped">
                               <thead>
                                 <tr>
-                                  <th>#</th>
-                                  <th>ชื่อพนักงาน</th>
+                                  <th style="width:10%;">#</th>
+                                  <th style="width:40%;">ชื่อพนักงาน</th>
 
-                                  <th>เบอร์โทร</th>
-                                  <th>เพศ</th>
-                                  <th style="width:20%;">วันที่สร้าง</th>
+                                  <th style="width:30%;">เบอร์โทร</th>
+                                  <th style="width:5%;">เพศ</th>
+                                  <th style="width:15%;">วันที่สร้าง</th>
                                 </tr>
                               </thead>
                                 <tbody>
