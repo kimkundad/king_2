@@ -324,7 +324,7 @@ font-weight: 500;
 
                                   <th>เบอร์โทร</th>
                                   <th>เพศ</th>
-                                  <th>วันที่สร้าง</th>
+                                  <th style="width:70px;">วันที่สร้าง</th>
                                 </tr>
                               </thead>
                                 <tbody>
@@ -349,7 +349,7 @@ font-weight: 500;
                                       @else
                                         หญิง
                                       @endif</td>
-                                      <td style="width:60px;"><?php echo DateThai($employees->created_at); ?></td>
+                                      <td ><?php echo DateThai($employees->created_at); ?></td>
                                     </tr>
                                     @endforeach
                                   @endif
