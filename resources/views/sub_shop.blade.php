@@ -349,7 +349,7 @@ font-weight: 500;
                                       @else
                                         หญิง
                                       @endif</td>
-                                      <td><?php echo DateThai($employees->created_at); ?></td>
+                                      <td style="width:60px;"><?php echo DateThai($employees->created_at); ?></td>
                                     </tr>
                                     @endforeach
                                   @endif
