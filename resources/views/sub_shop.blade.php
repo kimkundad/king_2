@@ -396,7 +396,7 @@ font-weight: 500;
 <script src="{{url('assets/js/markerclusterer.js')}}"></script>
 <script>
     function initMap() {
-        var center = new google.maps.LatLng({{$objs->lat}}, {{$objs->lat}});
+        var center = new google.maps.LatLng({{$objs->lat}}, {{$objs->lng}});
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 10,
@@ -406,7 +406,7 @@ font-weight: 500;
 
         var markers = [];
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng({{$objs->lat}}, {{$objs->lat}})
+            position: new google.maps.LatLng({{$objs->lat}}, {{$objs->lng}})
         });
         markers.push(marker);
 
