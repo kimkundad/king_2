@@ -137,8 +137,21 @@ class HomeController extends Controller
 
 
 
-    public function album()
+    public function album($id)
     {
+      $shop_id = DB::table('albums')->select(
+            'albums.*'
+            )
+            ->where('id', $id)
+            ->first();
+      $data['shop_id'] = $shop_id;
+      $img_all = DB::table('album_photos')->select(
+          'album_photos.*'
+          )
+          ->where('album_id', $id)
+          ->get();
+      $data['shop_ids'] = $shop_id->shop_id;
+      $data['img_all'] = $img_all;
       $data['template'] = 2;
       return view('album', $data);
     }

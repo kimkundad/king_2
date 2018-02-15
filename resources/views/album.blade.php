@@ -52,34 +52,24 @@ font-weight: 500;
 
       <div class="container">
 
-
+          <a class="btn btn-primary btn-round " href="{{url('sub_shop/'.$shop_ids)}}" style="color: #FFFFFF;">กลับสู่ Shop</a>
+          <br><br>
           <div id="images">
 
                         <div class="row magnific-gallery">
 
                             <div class="col-12">
-                              <p class="category" style="color: #2c2c2c;">Tabs with Icons on Card</p>
+                              <p class="category" style="color: #2c2c2c;">{{$shop_id->name}}</p>
                             </div>
+                            @if($img_all)
+                            @foreach($img_all as $img_u)
                             <div class="col-6">
-                              <a class="example-image-link" href="{{url('assets/img/bg8.jpg')}}" >
-                              <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot ">
+                              <a class="example-image-link" href="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" >
+                              <img src="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" alt="{{$shop_id->name}}" class="img-raised mar-bot ">
                               </a>
                             </div>
-                            <div class="col-6">
-                              <a class="example-image-link" href="{{url('assets/img/bg8.jpg')}}" >
-                              <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot ">
-                              </a>
-                            </div>
-                            <div class="col-6">
-                              <a class="example-image-link" href="{{url('assets/img/bg8.jpg')}}" >
-                              <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot ">
-                              </a>
-                            </div>
-                            <div class="col-6">
-                              <a class="example-image-link" href="{{url('assets/img/bg8.jpg')}}" >
-                              <img src="{{url('assets/img/bg8.jpg')}}" alt="" class="img-raised mar-bot ">
-                              </a>
-                            </div>
+                            @endforeach
+                            @endif
 
 
                         </div>
