@@ -19,7 +19,9 @@
           </div>
           <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
               <ul class="navbar-nav">
-                  <li class="nav-item">
+
+
+                <!--  <li class="nav-item">
                       <a class="nav-link" >
                           <i class="now-ui-icons arrows-1_cloud-download-93"></i>
                           <p>Download</p>
@@ -30,11 +32,11 @@
                           <i class="now-ui-icons files_paper"></i>
                           <p>Components</p>
                       </a>
-                  </li>
+                  </li> -->
                   <li class="nav-item">
                       <a class="nav-link btn btn-neutral" href="{{url('admin/dashboard')}}">
                           <i class="now-ui-icons arrows-1_share-66"></i>
-                          <p>Upgrade to PRO</p>
+                          <p>Administration</p>
                       </a>
                   </li>
                   <li class="nav-item">
