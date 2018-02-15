@@ -167,7 +167,7 @@ font-weight: 500;
                             <div class="tab-pane active" id="home" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
                                   <h5>ข้อมูลของ {{$objs->shop_name}}</h5>
-                                
+
                                   <table class="table">
 
                                     <tbody>
@@ -398,7 +398,7 @@ font-weight: 500;
         var center = new google.maps.LatLng({{$objs->lat}}, {{$objs->lat}});
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
+          zoom: 10,
           center: center,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
