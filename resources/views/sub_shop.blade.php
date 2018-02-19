@@ -356,8 +356,7 @@ return "$strDay $strMonthThai $strYear";
                                 <th>ชื่อพนักงาน</th>
 
                                 <th>เบอร์โทร</th>
-                                <th>เพศ</th>
-                                <th>วันที่สร้าง</th>
+
                               </tr>
                             </thead>
                               <tbody>
@@ -377,12 +376,7 @@ return "$strDay $strMonthThai $strYear";
                                     <td>{{$employees->name}}</td>
                                     <td>{{$employees->phone}}</td>
 
-                                    <td>@if($employees->sex == 1)
-                                      ชาย
-                                    @else
-                                      หญิง
-                                    @endif</td>
-                                    <td ><?php echo DateThai($employees->created_at); ?></td>
+                                    
                                   </tr>
                                   @endforeach
                                 @endif
