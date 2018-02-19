@@ -22,7 +22,7 @@ font-weight: 500;
 .h5-set{
       font-weight: bold;
   color: #848282;
-  font-size: 1em;
+  font-size: 0.9em;
   margin-bottom: 0px;
   margin-top: 5px;
 }
@@ -53,6 +53,9 @@ font-weight: 500;
 }
 .table td, .table th {
     padding: .45rem;
+}
+a.ab {
+      text-decoration: none;
 }
 </style>
 <?php
@@ -164,9 +167,9 @@ return "$strDay $strMonthThai $strYear";
 
                                       <div class="col-6 col-md-3">
 
-                                        <a href="{{url('product/'.$products->ids)}}" >
-                                          <p class="category" style="margin-bottom: 0.2rem;">{{$products->product_name}} </p>
-                                          <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> <?php echo DateThai($products->created_at); ?></p>
+                                        <a href="{{url('product/'.$products->ids)}}" class="ab">
+                                          <h5 class="h5-set">{{$products->product_name}} </h5>
+                                          <p class="text-muted"> <?php echo DateThai($products->created_at); ?></p>
                                           <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class="img-raised mar-bot">
                                         </a>
                                         <br><br>
@@ -286,9 +289,9 @@ return "$strDay $strMonthThai $strYear";
                                         @foreach($albums as $album)
 
                                         <div class="col-6 col-md-3">
-                                          <a href="{{url('album/'.$album->id)}}">
-                                            <p class="category" style="margin-bottom: 0.2rem;">{{$album->name}} </p>
-                                            <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> <?php echo DateThai($album->created_at); ?></p>
+                                          <a href="{{url('album/'.$album->id)}}" class="ab">
+                                            <h5 class="h5-set">{{$album->name}} </h5>
+                                            <p class="text-muted"> <?php echo DateThai($album->created_at); ?></p>
                                             <img src="{{url('admin/assets/gallery_shop/'.$album->sum_album->image)}}" alt="" class="img-raised mar-bot">
                                           </a>
                                         </div>
@@ -376,7 +379,7 @@ return "$strDay $strMonthThai $strYear";
                                     <td>{{$employees->name}}</td>
                                     <td>{{$employees->phone}}</td>
 
-                                    
+
                                   </tr>
                                   @endforeach
                                 @endif
