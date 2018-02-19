@@ -172,17 +172,9 @@ font-weight: 500;
 
                 </div>
             </div>
-
-
-
-            <div class="section section-signup" style="background-image: url('{{url('assets/img/app-banner.png')}}'); background-size: cover; background-position: top center; min-height: 400px;">
-                            <div class="container">
-                                <div class="row">
-
-                                </div>
-                            </div>
-                        </div>
-
+<div class="text-center">
+<img src="{{url('assets/img/app-banner.png')}}" class="img-responsive ">
+</div>
 
 
                         <div class="section section-basic " style="padding-bottom: 15px;">
