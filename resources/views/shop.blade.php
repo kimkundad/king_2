@@ -196,7 +196,7 @@ font-weight: 500;
                                             <h6>Shop ที่เกี่ยวข้าง</h6>
                                             <hr>
 
-
+                                            <div class="row">
                                                       @if($shop)
                                                   @foreach($shop as $u)
                                                         <div class="col-6 col-md-3">
@@ -211,13 +211,13 @@ font-weight: 500;
                                                         @endforeach
                                                   @endif
 
+                                                  </div>
 
-
-
+                                                  <br><br><br>
                                               <hr>
 
 
-
+                                              <div class="content table-responsive table-full-width">
                                               <h6>ผู้ใช้งานร่วม </h6>
                                               <table class="table table-striped">
                                                 <thead>
@@ -288,7 +288,7 @@ font-weight: 500;
 
                                                   </tbody>
                                               </table>
-
+                                                </div>
 
 
 
