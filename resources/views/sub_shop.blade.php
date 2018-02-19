@@ -334,7 +334,7 @@ return "$strDay $strMonthThai $strYear";
 
 
 
-            <div class="section section-basic " style="padding-bottom: 15px;">
+            <div class="section section-basic " style="padding-bottom: 150px;">
                           <div class="container">
 
                             <br>
