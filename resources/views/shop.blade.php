@@ -44,6 +44,9 @@ font-weight: 500;
     border-radius: 50%;
     margin-right: 5px;
 }
+.table td, .table th {
+    padding: .5rem;
+}
 </style>
 <?php
                           function DateThai($strDate)
@@ -101,7 +104,7 @@ font-weight: 500;
 
 
 
-  <div class="section section-basic " style="padding-bottom: 15px;">
+  <div class="section section-basic " style="padding-bottom: 0px;">
                 <div class="container">
 
 
@@ -112,7 +115,7 @@ font-weight: 500;
 
 
 
-                  <br><br>
+
 
 
                   <div class="row">
