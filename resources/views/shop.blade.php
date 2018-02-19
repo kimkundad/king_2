@@ -213,7 +213,7 @@ font-weight: 500;
 
                                                   </div>
 
-                                                  <br><br><br>
+                                                  <br>
                                               <hr>
 
 
