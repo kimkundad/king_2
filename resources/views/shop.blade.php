@@ -21,8 +21,8 @@ font-weight: 500;
 }
 .h5-set{
       font-weight: bold;
-  color: #9A9A9A;
-  font-size: 1.1em;
+  color: #848282;
+  font-size: 1em;
   margin-bottom: 0px;
   margin-top: 5px;
 }
@@ -45,7 +45,20 @@ font-weight: 500;
     margin-right: 5px;
 }
 </style>
-
+<?php
+                          function DateThai($strDate)
+                          {
+                          $strYear = date("Y",strtotime($strDate))+543;
+                          $strMonth= date("n",strtotime($strDate));
+                          $strDay= date("j",strtotime($strDate));
+                          $strHour= date("H",strtotime($strDate));
+                          $strMinute= date("i",strtotime($strDate));
+                          $strSeconds= date("s",strtotime($strDate));
+                          $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+                          $strMonthThai=$strMonthCut[$strMonth];
+                          return "$strDay $strMonthThai $strYear";
+                          }
+                           ?>
   <div class="section section-tabs" style="padding: 20px 0;">
 
       <div class="container">
@@ -88,7 +101,7 @@ font-weight: 500;
 
 
 
-  <div class="section section-basic ">
+  <div class="section section-basic " style="padding-bottom: 15px;">
                 <div class="container">
 
 
@@ -99,205 +112,59 @@ font-weight: 500;
 
 
 
-                  <br>
+                  <br><br>
 
 
+                  <div class="row">
+
+                    <div class="col-md-10 ml-auto mr-auto">
+
+                      <h6>ข้อมูลของ {{$brander->branders_name}}</h6>
+                      <table class="table">
+
+                        <tbody>
+                          <tr>
+                            <th scope="row">
+                              <h5 class="h5-set">ชื่อ Account</h5>
+                              <p class="category-1">{{$brander->branders_name}}</p>
+                            </th>
+                          </tr>
+
+                          <tr>
+                            <th scope="row">
+                              <h5 class="h5-set">กลุ่มสินค้า</h5>
+                              <p class="category-1">{{$brander->branders_group}}</p>
+                            </th>
+                          </tr>
+                          <tr>
+                            <th scope="row">
+                              <h5 class="h5-set">ร้านค้าประเภท</h5>
+                              <p class="category-1">{{$brander->branders_type}}</p>
+                            </th>
+                          </tr>
 
 
-
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="nav-align-center">
-                                <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#profile" role="tablist">
-                                            <i class="now-ui-icons design_image"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#home" role="tablist">
-                                            <i class="now-ui-icons location_world"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#messages" role="tablist">
-                                            <i class="now-ui-icons sport_user-run"></i>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Tab panes -->
-                        <div class="col-md-12">
-                            <div class="space-50"></div>
-                        <div class="tab-content gallery">
-                            <div class="tab-pane active" id="home" role="tabpanel">
-                                <div class="col-md-10 ml-auto mr-auto">
-
-                                  <h5>ข้อมูลของ {{$brander->branders_name}}</h5>
-                                  <table class="table">
-
-                                    <tbody>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">ชื่อ Account</h5>
-                                          <p class="category-1">{{$brander->branders_name}}</p>
-                                        </th>
-                                      </tr>
-
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">กลุ่มสินค้า</h5>
-                                          <p class="category-1">{{$brander->branders_group}}</p>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">ร้านค้าประเภท</h5>
-                                          <p class="category-1">{{$brander->branders_type}}</p>
-                                        </th>
-                                      </tr>
-
-                                      <?php
-                                                                function DateThai($strDate)
-                                                                {
-                                                                $strYear = date("Y",strtotime($strDate))+543;
-                                                                $strMonth= date("n",strtotime($strDate));
-                                                                $strDay= date("j",strtotime($strDate));
-                                                                $strHour= date("H",strtotime($strDate));
-                                                                $strMinute= date("i",strtotime($strDate));
-                                                                $strSeconds= date("s",strtotime($strDate));
-                                                                $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
-                                                                $strMonthThai=$strMonthCut[$strMonth];
-                                                                return "$strDay $strMonthThai $strYear";
-                                                                }
-                                                                 ?>
-
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">วันที่สร้าง</h5>
-                                          <p class="category-1"><?php echo DateThai($brander->created_at); ?></p>
-                                        </th>
-                                      </tr>
-                                    </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="profile" role="tabpanel">
-                                <div class="col-md-10 ml-auto mr-auto">
-                                  <h5>Shop ทั้งหมด</h5>
-                                  <hr>
-                                    <div class="row collections">
-
-                                      @if($shop)
-                                  @foreach($shop as $u)
-                                        <div class="col-md-6">
-                                          <a href="{{url('sub_shop/'.$u->id)}}">
-                                            <p class="category">{{$u->shop_name}}</p>
-
-                                            <img src="{{url('admin/assets/blog/'.$u->image_shop)}}" alt="{{$u->shop_name}}" class="img-raised mar-bot">
-                                          </a>
-
-                                        </div>
-
-                                        @endforeach
-                                  @endif
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="messages" role="tabpanel">
-                                <div class="col-md-10 ml-auto mr-auto">
-                                  <div class="content table-responsive table-full-width">
-
-
-                            <h5>ผู้ใช้งานร่วม </h5>
-                            <table class="table table-striped">
-                              <thead>
-                                <tr>
-                                  <th>#</th>
-                                  <th>ชื่อผู้ใช้</th>
-                                  <th>แหล่งที่มา</th>
-                                  <th>Email</th>
-
-
-                                </tr>
-                              </thead>
-                                <tbody>
-
-                                                                                                            <tr id="5">
-                                      <td>
-                                        <div class="avatar2">
-                                          <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                        </div>
-                                      </td>
-                                      <td>Fair St</td>
-                                      <td>facebook</td>
-                                      <td>fair____@hotmail.com</td>
-
-
-                                    </tr>
-                                                                          <tr id="4">
-                                      <td><div class="avatar2">
-                                        <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                      </div></td>
-                                      <td>Praewrawee Muannirut</td>
-                                      <td>facebook</td>
-                                      <td>tao_02081992@hotmail.com</td>
-
-
-                                    </tr>
-                                                                          <tr id="3">
-                                      <td><div class="avatar2">
-                                        <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                      </div></td>
-                                      <td>Tu Kanjana Sridet</td>
-                                      <td>facebook</td>
-                                      <td>ying_tu34@hotmail.com</td>
-
-
-                                    </tr>
-                                                                          <tr id="2">
-                                      <td><div class="avatar2">
-                                        <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                      </div></td>
-                                      <td>Shuvit Funsok</td>
-                                      <td>facebook</td>
-                                      <td>ighostzaa@gmail.com</td>
-
-
-                                    </tr>
-                                                                          <tr id="1">
-                                      <td><div class="avatar2">
-                                        <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                      </div></td>
-                                      <td>kim kundad</td>
-                                      <td>email</td>
-                                      <td>kim.kundad@gmail.com</td>
-
-
-                                    </tr>
-
-
-                                </tbody>
-                            </table>
-
-                        </div>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-
-
-
-
-
-
+                          <tr>
+                            <th scope="row">
+                              <h5 class="h5-set">วันที่สร้าง</h5>
+                              <p class="category-1"><?php echo DateThai($brander->created_at); ?></p>
+                            </th>
+                          </tr>
+                        </tbody>
+                        </table>
                     </div>
+
+
+
+
+
+
+                  </div>
+
+
+
+
+
 
 
 
@@ -305,6 +172,90 @@ font-weight: 500;
 
                 </div>
             </div>
+
+
+
+            <div class="section section-signup" style="background-image: url('{{url('assets/img/app-banner.png')}}'); background-size: cover; background-position: top center; min-height: 400px;">
+                            <div class="container">
+                                <div class="row">
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="section section-basic " style="padding-bottom: 15px;">
+                                      <div class="container">
+
+
+
+
+
+
+
+
+
+                                        <br>
+
+
+                                        <div class="row">
+
+                                          <div class="col-md-10 ml-auto mr-auto">
+
+                                            <h5>ข้อมูลของ {{$brander->branders_name}}</h5>
+                                            <table class="table">
+
+                                              <tbody>
+                                                <tr>
+                                                  <th scope="row">
+                                                    <h5 class="h5-set">ชื่อ Account</h5>
+                                                    <p class="category-1">{{$brander->branders_name}}</p>
+                                                  </th>
+                                                </tr>
+
+                                                <tr>
+                                                  <th scope="row">
+                                                    <h5 class="h5-set">กลุ่มสินค้า</h5>
+                                                    <p class="category-1">{{$brander->branders_group}}</p>
+                                                  </th>
+                                                </tr>
+                                                <tr>
+                                                  <th scope="row">
+                                                    <h5 class="h5-set">ร้านค้าประเภท</h5>
+                                                    <p class="category-1">{{$brander->branders_type}}</p>
+                                                  </th>
+                                                </tr>
+
+
+                                                <tr>
+                                                  <th scope="row">
+                                                    <h5 class="h5-set">วันที่สร้าง</h5>
+                                                    <p class="category-1"><?php echo DateThai($brander->created_at); ?></p>
+                                                  </th>
+                                                </tr>
+                                              </tbody>
+                                              </table>
+                                          </div>
+
+
+
+
+
+
+                                        </div>
+
+
+
+
+
+
+
+
+
+
+                                      </div>
+                                  </div>
 
 
 
