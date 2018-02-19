@@ -193,39 +193,106 @@ font-weight: 500;
 
                                           <div class="col-md-10 ml-auto mr-auto">
 
-                                            <h5>ข้อมูลของ {{$brander->branders_name}}</h5>
-                                            <table class="table">
-
-                                              <tbody>
-                                                <tr>
-                                                  <th scope="row">
-                                                    <h5 class="h5-set">ชื่อ Account</h5>
-                                                    <p class="category-1">{{$brander->branders_name}}</p>
-                                                  </th>
-                                                </tr>
-
-                                                <tr>
-                                                  <th scope="row">
-                                                    <h5 class="h5-set">กลุ่มสินค้า</h5>
-                                                    <p class="category-1">{{$brander->branders_group}}</p>
-                                                  </th>
-                                                </tr>
-                                                <tr>
-                                                  <th scope="row">
-                                                    <h5 class="h5-set">ร้านค้าประเภท</h5>
-                                                    <p class="category-1">{{$brander->branders_type}}</p>
-                                                  </th>
-                                                </tr>
+                                            <h6>Shop ที่เกี่ยวข้าง</h6>
+                                            <hr>
 
 
-                                                <tr>
-                                                  <th scope="row">
-                                                    <h5 class="h5-set">วันที่สร้าง</h5>
-                                                    <p class="category-1"><?php echo DateThai($brander->created_at); ?></p>
-                                                  </th>
-                                                </tr>
-                                              </tbody>
+                                                      @if($shop)
+                                                  @foreach($shop as $u)
+                                                        <div class="col-6 col-md-3">
+                                                          <a href="{{url('sub_shop/'.$u->id)}}">
+                                                            <p class="text-muted" style="margin-bottom: 5px; font-size: 12px;">{{$u->shop_name}}</p>
+
+                                                            <img src="{{url('admin/assets/blog/'.$u->image_shop)}}" alt="{{$u->shop_name}}" class="img-raised mar-bot">
+                                                          </a>
+
+                                                        </div>
+
+                                                        @endforeach
+                                                  @endif
+
+
+
+
+                                              <hr>
+
+
+
+                                              <h6>ผู้ใช้งานร่วม </h6>
+                                              <table class="table table-striped">
+                                                <thead>
+                                                  <tr>
+                                                    <th>#</th>
+                                                    <th>ชื่อผู้ใช้</th>
+                                                    <th>แหล่งที่มา</th>
+                                                    <th>Email</th>
+
+
+                                                  </tr>
+                                                </thead>
+                                                  <tbody>
+
+                                                                                                                              <tr id="5">
+                                                        <td>
+                                                          <div class="avatar2">
+                                                            <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                          </div>
+                                                        </td>
+                                                        <td>Fair St</td>
+                                                        <td>facebook</td>
+                                                        <td>fair____@hotmail.com</td>
+
+
+                                                      </tr>
+                                                                                            <tr id="4">
+                                                        <td><div class="avatar2">
+                                                          <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                        </div></td>
+                                                        <td>Praewrawee Muannirut</td>
+                                                        <td>facebook</td>
+                                                        <td>tao_02081992@hotmail.com</td>
+
+
+                                                      </tr>
+                                                                                            <tr id="3">
+                                                        <td><div class="avatar2">
+                                                          <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                        </div></td>
+                                                        <td>Tu Kanjana Sridet</td>
+                                                        <td>facebook</td>
+                                                        <td>ying_tu34@hotmail.com</td>
+
+
+                                                      </tr>
+                                                                                            <tr id="2">
+                                                        <td><div class="avatar2">
+                                                          <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                        </div></td>
+                                                        <td>Shuvit Funsok</td>
+                                                        <td>facebook</td>
+                                                        <td>ighostzaa@gmail.com</td>
+
+
+                                                      </tr>
+                                                                                            <tr id="1">
+                                                        <td><div class="avatar2">
+                                                          <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                                        </div></td>
+                                                        <td>kim kundad</td>
+                                                        <td>email</td>
+                                                        <td>kim.kundad@gmail.com</td>
+
+
+                                                      </tr>
+
+
+                                                  </tbody>
                                               </table>
+
+
+
+
+
                                           </div>
 
 
