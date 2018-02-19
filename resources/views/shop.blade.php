@@ -107,12 +107,7 @@ font-weight: 500;
   <div class="section section-basic " style="padding-bottom: 0px;">
                 <div class="container">
 
-
-
-
-
-
-
+  <br>
 
 
 

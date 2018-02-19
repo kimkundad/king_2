@@ -43,7 +43,7 @@
       </div>
 
       @else
-      <div class="space-70"></div>
+      <div class="space-70" style="height: 65px;"></div>
       @endif
 
 
