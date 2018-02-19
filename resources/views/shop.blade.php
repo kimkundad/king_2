@@ -224,7 +224,7 @@ font-weight: 500;
                                                   <tr>
                                                     <th>#</th>
                                                     <th>ชื่อผู้ใช้</th>
-                                                    <th>แหล่งที่มา</th>
+
                                                     <th>Email</th>
 
 
@@ -239,7 +239,7 @@ font-weight: 500;
                                                           </div>
                                                         </td>
                                                         <td>Fair St</td>
-                                                        <td>facebook</td>
+
                                                         <td>fair____@hotmail.com</td>
 
 
@@ -249,7 +249,7 @@ font-weight: 500;
                                                           <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                                                         </div></td>
                                                         <td>Praewrawee Muannirut</td>
-                                                        <td>facebook</td>
+
                                                         <td>tao_02081992@hotmail.com</td>
 
 
@@ -259,7 +259,7 @@ font-weight: 500;
                                                           <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                                                         </div></td>
                                                         <td>Tu Kanjana Sridet</td>
-                                                        <td>facebook</td>
+
                                                         <td>ying_tu34@hotmail.com</td>
 
 
@@ -269,7 +269,7 @@ font-weight: 500;
                                                           <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                                                         </div></td>
                                                         <td>Shuvit Funsok</td>
-                                                        <td>facebook</td>
+
                                                         <td>ighostzaa@gmail.com</td>
 
 
@@ -279,7 +279,7 @@ font-weight: 500;
                                                           <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                                                         </div></td>
                                                         <td>kim kundad</td>
-                                                        <td>email</td>
+
                                                         <td>kim.kundad@gmail.com</td>
 
 
