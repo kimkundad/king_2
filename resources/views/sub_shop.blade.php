@@ -55,7 +55,20 @@ font-weight: 500;
     padding: .45rem;
 }
 </style>
-
+<?php
+function DateThai($strDate)
+{
+$strYear = date("Y",strtotime($strDate))+543;
+$strMonth= date("n",strtotime($strDate));
+$strDay= date("j",strtotime($strDate));
+$strHour= date("H",strtotime($strDate));
+$strMinute= date("i",strtotime($strDate));
+$strSeconds= date("s",strtotime($strDate));
+$strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+$strMonthThai=$strMonthCut[$strMonth];
+return "$strDay $strMonthThai $strYear";
+}
+ ?>
   <div class="section section-tabs" style="padding: 20px 0;">
 
       <div class="container">
@@ -122,11 +135,7 @@ font-weight: 500;
                                             <i class="now-ui-icons business_badge"></i>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#messages" role="tablist">
-                                            <i class="now-ui-icons sport_user-run"></i>
-                                        </a>
-                                    </li>
+
 
                                     <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#link" role="tablist">
@@ -153,7 +162,7 @@ font-weight: 500;
                                     @if($product)
                                       @foreach($product as $products)
 
-                                      <div class="col-md-6">
+                                      <div class="col-6 col-md-3">
 
                                         <a href="{{url('product/'.$products->ids)}}" >
                                           <p class="category" style="margin-bottom: 0.2rem;">{{$products->product_name}} </p>
@@ -276,7 +285,7 @@ font-weight: 500;
                                       @if($albums)
                                         @foreach($albums as $album)
 
-                                        <div class="col-md-6">
+                                        <div class="col-6 col-md-3">
                                           <a href="{{url('album/'.$album->id)}}">
                                             <p class="category" style="margin-bottom: 0.2rem;">{{$album->name}} </p>
                                             <p class="text-muted"><i class="now-ui-icons tech_watch-time"></i> <?php echo DateThai($album->created_at); ?></p>
@@ -290,80 +299,7 @@ font-weight: 500;
                                 </div>
                             </div>
 
-                            <div class="tab-pane" id="exclamation" role="tabpanel">
-                                <div class="col-md-10 ml-auto mr-auto">
-                                    <div class="row collections">
-                                        <div class="col-md-6 ml-auto mr-auto">
 
-
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tab-pane" id="messages" role="tabpanel">
-                                <div class="col-md-10 ml-auto mr-auto">
-                                  <div class="content table-responsive table-full-width">
-                                    <?php
-                                    function DateThai($strDate)
-                                    {
-                                    $strYear = date("Y",strtotime($strDate))+543;
-                                    $strMonth= date("n",strtotime($strDate));
-                                    $strDay= date("j",strtotime($strDate));
-                                    $strHour= date("H",strtotime($strDate));
-                                    $strMinute= date("i",strtotime($strDate));
-                                    $strSeconds= date("s",strtotime($strDate));
-                                    $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
-                                    $strMonthThai=$strMonthCut[$strMonth];
-                                    return "$strDay $strMonthThai $strYear";
-                                    }
-                                     ?>
-
-                                    <h5>รายชื่อพนักงาน</h5>
-                            <table class="table table-striped">
-                              <thead>
-                                <tr>
-                                  <th style="width:10%;">#</th>
-                                  <th style="width:40%;">ชื่อพนักงาน</th>
-
-                                  <th style="width:30%;">เบอร์โทร</th>
-                                  <th style="width:5%;">เพศ</th>
-                                  <th style="width:15%;">วันที่สร้าง</th>
-                                </tr>
-                              </thead>
-                                <tbody>
-                                  @if($employee)
-                                    @foreach($employee as $employees)
-                                    <tr id="5">
-                                      <td>
-                                        <div class="avatar2">
-                                          @if($employees->sex == 1)
-                                            <img src="{{url('admin/assets/img/avatar/1483537975.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                          @else
-                                            <img src="{{url('admin/assets/img/avatar/1483556517.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                          @endif
-
-                                        </div>
-                                      </td>
-                                      <td>{{$employees->name}}</td>
-                                      <td>{{$employees->phone}}</td>
-
-                                      <td>@if($employees->sex == 1)
-                                        ชาย
-                                      @else
-                                        หญิง
-                                      @endif</td>
-                                      <td ><?php echo DateThai($employees->created_at); ?></td>
-                                    </tr>
-                                    @endforeach
-                                  @endif
-                                </tbody>
-                            </table>
-
-                        </div>
-                                </div>
-                            </div>
                         </div>
                         </div>
 
@@ -390,6 +326,79 @@ font-weight: 500;
             </div>
 
 
+
+            <div class="text-center">
+            <img src="{{url('assets/img/banner.png')}}" class="img-responsive ">
+            </div>
+
+
+
+
+            <div class="section section-basic " style="padding-bottom: 15px;">
+                          <div class="container">
+
+                            <br>
+
+                            <div class="row">
+
+                              <div class="col-md-10 ml-auto mr-auto">
+
+
+
+                                <div class="content table-responsive table-full-width">
+
+
+                                  <h6>รายชื่อพนักงาน</h6>
+                          <table class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th style="width:10%;">#</th>
+                                <th style="width:40%;">ชื่อพนักงาน</th>
+
+                                <th style="width:30%;">เบอร์โทร</th>
+                                <th style="width:5%;">เพศ</th>
+                                <th style="width:15%;">วันที่สร้าง</th>
+                              </tr>
+                            </thead>
+                              <tbody>
+                                @if($employee)
+                                  @foreach($employee as $employees)
+                                  <tr id="5">
+                                    <td>
+                                      <div class="avatar2">
+                                        @if($employees->sex == 1)
+                                          <img src="{{url('admin/assets/img/avatar/1483537975.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                        @else
+                                          <img src="{{url('admin/assets/img/avatar/1483556517.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                        @endif
+
+                                      </div>
+                                    </td>
+                                    <td>{{$employees->name}}</td>
+                                    <td>{{$employees->phone}}</td>
+
+                                    <td>@if($employees->sex == 1)
+                                      ชาย
+                                    @else
+                                      หญิง
+                                    @endif</td>
+                                    <td ><?php echo DateThai($employees->created_at); ?></td>
+                                  </tr>
+                                  @endforeach
+                                @endif
+                              </tbody>
+                          </table>
+
+                      </div>
+
+
+                                </div>
+
+                                </div>
+
+                                </div>
+
+                                </div>
 
 @endsection
 
