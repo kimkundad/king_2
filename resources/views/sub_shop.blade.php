@@ -16,13 +16,13 @@
 .category-1{
   margin-bottom: 5px;
 color: #17a2b8;
-font-size: 1em;
+font-size: 0.9em;
 font-weight: 500;
 }
 .h5-set{
       font-weight: bold;
-  color: #9A9A9A;
-  font-size: 1.1em;
+  color: #848282;
+  font-size: 1em;
   margin-bottom: 0px;
   margin-top: 5px;
 }
@@ -50,6 +50,9 @@ font-weight: 500;
 .author {
     text-align: center;
 
+}
+.table td, .table th {
+    padding: .45rem;
 }
 </style>
 
@@ -116,7 +119,7 @@ font-weight: 500;
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link active" data-toggle="tab" href="#home" role="tablist">
-                                            <i class="now-ui-icons location_world"></i>
+                                            <i class="now-ui-icons business_badge"></i>
                                         </a>
                                     </li>
                                     <li class="nav-item">
@@ -142,7 +145,7 @@ font-weight: 500;
 
                           <div class="tab-pane" id="link" role="tabpanel">
                               <div class="col-md-10 ml-auto mr-auto">
-                                <h5>สินค้า ทั้งหมด</h5>
+                                <h6>สินค้า ทั้งหมด</h6>
                                 <hr>
                                 <br>
                                   <div class="row collections">
@@ -169,7 +172,7 @@ font-weight: 500;
 
                             <div class="tab-pane active" id="home" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
-                                  <h5>ข้อมูลของ {{$objs->shop_name}}</h5>
+                                  <h6>ข้อมูลของ {{$objs->shop_name}}</h6>
 
                                   <table class="table">
 
@@ -260,7 +263,7 @@ font-weight: 500;
                             </div>
                             <div class="tab-pane" id="profile" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
-                                  <h5>album ทั้งหมด</h5>
+                                  <h6>album ทั้งหมด</h6>
                                   <hr>
                                   <br>
                                     <div class="row collections">
