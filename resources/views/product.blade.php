@@ -81,7 +81,7 @@ return "$strDay $strMonthThai $strYear";
 
                         <div class="row">
                             <div class="col-12">
-                              <a class="btn btn-primary btn-round " href="{{url('shop/'.$product->ids)}}" style="color: #FFFFFF;">กลับสู่ shop</a>
+                              <a class="btn btn-primary btn-round " href="{{url('sub_shop/'.$product->ids)}}" style="color: #FFFFFF;">กลับสู่ shop</a>
                               <br><br>
 
                               <p class="category" style="color: #2c2c2c;">{{$header}}</p>
