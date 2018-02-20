@@ -129,6 +129,7 @@ class HomeController extends Controller
       $product = DB::table('products')->select(
           'products.*',
           'products.id as idp',
+          'products.created_at as created',
           'categories.*',
           'shops.*',
           'shops.id as ids'

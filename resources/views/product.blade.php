@@ -106,7 +106,7 @@ return "$strDay $strMonthThai $strYear";
 
 
 
-  <div class="section section-basic ">
+  <div class="section section-basic " style="padding-bottom: 0px;">
                 <div class="container">
 
 
@@ -124,30 +124,49 @@ return "$strDay $strMonthThai $strYear";
 
 
                     <div class="row">
-                        <div class="col-md-12">
+                      <div class="col-md-10 ml-auto mr-auto">
+
+                        <table class="table">
+
+                          <tbody>
+                            <tr>
+                              <th scope="row">
+                                <h5 class="h5-set">code สินค้า</h5>
+                                <p class="category-1">{{$product->product_code}}</p>
+                              </th>
+                            </tr>
+
+                            <tr>
+                              <th scope="row">
+                                <h5 class="h5-set">หมวดหมู่ </h5>
+                                <p class="category-1">{{$product->cat_name}}</p>
+                              </th>
+                            </tr>
 
 
-                        </div>
+
+                            <tr>
+                              <th scope="row">
+                                <h5 class="h5-set">วันที่สร้าง</h5>
+                                <p class="category-1"><?php echo DateThai($product->created); ?></p>
+                              </th>
+                            </tr>
+                            <tr>
+                              <th scope="row">
+                                <h5 class="h5-set">รายละเอียด</h5>
+                                <p class="category-1">{{$product->product_detail}}</p>
+                              </th>
+                            </tr>
+                          </tbody>
+                          </table>
+                      </div>
 
                         <!-- Tab panes -->
                         <div class="col-md-12">
 
-
                         </div>
 
-
-
-
-
-
                     </div>
-
-
-
-
-
-
-
 
 
 
