@@ -86,7 +86,7 @@ return "$strDay $strMonthThai $strYear";
                               <a class="btn btn-primary btn-round " href="{{url('sub_shop/'.$product->ids)}}" style="color: #FFFFFF;">กลับสู่ shop</a>
                               <br><br>
 
-                              <p class="category" style="color: #2c2c2c;">{{$header}} <br><span class="text-primary" style="font-size: 12px;">#{{$product->product_code}}<span></p>
+                              <p class="category" style="color: #2c2c2c;">{{$header}} </p>
 
                               <div class="author">
                               <img src="{{url('admin/assets/product/'.$product->product_image)}}" alt="{{$product->product_name}}" class="img-raised mar-bot">
@@ -127,10 +127,18 @@ return "$strDay $strMonthThai $strYear";
 
                     <div class="row">
                       <div class="col-md-10 ml-auto mr-auto">
-
+                        <br>
+                        <h6>ข้อมูลสินค้า</h6>
                         <table class="table">
 
                           <tbody>
+
+                            <tr>
+                              <th scope="row">
+                                <h5 class="h5-set">รหัสสินค้า </h5>
+                                <p class="category-1">#{{$product->product_code}}</p>
+                              </th>
+                            </tr>
 
                             <tr>
                               <th scope="row">
