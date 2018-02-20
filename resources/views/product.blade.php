@@ -1,5 +1,7 @@
 @extends('layouts.template')
-
+@section('stylesheet')
+<link rel="stylesheet" href="{{url('assets/magnific-popup/magnific-popup.css')}}">
+@stop('stylesheet')
 @section('content')
 
 
@@ -209,7 +211,7 @@ return "$strDay $strMonthThai $strYear";
                                                           <tr id="{{$u->st_id}}">
 
                                                             <td><?php echo DateThai($u->created_stock); ?> </td>
-                                                          
+
                                                             <td>{{$u->product_total}}</td>
                                                             <td>{{$u->product_sum}}</td>
                                                             <td>{{$u->name}}</td>
@@ -229,6 +231,39 @@ return "$strDay $strMonthThai $strYear";
 
                                 </div>
 
+
+
+
+
+
+
+
+                                <div class="row magnific-gallery">
+
+                                  <div class="col-md-10 ml-auto mr-auto">
+                                    <h6>รูปภาพประกอบสินค้า</h6>
+                                    <hr>
+                                    @if($img_all)
+                                    @foreach($img_all as $img_u)
+                                    <div class="col-6">
+                                      <a class="example-image-link" href="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" >
+                                      <img src="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" alt="{{$shop_id->name}}" class="img-raised mar-bot ">
+                                      </a>
+                                    </div>
+                                    @endforeach
+                                    @endif
+
+
+                                  </div>
+                                </div>
+
+
+
+
+
+
+
+
                                 </div>
 
                                 </div>
@@ -238,7 +273,18 @@ return "$strDay $strMonthThai $strYear";
 @section('scripts')
 
 
-
+<script src="{{url('assets/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+<script>
+$(document).ready(function() {
+  $('.magnific-gallery').each(function() {
+$(this).magnificPopup({
+    delegate: 'a',
+    type: 'image',
+    gallery:{enabled:true}
+});
+});
+});
+</script>
 
 
 
