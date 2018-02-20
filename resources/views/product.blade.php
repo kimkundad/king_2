@@ -117,7 +117,7 @@ return "$strDay $strMonthThai $strYear";
 
 
 
-                  <br>
+              
 
 
 
