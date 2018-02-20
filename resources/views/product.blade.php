@@ -197,7 +197,7 @@ return "$strDay $strMonthThai $strYear";
                           <table class="table table-striped">
                             <tr>
                                 <th>วันที่</th>
-                                <th>ชื่อสินค้า</th>
+
                                 <th>จำหน่าย</th>
                                 <th>คงเหลือ</th>
                                 <th>ผู้ใช้งาน</th>
@@ -209,7 +209,7 @@ return "$strDay $strMonthThai $strYear";
                                                           <tr id="{{$u->st_id}}">
 
                                                             <td><?php echo DateThai($u->created_stock); ?> </td>
-                                                            <td>{{$u->product_name}}</td>
+                                                          
                                                             <td>{{$u->product_total}}</td>
                                                             <td>{{$u->product_sum}}</td>
                                                             <td>{{$u->name}}</td>
