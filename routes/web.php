@@ -12,15 +12,7 @@
 */
 
 
-Route::get('www',  function () {
-    //Add the 'www.' to all requests
-  $request=app('request');
-  $host=$request->header('host');
-  if (substr($host, 0, 4) != 'www.') {
-    $request->headers->set('host', 'www.'.$host);
-    return Redirect::to($request->path());
-  }
-});
+
 
 
 Route::auth();
