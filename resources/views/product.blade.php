@@ -247,7 +247,7 @@ return "$strDay $strMonthThai $strYear";
                                     @foreach($img_all as $img_u)
                                     <div class="col-6">
                                       <a class="example-image-link" href="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" >
-                                      <img src="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" alt="{{$shop_id->name}}" class="img-raised mar-bot ">
+                                      <img src="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" alt="{{$product->product_name}}" class="img-raised mar-bot ">
                                       </a>
                                     </div>
                                     @endforeach
