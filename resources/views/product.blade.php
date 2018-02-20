@@ -117,7 +117,7 @@ return "$strDay $strMonthThai $strYear";
 
 
 
-              
+
 
 
 
@@ -195,16 +195,29 @@ return "$strDay $strMonthThai $strYear";
 
                                   <h6>จำนวนสินค้า <span class="text-primary">{{$product->product_sum}}</span></h6>
                           <table class="table table-striped">
-                            <thead>
-                              <tr>
-                                <th>#</th>
-                                <th>ชื่อพนักงาน</th>
-
-                                <th>เบอร์โทร</th>
-
-                              </tr>
-                            </thead>
+                            <tr>
+                                <th>วันที่</th>
+                                <th>ชื่อสินค้า</th>
+                                <th>จำหน่าย</th>
+                                <th>คงเหลือ</th>
+                                <th>ผู้ใช้งาน</th>
+                            </tr>
                               <tbody>
+
+                                @if($objs)
+                                    @foreach($objs as $u)
+                                                          <tr id="{{$u->st_id}}">
+
+                                                            <td><?php echo DateThai($u->created_stock); ?> </td>
+                                                            <td>{{$u->product_name}}</td>
+                                                            <td>{{$u->product_total}}</td>
+                                                            <td>{{$u->product_sum}}</td>
+                                                            <td>{{$u->name}}</td>
+
+
+                                                          </tr>
+                                    @endforeach
+                                  @endif
 
                               </tbody>
                           </table>
