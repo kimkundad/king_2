@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1a5e92aca50b2ebd602f4a838061079",
+    "content-hash": "fdeb0e54fb8f464f8fc1f6bbeaaf1890",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1730,6 +1730,55 @@
                 "uuid"
             ],
             "time": "2018-01-20T00:28:24+00:00"
+        },
+        {
+            "name": "robbiep/zbar-qrdecoder",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/robbiepaul/zbar-qrdecoder.git",
+                "reference": "ca652762b28745e8e470ee43f006a2691403c4e8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/robbiepaul/zbar-qrdecoder/zipball/ca652762b28745e8e470ee43f006a2691403c4e8",
+                "reference": "ca652762b28745e8e470ee43f006a2691403c4e8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.0",
+                "symfony/process": "^3.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*@dev",
+                "phpunit/phpunit": "4.3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "RobbieP\\ZbarQrdecoder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robbie Paul",
+                    "email": "robbiepaul@me.com"
+                }
+            ],
+            "description": "A PHP wrapper for Zbar. Decodes images/photos containing QR codes.",
+            "keywords": [
+                "decode",
+                "laravel",
+                "php",
+                "qr",
+                "qrcode",
+                "zbar"
+            ],
+            "time": "2016-03-13T16:05:08+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

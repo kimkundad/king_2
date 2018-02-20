@@ -10,6 +10,7 @@ use App\fileshop;
 use File;
 use Auth;
 
+
 class HomeController extends Controller
 {
     /**
@@ -142,6 +143,8 @@ class HomeController extends Controller
           ->first();
 
 
+
+
           $img_all = DB::table('product_images')->select(
               'product_images.*'
               )
@@ -163,7 +166,8 @@ class HomeController extends Controller
             ->paginate(15);
 
 
-      $data['objs'] = $shop;
+          $data['objs'] = $shop;
+      
 
 
           $data['product'] = $product;

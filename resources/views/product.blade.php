@@ -212,7 +212,10 @@ return "$strDay $strMonthThai $strYear";
                                                 </div>
                                             </div>
                                             <div class="modal-body">
-                                                <p>Always have an access to your profile</p>
+                                              <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                <span class="btn btn-default btn-file"><span>Choose file</span><input type="file" /></span>
+                                                <span class="fileinput-filename"></span><span class="fileinput-new">No file chosen</span>
+                                              </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-link btn-neutral"></button>
