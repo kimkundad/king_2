@@ -198,9 +198,36 @@ return "$strDay $strMonthThai $strYear";
 
                               <div class="col-md-10 ml-auto mr-auto">
 
+                                <button class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal">
+                                    เพิ่มรายการ
+                                </button>
 
+
+                                <div class="modal fade modal-primary" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header justify-content-center">
+                                                <div class="modal-profile">
+                                                    <h6>ใส่ข้อมูลเพื่อตัดสินค้าในสต็อก</h6>
+                                                </div>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Always have an access to your profile</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-link btn-neutral">Back</button>
+                                                <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <br><br>
 
                                 <div class="content table-responsive table-full-width">
+
 
 
                                   <h6>จำนวนสินค้า <span class="text-primary">{{$product->product_sum}}</span></h6>
