@@ -238,23 +238,24 @@ return "$strDay $strMonthThai $strYear";
 
 
 
-                                <div class="row magnific-gallery">
+                                <div class="row magnific-gallery" style="margin-top:20px;">
 
-                                  <div class="col-md-10 ml-auto mr-auto">
+                                  <div class="col-12">
                                     <h6>รูปภาพประกอบสินค้า</h6>
-                                    <hr>
+                                    </div>
+
                                     @if($img_all)
                                     @foreach($img_all as $img_u)
-                                    <div class="col-6">
-                                      <a class="example-image-link" href="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" >
-                                      <img src="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" alt="{{$product->product_name}}" class="img-raised mar-bot ">
+                                    <div class="col-6 col-md-6">
+                                      <a class="example-image-link" href="{{url('admin/assets/gallery_product/'.$img_u->image)}}" >
+                                      <img src="{{url('admin/assets/gallery_product/'.$img_u->image)}}" alt="{{$product->product_name}}" class="img-raised mar-bot ">
                                       </a>
                                     </div>
                                     @endforeach
                                     @endif
 
 
-                                  </div>
+
                                 </div>
 
 
