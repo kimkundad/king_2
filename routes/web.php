@@ -12,7 +12,7 @@
 */
 
 
-Route::filter('www',  function () {
+Route::get('www',  function () {
     //Add the 'www.' to all requests
   $request=app('request');
   $host=$request->header('host');
