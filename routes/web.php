@@ -42,6 +42,7 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('brander/{id}', 'HomeController@brander')->name('shop');
   Route::get('sub_shop/{id}', 'HomeController@sub_shop')->name('sub_shop');
   Route::get('album/{id}', 'HomeController@album')->name('album');
+  Route::get('product/{id}', 'HomeController@product')->name('product');
   Route::get('new_album/{id}', 'HomeController@new_album')->name('new_album');
   Route::post('add_new_albums', 'HomeController@add_new_albums');
 

@@ -123,7 +123,54 @@ class HomeController extends Controller
     }
 
 
+    public function product($id){
 
+
+      $product = DB::table('products')->select(
+          'products.*',
+          'products.id as idp',
+          'categories.*',
+          'shops.*',
+          'shops.id as ids'
+          )
+          ->leftjoin('categories','categories.id', 'products.cat_id')
+          ->leftjoin('shops','shops.id', 'products.shop_id')
+          ->where('products.id', $id)
+          ->where('products.user_id', Auth::user()->id)
+          ->orderBy('products.id', 'desc')
+          ->first();
+
+
+          $img_all = DB::table('product_images')->select(
+              'product_images.*'
+              )
+              ->where('product_id', $id)
+              ->get();
+          $data['img_all'] = $img_all;
+
+          $shop = DB::table('stocks')->select(
+            'stocks.*',
+            'stocks.id as st_id',
+            'stocks.created_at as created_stock',
+            'products.*',
+            'users.*'
+            )
+            ->leftjoin('products','products.id', 'stocks.product_id')
+            ->leftjoin('users','users.id', 'stocks.user_id')
+            ->where('products.id', $id)
+            ->orderBy('stocks.id', 'desc')
+            ->paginate(15);
+
+
+      $data['objs'] = $shop;
+
+
+          $data['product'] = $product;
+          $data['header'] = $product->product_name;
+          $data['template'] = 2;
+          return view('product',$data);
+
+    }
 
 
 

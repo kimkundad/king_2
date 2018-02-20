@@ -288,7 +288,7 @@ return "$strDay $strMonthThai $strYear";
                                       @if($albums)
                                         @foreach($albums as $album)
 
-                                        <div class="col-12">
+                                        <div class="col-12 col-md-3">
                                           <a href="{{url('album/'.$album->id)}}" class="ab">
                                             <h5 class="h5-set">{{$album->name}} </h5>
                                             <p class="text-muted"> <?php echo DateThai($album->created_at); ?></p>
