@@ -192,7 +192,7 @@ return "$strDay $strMonthThai $strYear";
             <div class="section section-basic " style="padding-bottom: 150px;">
                           <div class="container">
 
-                            <br>
+                            <br><br>
 
                             <div class="row">
 
@@ -221,7 +221,7 @@ return "$strDay $strMonthThai $strYear";
                                                             <td><?php echo DateThai($u->created_stock); ?> </td>
 
                                                             <td>{{$u->product_total}}</td>
-                                                          
+
                                                             <td>{{$u->name}}</td>
 
 
