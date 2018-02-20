@@ -5,7 +5,7 @@
 
     RewriteEngine On
     RewriteCond %{HTTP_HOST} ^linchak.com [NC]
-    RewriteRule ^(.*)$ http://www.linchak.com/$1 [L,R=301]
+    RewriteRule ^(.*)$ https://www.linchak.com/$1 [L,R=301]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
