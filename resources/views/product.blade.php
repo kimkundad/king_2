@@ -215,7 +215,7 @@ return "$strDay $strMonthThai $strYear";
                                                 <p>Always have an access to your profile</p>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-link btn-neutral">Back</button>
+                                                <button type="button" class="btn btn-link btn-neutral"></button>
                                                 <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Close</button>
                                             </div>
                                         </div>
