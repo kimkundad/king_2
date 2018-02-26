@@ -239,6 +239,9 @@ return "$strDay $strMonthThai $strYear";
 
 
 
+
+
+
                                 <br><br>
 
                                 <div class="content table-responsive table-full-width">
