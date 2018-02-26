@@ -220,6 +220,10 @@ return "$strDay $strMonthThai $strYear";
                                                   <input type="text" placeholder="ใส่จำนวน ตัวเลข" name="number_stock" class="form-control">
                                               </div>
 
+                                              <div class="form-group">
+                                              <textarea class="form-control" name="detail_stock" placeholder="ใส่รายละเอียด ที่นี่" rows="3"></textarea>
+                                              </div>
+
                                               <div class="footer text-center">
                                                   <button class="btn btn-neutral btn-round btn-lg" type="submit">ส่งข้อมูล</button>
                                               </div>
