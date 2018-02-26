@@ -10,11 +10,6 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
-
-
 Route::auth();
 
 Route::get('/', function () {
@@ -24,7 +19,7 @@ Route::get('/', function () {
   }else{
     return view('auth.login');
   }
-
+  
 });
 
 Auth::routes();

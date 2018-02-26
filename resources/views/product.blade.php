@@ -211,16 +211,27 @@ return "$strDay $strMonthThai $strYear";
                                                     <h6>ใส่ข้อมูลเพื่อตัดสินค้าในสต็อก</h6>
                                                 </div>
                                             </div>
+
+                                            <form class="form-horizontal" action="{{url('')}}" method="post" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+
                                             <div class="modal-body">
-                                              <div class="fileinput fileinput-new" data-provides="fileinput">
-                                                <span class="btn btn-default btn-file"><span>Choose file</span><input type="file" /></span>
-                                                <span class="fileinput-filename"></span><span class="fileinput-new">No file chosen</span>
+                                              <div class="form-group">
+                                                  <input type="text" placeholder="ใส่จำนวน ตัวเลข" name="number_stock" class="form-control">
                                               </div>
+
+                                              <div class="footer text-center">
+                                                  <button class="btn btn-primary btn-round" type="submit">ส่งข้อมูล</button>
+                                              </div>
+
+
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-link btn-neutral"></button>
                                                 <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Close</button>
                                             </div>
+
+                                          </form>
                                         </div>
                                     </div>
                                 </div>
