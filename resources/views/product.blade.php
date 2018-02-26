@@ -212,7 +212,7 @@ return "$strDay $strMonthThai $strYear";
                                                 </div>
                                             </div>
 
-                                            <form class="form-horizontal" action="{{url('')}}" method="post" enctype="multipart/form-data">
+                                            <form class="form-horizontal" action="{{url('add_num_stock')}}" method="post" enctype="multipart/form-data">
                                             {{ csrf_field() }}
 
                                             <div class="modal-body">
@@ -221,7 +221,7 @@ return "$strDay $strMonthThai $strYear";
                                               </div>
 
                                               <div class="footer text-center">
-                                                  <button class="btn btn-primary btn-round" type="submit">ส่งข้อมูล</button>
+                                                  <button class="btn btn-neutral btn-round btn-lg" type="submit">ส่งข้อมูล</button>
                                               </div>
 
 
