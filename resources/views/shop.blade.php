@@ -259,6 +259,7 @@ font-weight: 500;
                                                   <img src="{{url('assets/img/app-banner.png')}}" class="img-responsive ">
                                                   </div>
                                                 </div>
+                                                <br><br>
                                               </div>
 
 
