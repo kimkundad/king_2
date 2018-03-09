@@ -201,14 +201,7 @@ font-weight: 500;
 
 
 
-            <div class="row hidden-sm hidden-xs">
 
-              <div class="col-md-8 ml-auto mr-auto">
-                <div class="text-center">
-                <img src="{{url('assets/img/app-banner.png')}}" class="img-responsive ">
-                </div>
-              </div>
-            </div>
 
 
 
@@ -257,6 +250,16 @@ font-weight: 500;
 
                                                   <br>
                                               <hr>
+
+
+                                              <div class="row hidden-sm hidden-xs">
+
+                                                <div class="col-md-8 ml-auto mr-auto" style="padding-right: 0px; padding-left: 0px;">
+                                                  <div class="text-center">
+                                                  <img src="{{url('assets/img/app-banner.png')}}" class="img-responsive ">
+                                                  </div>
+                                                </div>
+                                              </div>
 
 
                                               <div class="content table-responsive table-full-width">
