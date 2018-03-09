@@ -94,18 +94,18 @@ class HomeController extends Controller
              ->where('id', $request['product_id'])
              ->first();
 
-     if($product->product_sum >= $request['product_total']){
+     if($product->product_sum >= $request['number_stock']){
 
        $package = new stock;
        $package->user_id = Auth::user()->id;
        $package->product_id = $request['product_id'];
-       $package->product_total = $request['product_total'];
+       $package->product_total = $request['number_stock'];
        $package->detail = $request['product_detail'];
        $package->save();
 
        $id = $request['product_id'];
 
-       $sum = $product->product_sum - $request['product_total'];
+       $sum = $product->product_sum - $request['number_stock'];
        $package = product::find($id);
        $package->product_sum = $sum;
        $package->save();
