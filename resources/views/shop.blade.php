@@ -189,7 +189,7 @@ font-weight: 500;
 
 
 <div class="text-center visible-sm visible-xs">
-<img src="{{url('assets/img/app-banner.png')}}" class="img-responsive ">
+<img src="{{url('assets/img/cr-banner_2.jpg')}}" class="img-responsive ">
 </div>
 
 
