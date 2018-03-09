@@ -1,6 +1,7 @@
 @extends('layouts.template')
 @section('stylesheet')
 <link rel="stylesheet" href="{{url('assets/magnific-popup/magnific-popup.css')}}">
+
 @stop('stylesheet')
 @section('content')
 
@@ -331,9 +332,28 @@ return "$strDay $strMonthThai $strYear";
 @endsection
 
 @section('scripts')
-
-
 <script src="{{url('assets/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{url('admin/assets/js/bootstrap-notify.js')}}"></script>
+
+
+<script type="text/javascript">
+type = ['success'];
+$.notify({
+    icon: "ti-gift",
+    message: "ยินดีด้วย ได้ทำการลบข้อมูล สำเร็จเรียบร้อยแล้วค่ะ"
+
+  },{
+      type: type[0],
+      timer: 2000,
+      placement: {
+          from: 'top',
+          align: 'right'
+      }
+  });
+</script>
+
+
+
 <script>
 $(document).ready(function() {
   $('.magnific-gallery').each(function() {
