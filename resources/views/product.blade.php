@@ -222,7 +222,7 @@ return "$strDay $strMonthThai $strYear";
                                               </div>
 
                                               <div class="form-group">
-                                              <textarea class="form-control" name="detail_stock" placeholder="ใส่รายละเอียด ที่นี่" rows="3" required></textarea>
+                                              <textarea class="form-control" name="detail_stock" placeholder="ใส่รายละเอียด ที่นี่" rows="3"></textarea>
                                               </div>
 
                                               <div class="footer text-center">
