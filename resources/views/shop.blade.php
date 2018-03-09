@@ -47,6 +47,11 @@ font-weight: 500;
 .table td, .table th {
     padding: .5rem;
 }
+.document-subtitle {
+    color: #616161;
+    display: inline-block;
+
+}
 </style>
 <?php
                           function DateThai($strDate)
@@ -67,7 +72,7 @@ font-weight: 500;
       <div class="container">
 
 
-          <div id="images">
+          <div id="images" class="col-md-10 ml-auto mr-auto">
 
                         <div class="row">
                             <div class="col-4 col-md-3">
@@ -79,8 +84,8 @@ font-weight: 500;
                             <div class="col-8 col-md-9" style="padding-left: 1px;">
                               <h6 style="font-size: 1.2em;">{{$brander->branders_name}}</h6>
 
-                              <div class="button-container" style="    margin-top: 10px;">
-                                  <a href="#button" class="btn btn-primary btn-round btn-sm">Follow</a>
+                              <div class="button-container" style="    margin-top: 12px;">
+                                  <a href="#button" class="btn btn-primary btn-round btn-sm"> ร่วมใช้งาน </a>
                                   <a href="#button" class="btn btn-default btn-round btn-sm btn-icon" rel="tooltip" title="" data-original-title="Follow me on Twitter">
                                       <i class="fa fa-twitter"></i>
                                   </a>
@@ -89,33 +94,11 @@ font-weight: 500;
                                   </a>
                               </div>
 
-                              <table class="table hidden-sm hidden-xs">
-
-                                <tbody>
-
-
-                                  <tr style="padding: .2rem;">
-                                    <th scope="row">
-                                      <h5 class="h5-set">กลุ่มสินค้า</h5>
-                                      <p class="category-1">{{$brander->branders_group}}</p>
-                                    </th>
-                                  </tr>
-                                  <tr style="padding: .2rem;">
-                                    <th scope="row">
-                                      <h5 class="h5-set">ร้านค้าประเภท</h5>
-                                      <p class="category-1">{{$brander->branders_type}}</p>
-                                    </th>
-                                  </tr>
+                              <div class="hidden-sm hidden-xs">
+                                <p class="document-subtitle"><b>กลุ่มสินค้า : {{$brander->branders_group}}</b> , ร้านค้าประเภท : {{$brander->branders_type}} , วันที่สร้าง : <?php echo DateThai($brander->created_at); ?></p>
+                              </div>
 
 
-                                  <tr style="padding: .2rem;">
-                                    <th scope="row">
-                                      <h5 class="h5-set">วันที่สร้าง</h5>
-                                      <p class="category-1"><?php echo DateThai($brander->created_at); ?></p>
-                                    </th>
-                                  </tr>
-                                </tbody>
-                                </table>
 
                             </div>
 

@@ -2232,7 +2232,7 @@ fieldset[disabled] .btn-link.active {
 .btn-sm {
     font-size: 14px;
     border-radius: 0.1875rem;
-    padding: 5px 15px;
+    padding: 8px 15px;
 }
 
 .btn-sm.btn-simple {
