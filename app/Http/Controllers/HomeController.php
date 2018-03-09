@@ -79,6 +79,47 @@ class HomeController extends Controller
 
     }
 
+    public function add_num_stock(Request $request){
+
+      $this->validate($request, [
+           'number_stock' => 'required',
+           'product_id' => 'required'
+       ]);
+
+
+       $product = DB::table('products')->select(
+             'products.*'
+             )
+             ->where('id', $request['product_id'])
+             ->first();
+
+     if($product->product_sum >= $request['product_total']){
+
+       $package = new stock;
+       $package->user_id = Auth::user()->id;
+       $package->product_id = $request['product_id'];
+       $package->product_total = $request['product_total'];
+       $package->detail = $request['product_detail'];
+       $package->save();
+
+       $id = $request['product_id'];
+
+       $sum = $product->product_sum - $request['product_total'];
+       $package = product::find($id);
+       $package->product_sum = $sum;
+       $package->save();
+       return redirect(url('product/'.$id))->with('success_stock','เพิ่มร้านค้าสำเร็จแล้วค่ะ');
+
+     }else{
+
+       return redirect(url('product/'.$request['product_id']))->with('error_stock','เพิ่มร้านค้าสำเร็จแล้วค่ะ');
+
+     }
+
+
+
+    }
+
     public function add_new_albums(Request $request){
 
       $this->validate($request, [
@@ -167,7 +208,7 @@ class HomeController extends Controller
 
 
           $data['objs'] = $shop;
-      
+
 
 
           $data['product'] = $product;
