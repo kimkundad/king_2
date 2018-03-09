@@ -335,12 +335,31 @@ return "$strDay $strMonthThai $strYear";
 <script src="{{url('assets/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{url('admin/assets/js/bootstrap-notify.js')}}"></script>
 
-
+@if ($message = Session::get('success_stock'))
 <script type="text/javascript">
 type = ['success'];
 $.notify({
     icon: "ti-gift",
-    message: "ยินดีด้วย ได้ทำการลบข้อมูล สำเร็จเรียบร้อยแล้วค่ะ"
+    message: "ทำการเพิ่มข้อมูล สำเร็จเรียบร้อย"
+
+  },{
+      type: type[0],
+      timer: 2000,
+      placement: {
+          from: 'top',
+          align: 'right'
+      }
+  });
+</script>
+@endif
+
+@if ($message = Session::get('error_stock'))
+<script type="text/javascript">
+type = ['danger'];
+
+$.notify({
+    icon: "ti-face-sad",
+    message: "จำนวนสินค้าของคุณไม่เพียงพอ ต่อการทำรายการ"
 
   },{
       type: type[0],
@@ -352,6 +371,7 @@ $.notify({
   });
 </script>
 
+@endif
 
 
 <script>
