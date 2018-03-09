@@ -8,6 +8,7 @@ use App\album;
 use App\album_photo;
 use App\fileshop;
 use App\stock;
+use App\product;
 use File;
 use Auth;
 
