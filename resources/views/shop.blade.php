@@ -95,7 +95,7 @@ font-weight: 500;
                               </div>
 
                               <div class="hidden-sm hidden-xs">
-                                <p class="document-subtitle"><b>กลุ่มสินค้า : {{$brander->branders_group}}</b> , ร้านค้าประเภท : {{$brander->branders_type}} , วันที่สร้าง : <?php echo DateThai($brander->created_at); ?></p>
+                                <p class="document-subtitle" style="margin-top: 10px;"><b>กลุ่มสินค้า : {{$brander->branders_group}}</b> , ร้านค้าประเภท : {{$brander->branders_type}} , วันที่สร้าง : <?php echo DateThai($brander->created_at); ?></p>
                               </div>
 
 
@@ -247,78 +247,7 @@ font-weight: 500;
                                               </div>
 
 
-                                              <div class="content table-responsive table-full-width">
-                                              <h6>ผู้ใช้งานร่วม </h6>
-                                              <table class="table table-striped">
-                                                <thead>
-                                                  <tr>
-                                                    <th>#</th>
-                                                    <th>ชื่อผู้ใช้</th>
 
-                                                    <th>Email</th>
-
-
-                                                  </tr>
-                                                </thead>
-                                                  <tbody>
-
-                                                                                                                              <tr id="5">
-                                                        <td>
-                                                          <div class="avatar2">
-                                                            <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                          </div>
-                                                        </td>
-                                                        <td>Fair St</td>
-
-                                                        <td>fair____@hotmail.com</td>
-
-
-                                                      </tr>
-                                                                                            <tr id="4">
-                                                        <td><div class="avatar2">
-                                                          <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                        </div></td>
-                                                        <td>Praewrawee Muannirut</td>
-
-                                                        <td>tao_02081992@hotmail.com</td>
-
-
-                                                      </tr>
-                                                                                            <tr id="3">
-                                                        <td><div class="avatar2">
-                                                          <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                        </div></td>
-                                                        <td>Tu Kanjana Sridet</td>
-
-                                                        <td>ying_tu34@hotmail.com</td>
-
-
-                                                      </tr>
-                                                                                            <tr id="2">
-                                                        <td><div class="avatar2">
-                                                          <img src="{{url('assets/img/faces/face-0.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                        </div></td>
-                                                        <td>Shuvit Funsok</td>
-
-                                                        <td>ighostzaa@gmail.com</td>
-
-
-                                                      </tr>
-                                                                                            <tr id="1">
-                                                        <td><div class="avatar2">
-                                                          <img src="{{url('assets/img/faces/face-1.jpg')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                        </div></td>
-                                                        <td>kim kundad</td>
-
-                                                        <td>kim.kundad@gmail.com</td>
-
-
-                                                      </tr>
-
-
-                                                  </tbody>
-                                              </table>
-                                                </div>
 
 
 
