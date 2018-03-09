@@ -239,7 +239,7 @@ font-weight: 500;
 
                                                 <div class="col-md-8 ml-auto mr-auto" style="padding-right: 0px; padding-left: 0px;">
                                                   <div class="text-center">
-                                                  <img src="{{url('assets/img/app-banner.png')}}" class="img-responsive ">
+                                                  <img src="{{url('assets/img/cr-banner_2.jpg')}}" class="img-responsive ">
                                                   <br><br><br>
                                                   </div>
                                                 </div>
