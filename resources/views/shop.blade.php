@@ -94,13 +94,13 @@ font-weight: 500;
                                 <tbody>
 
 
-                                  <tr>
+                                  <tr style="padding: .2rem;">
                                     <th scope="row">
                                       <h5 class="h5-set">กลุ่มสินค้า</h5>
                                       <p class="category-1">{{$brander->branders_group}}</p>
                                     </th>
                                   </tr>
-                                  <tr>
+                                  <tr style="padding: .2rem;">
                                     <th scope="row">
                                       <h5 class="h5-set">ร้านค้าประเภท</h5>
                                       <p class="category-1">{{$brander->branders_type}}</p>
@@ -108,7 +108,7 @@ font-weight: 500;
                                   </tr>
 
 
-                                  <tr>
+                                  <tr style="padding: .2rem;">
                                     <th scope="row">
                                       <h5 class="h5-set">วันที่สร้าง</h5>
                                       <p class="category-1"><?php echo DateThai($brander->created_at); ?></p>
