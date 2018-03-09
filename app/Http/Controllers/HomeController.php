@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\album;
 use App\album_photo;
 use App\fileshop;
+use App\stock;
 use File;
 use Auth;
 
