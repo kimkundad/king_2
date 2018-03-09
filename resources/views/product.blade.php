@@ -218,7 +218,7 @@ return "$strDay $strMonthThai $strYear";
 
                                             <div class="modal-body">
                                               <div class="form-group">
-                                                  <input type="text" placeholder="ใส่จำนวน ตัวเลข" name="number_stock" class="form-control" required>
+                                                  <input type="number" placeholder="ใส่จำนวน ตัวเลข" name="number_stock" class="form-control" required>
                                                   <input type="hidden" name="product_id" value="{{$product->idp}}" class="form-control">
                                               </div>
 

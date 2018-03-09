@@ -89,6 +89,34 @@ font-weight: 500;
                                   </a>
                               </div>
 
+                              <table class="table hidden-sm hidden-xs">
+
+                                <tbody>
+
+
+                                  <tr>
+                                    <th scope="row">
+                                      <h5 class="h5-set">กลุ่มสินค้า</h5>
+                                      <p class="category-1">{{$brander->branders_group}}</p>
+                                    </th>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">
+                                      <h5 class="h5-set">ร้านค้าประเภท</h5>
+                                      <p class="category-1">{{$brander->branders_type}}</p>
+                                    </th>
+                                  </tr>
+
+
+                                  <tr>
+                                    <th scope="row">
+                                      <h5 class="h5-set">วันที่สร้าง</h5>
+                                      <p class="category-1"><?php echo DateThai($brander->created_at); ?></p>
+                                    </th>
+                                  </tr>
+                                </tbody>
+                                </table>
+
                             </div>
 
                         </div>
@@ -104,7 +132,7 @@ font-weight: 500;
 
 
 
-  <div class="section section-basic " style="padding-bottom: 0px;">
+  <div class="section section-basic visible-sm visible-xs" style="padding-bottom: 0px;">
                 <div class="container">
 
   <br>
@@ -170,7 +198,21 @@ font-weight: 500;
 
                 </div>
             </div>
-<div class="text-center">
+
+
+
+            <div class="row hidden-sm hidden-xs">
+
+              <div class="col-md-8 ml-auto mr-auto">
+                <div class="text-center">
+                <img src="{{url('assets/img/app-banner.png')}}" class="img-responsive ">
+                </div>
+              </div>
+            </div>
+
+
+
+<div class="text-center visible-sm visible-xs">
 <img src="{{url('assets/img/app-banner.png')}}" class="img-responsive ">
 </div>
 
