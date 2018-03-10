@@ -94,7 +94,7 @@ $strMonthThai=$strMonthCut[$strMonth];
 return "$strDay $strMonthThai $strYear";
 }
  ?>
-  
+
 
 
   <div class="section section-tabs" style="padding: 20px 0;">
@@ -124,7 +124,7 @@ return "$strDay $strMonthThai $strYear";
                                 <hr style="color:#ddd; margin-top: 0.5rem;  margin-bottom: 0.5rem;">
                                 <p class="document-subtitle" style="font-size: 13px;"><b>วันที่สร้าง</b> <?php echo DateThai($product->created); ?> </p>
                                 <p class="document-subtitle" style="font-size: 13px;"><b>หมายเหตุ</b> {{$product->product_detail}}</p>
-                                <span class="badge badge-primary">จำนวนสินค้าทั้งหมด {{number_format($product->product_detail,2)}}</span>
+                                <span class="badge badge-primary">จำนวนสินค้าทั้งหมด {{number_format($product->product_sum,2)}}</span>
                               </div>
 
 
