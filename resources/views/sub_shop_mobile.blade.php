@@ -62,7 +62,7 @@ a.ab {
 }
 
 .document-subtitle i {
-  color: #b2cb39;
+  color: #18ce0f
 }
 </style>
 <?php
@@ -106,8 +106,8 @@ return "$strDay $strMonthThai $strYear";
 
                               <div class="hidden-sm hidden-xs">
                                 <p class="document-subtitle" style="margin-top: 10px;"><b><i class="fa fa-circle-o-notch" ></i> {{$objs->shop_code}}, {{$objs->branders_group}}, {{$objs->branders_type}}</b></p>
-                                <p class="document-subtitle"><b><i class="fa fa-phone" ></i> {{$objs->shop_phone}}</b></p>
-                                <p class="document-subtitle"><b><i class="fa fa-envelope-o" ></i> {{$objs->shop_email}}</b></p>
+                                <p class="document-subtitle"><b><i class="fa fa-phone" ></i></b> {{$objs->shop_phone}}</p>
+                                <p class="document-subtitle"><b><i class="fa fa-envelope-o" ></i></b> {{$objs->shop_email}}</p>
                               </div>
 
 
