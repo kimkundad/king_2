@@ -141,12 +141,43 @@ return "$strDay $strMonthThai $strYear";
       </div>
   </div>
 
+  <div class="section section-basic ">
+                <div class="container">
+                  <br>
+                  <div class="col-md-10 ml-auto mr-auto">
+                    <h6>album ทั้งหมด</h6>
+                    <hr>
+                    <br>
+                      <div class="row collections">
+                        <div class="col-12 text-center">
+                            <a href="{{url('new_album/'.$objs->p_id)}}" class="btn btn-primary btn-round btn-white" >สร้าง album ใหม่</a>
+                            <br><br>
+                        </div>
 
+
+                        @if($albums)
+                          @foreach($albums as $album)
+
+                          <div class="col-12 col-md-3">
+                            <a href="{{url('album/'.$album->id)}}" class="ab">
+                              <h5 class="h5-set">{{$album->name}} </h5>
+                              <p class="text-muted"> <?php echo DateThai($album->created_at); ?></p>
+                              <img src="{{url('admin/assets/gallery_shop/'.$album->sum_album->image)}}" alt="" class="img-raised mar-bot">
+                            </a>
+                          </div>
+                          @endforeach
+                        @endif
+
+                      </div>
+
+                  </div>
+                </div>
+  </div>
 
   <div class="section section-basic ">
                 <div class="container">
 
-
+                  <div class="col-md-10 ml-auto mr-auto">
 
 
 
