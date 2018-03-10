@@ -136,104 +136,7 @@ return "$strDay $strMonthThai $strYear";
 
 
 
-                        <div class="row">
-                          <br>
-                          <h6>ข้อมูลการตัดสินค้า</h6>
 
-                          <div class="col-md-10 ml-auto mr-auto">
-
-                            <button class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal">
-                                เพิ่มรายการ
-                            </button>
-
-
-                            <div class="modal fade modal-primary" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header justify-content-center">
-                                            <div class="modal-profile">
-                                                <h6>ใส่ข้อมูลเพื่อตัดสินค้าในสต็อก</h6>
-                                            </div>
-                                        </div>
-
-                                        <form class="form-horizontal" action="{{url('add_num_stock')}}" method="post" enctype="multipart/form-data">
-                                        {{ csrf_field() }}
-
-                                        <div class="modal-body">
-                                          <div class="form-group">
-                                              <input type="number" placeholder="ใส่จำนวน ตัวเลข" name="number_stock" class="form-control" required>
-                                              <input type="hidden" name="product_id" value="{{$product->idp}}" class="form-control">
-                                          </div>
-
-                                          <div class="form-group">
-                                          <textarea class="form-control" name="detail_stock" placeholder="ใส่รายละเอียด ที่นี่" rows="3"></textarea>
-                                          </div>
-
-                                          <div class="footer text-center">
-                                              <button class="btn btn-neutral btn-round btn-lg" type="submit">ส่งข้อมูล</button>
-                                          </div>
-
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-link btn-neutral"></button>
-                                            <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Close</button>
-                                        </div>
-
-                                      </form>
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-
-
-
-                            <br><br>
-
-                            <div class="content table-responsive table-full-width">
-
-
-
-                              <h6>จำนวนสินค้า <span class="text-primary">{{$product->product_sum}}</span></h6>
-                      <table class="table table-striped">
-                        <tr>
-                            <th>วันที่</th>
-
-                            <th>จำหน่าย</th>
-
-                            <th>ผู้ใช้งาน</th>
-                        </tr>
-                          <tbody>
-
-                            @if($objs)
-                                @foreach($objs as $u)
-                                                      <tr id="{{$u->st_id}}">
-
-                                                        <td><?php echo DateThai($u->created_stock); ?> </td>
-
-                                                        <td>{{$u->product_total}}</td>
-
-                                                        <td>{{$u->name}}</td>
-
-
-                                                      </tr>
-                                @endforeach
-                              @endif
-
-                          </tbody>
-                      </table>
-
-                  </div>
-
-
-                            </div>
-
-
-                        </div>
                     </div>
 
 
@@ -244,17 +147,7 @@ return "$strDay $strMonthThai $strYear";
 
 
 
-  <br><br>
-  <div class="row hidden-sm hidden-xs">
 
-    <div class="col-md-8 ml-auto mr-auto" style="padding-right: 0px; padding-left: 0px;">
-      <div class="text-center">
-      <img src="{{url('assets/img/app-banner_2.png')}}" class="img-responsive ">
-      <br><br><br>
-      </div>
-    </div>
-
-  </div>
 
 
 
@@ -267,6 +160,53 @@ return "$strDay $strMonthThai $strYear";
                             <br><br>
 
                             <div class="row">
+                              <br>
+                              <h6>ข้อมูลการตัดสินค้า</h6>
+
+                              <div class="col-md-10 ml-auto mr-auto">
+
+                                <button class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal">
+                                    เพิ่มรายการ
+                                </button>
+
+
+                                <div class="modal fade modal-primary" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header justify-content-center">
+                                                <div class="modal-profile">
+                                                    <h6>ใส่ข้อมูลเพื่อตัดสินค้าในสต็อก</h6>
+                                                </div>
+                                            </div>
+
+                                            <form class="form-horizontal" action="{{url('add_num_stock')}}" method="post" enctype="multipart/form-data">
+                                            {{ csrf_field() }}
+
+                                            <div class="modal-body">
+                                              <div class="form-group">
+                                                  <input type="number" placeholder="ใส่จำนวน ตัวเลข" name="number_stock" class="form-control" required>
+                                                  <input type="hidden" name="product_id" value="{{$product->idp}}" class="form-control">
+                                              </div>
+
+                                              <div class="form-group">
+                                              <textarea class="form-control" name="detail_stock" placeholder="ใส่รายละเอียด ที่นี่" rows="3"></textarea>
+                                              </div>
+
+                                              <div class="footer text-center">
+                                                  <button class="btn btn-neutral btn-round btn-lg" type="submit">ส่งข้อมูล</button>
+                                              </div>
+
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-link btn-neutral"></button>
+                                                <button type="button" class="btn btn-link btn-neutral" data-dismiss="modal">Close</button>
+                                            </div>
+
+                                          </form>
+                                        </div>
+                                    </div>
+                                </div>
 
 
 
@@ -275,9 +215,63 @@ return "$strDay $strMonthThai $strYear";
 
 
 
+                                <br><br>
+
+                                <div class="content table-responsive table-full-width">
+
+
+
+                                  <h6>จำนวนสินค้า <span class="text-primary">{{$product->product_sum}}</span></h6>
+                          <table class="table table-striped">
+                            <tr>
+                                <th>วันที่</th>
+
+                                <th>จำหน่าย</th>
+
+                                <th>ผู้ใช้งาน</th>
+                            </tr>
+                              <tbody>
+
+                                @if($objs)
+                                    @foreach($objs as $u)
+                                                          <tr id="{{$u->st_id}}">
+
+                                                            <td><?php echo DateThai($u->created_stock); ?> </td>
+
+                                                            <td>{{$u->product_total}}</td>
+
+                                                            <td>{{$u->name}}</td>
+
+
+                                                          </tr>
+                                    @endforeach
+                                  @endif
+
+                              </tbody>
+                          </table>
+
+                      </div>
 
 
                                 </div>
+
+
+                            </div>
+
+
+
+
+                            <br><br>
+                            <div class="row hidden-sm hidden-xs">
+
+                              <div class="col-md-8 ml-auto mr-auto" style="padding-right: 0px; padding-left: 0px;">
+                                <div class="text-center">
+                                <img src="{{url('assets/img/app-banner_2.png')}}" class="img-responsive ">
+                                <br><br><br>
+                                </div>
+                              </div>
+
+                            </div>
 
 
 
