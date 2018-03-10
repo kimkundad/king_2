@@ -170,7 +170,7 @@ class HomeController extends Controller
 
     public function product($id){
 
-
+      $agent = new Agent();
       $product = DB::table('products')->select(
           'products.*',
           'products.id as idp',
