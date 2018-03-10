@@ -12,7 +12,7 @@ use App\product;
 use File;
 use Auth;
 use Jenssegers\Agent\Agent;
-$agent = new Agent();
+
 
 class HomeController extends Controller
 {
@@ -226,7 +226,7 @@ class HomeController extends Controller
     public function sub_shop($id)
     {
 
-
+      $agent = new Agent();
       $shop = DB::table('shops')->select(
           'shops.*',
           'shops.id as p_id',
