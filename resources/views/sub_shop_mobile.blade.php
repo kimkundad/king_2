@@ -57,6 +57,9 @@ font-weight: 500;
 a.ab {
       text-decoration: none;
 }
+.document-subtitle i {
+  color: #b2cb39;
+}
 </style>
 <?php
 function DateThai($strDate)
@@ -93,12 +96,14 @@ return "$strDay $strMonthThai $strYear";
 
                             </div>
                             <div class="col-8 col-md-9" style="padding-left: 1px;">
-                              <h6 style="font-size: 1.2em;">{{$objs->shop_name}}</h6>
+                              <h6 style="font-size: 1.4em;">{{$objs->shop_name}}</h6>
 
 
 
                               <div class="hidden-sm hidden-xs">
-                                <p class="document-subtitle" style="margin-top: 10px;"><b>รหัส : {{$objs->shop_code}}</b></p>
+                                <p class="document-subtitle" style="margin-top: 10px;"><b><i class="fa fa-circle-o-notch" ></i> {{$objs->shop_code}}</b></p>
+                                <p class="document-subtitle"><b><i class="fa fa-phone" ></i> {{$objs->shop_phone}}</b></p>
+                                <p class="document-subtitle"><b><i class="fa fa-envelope-o" ></i> {{$objs->shop_phone}}</b></p>
                               </div>
 
 
