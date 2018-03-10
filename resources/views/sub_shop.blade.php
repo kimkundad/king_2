@@ -330,8 +330,20 @@ return "$strDay $strMonthThai $strYear";
 
 
 
-            <div class="text-center">
+            <div class="text-center visible-sm visible-xs">
             <img src="{{url('assets/img/banner.png')}}" class="img-responsive ">
+            </div>
+
+
+            <div class="row hidden-sm hidden-xs">
+
+              <div class="col-md-8 ml-auto mr-auto" style="padding-right: 0px; padding-left: 0px;">
+                <div class="text-center">
+                <img src="{{url('assets/img/banner.png')}}" class="img-responsive ">
+                <br><br><br>
+                </div>
+              </div>
+
             </div>
 
 
