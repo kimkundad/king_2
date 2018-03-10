@@ -286,7 +286,13 @@ class HomeController extends Controller
       $data['albums'] = $albums;
       $data['total_product'] = $total;
       $data['template'] = 2;
-      return view('sub_shop', $data);
+
+      if($agent->isMobile()){
+        return view('sub_shop_mobile', $data);
+      }else{
+        return view('sub_shop', $data);
+      }
+
     }
 
 

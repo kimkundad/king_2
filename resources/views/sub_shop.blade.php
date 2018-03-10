@@ -83,12 +83,8 @@ return "$strDay $strMonthThai $strYear";
                             <div class="col-12">
                               <a class="btn btn-primary btn-round " href="{{url('brander/'.$objs->bid)}}" style="color: #FFFFFF;">กลับสู่ Account</a>
                               <br><br>
-                              @if ($agent->isMobile())
-                              <p class="category" style="color: #2c2c2c;">Mobile</p>
-                              @else
+                          
                               <p class="category" style="color: #2c2c2c;">{{$objs->shop_name}}</p>
-                              @endif
-
 
                               <div class="author">
                               <img src="{{url('admin/assets/blog/'.$objs->image_shop)}}" alt="{{$objs->shop_name}}" class="img-raised mar-bot">
