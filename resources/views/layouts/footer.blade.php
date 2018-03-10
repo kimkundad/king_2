@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" style="    border-top: 1px solid #EFF0F5;">
   <footer class="footer">
       <div class="container">
         <p class="text-muted"> </p>
