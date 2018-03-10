@@ -11,7 +11,7 @@ use App\stock;
 use App\product;
 use File;
 use Auth;
-
+$agent = new Jenssegers\Agent\Agent();
 
 class HomeController extends Controller
 {
@@ -287,8 +287,12 @@ class HomeController extends Controller
       $data['total_product'] = $total;
       $data['template'] = 2;
 
-      
-      return view('sub_shop', $data);
+      if ($agent->isMobile()) {
+        return view('sub_shop_mobile', $data);
+      }else{
+        return view('sub_shop', $data);
+      }
+
     }
 
 
