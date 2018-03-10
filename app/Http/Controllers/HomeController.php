@@ -9,6 +9,7 @@ use App\album_photo;
 use App\fileshop;
 use App\stock;
 use App\product;
+use Jenssegers\Agent\Agent;
 use File;
 use Auth;
 
@@ -23,6 +24,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $agent = new Agent();
     }
 
     /**
