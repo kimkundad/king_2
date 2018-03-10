@@ -119,7 +119,7 @@ return "$strDay $strMonthThai $strYear";
                               <div class="hidden-sm hidden-xs">
                                 รายละเอียดของร้านค้า
                                 <p class="document-subtitle" style="margin-top: 10px;"><b><i class="fa fa-circle-o-notch" ></i> {{$objs->shop_code}}, {{$objs->branders_group}}, {{$objs->branders_type}}</b>
-                                <b style="color: #756174; float:right;"><i class="fa fa-bookmark-o" style="color: #756174;"></i>Channel : {{$objs->channel}} </b>  </p>
+                                <b style="color: #756174; float:right;"><i class="fa fa-bookmark-o" style="color: #756174;"></i> Channel : {{$objs->channel}} </b>  </p>
                                 <hr style="color:#ddd; margin-top: 0.5rem;  margin-bottom: 0.5rem;">
                                 <p class="document-subtitle" style="font-size: 13px;"><b><i class="fa fa-phone" ></i></b> {{$objs->shop_phone}} , <b><i class="fa fa-envelope-o" ></i></b> {{$objs->shop_email}} </p>
                                 <p class="document-subtitle" style="font-size: 13px;"><b><i class="fa fa-map-marker" ></i></b> {{$objs->shop_address}}, {{$objs->PROVINCE_NAME}}</p>
