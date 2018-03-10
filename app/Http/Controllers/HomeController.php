@@ -217,7 +217,18 @@ class HomeController extends Controller
           $data['product'] = $product;
           $data['header'] = $product->product_name;
           $data['template'] = 2;
-          return view('product',$data);
+
+
+
+          if ($agent->isMobile()) {
+            return view('product', $data);
+          }else{
+            return view('product_mobile', $data);
+          }
+
+
+
+        //  return view('product',$data);
 
     }
 
