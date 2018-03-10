@@ -289,9 +289,9 @@ class HomeController extends Controller
       $data['template'] = 2;
 
       if ($agent->isMobile()) {
-        return view('sub_shop_mobile', $data);
-      }else{
         return view('sub_shop', $data);
+      }else{
+        return view('sub_shop_mobile', $data);
       }
 
     }
