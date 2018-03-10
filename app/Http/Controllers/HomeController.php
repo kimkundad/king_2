@@ -11,7 +11,8 @@ use App\stock;
 use App\product;
 use File;
 use Auth;
-$agent = new Jenssegers\Agent\Agent();
+use Jenssegers\Agent\Agent;
+$agent = new Agent();
 
 class HomeController extends Controller
 {
