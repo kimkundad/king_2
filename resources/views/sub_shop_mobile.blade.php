@@ -170,7 +170,7 @@ return "$strDay $strMonthThai $strYear";
 
                       </div>
 
-
+                      <br><br>
                       <div class="row hidden-sm hidden-xs">
 
                         <div class="col-md-8 ml-auto mr-auto" style="padding-right: 0px; padding-left: 0px;">
@@ -207,312 +207,47 @@ return "$strDay $strMonthThai $strYear";
                         </div>
 
 
+                        <h6>รายชื่อพนักงาน</h6>
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>ชื่อพนักงาน</th>
+
+                      <th>เบอร์โทร</th>
+
+                    </tr>
+                  </thead>
+                    <tbody>
+                      @if($employee)
+                        @foreach($employee as $employees)
+                        <tr id="5">
+                          <td>
+                            <div class="avatar2">
+                              @if($employees->sex == 1)
+                                <img src="{{url('admin/assets/img/avatar/1483537975.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                              @else
+                                <img src="{{url('admin/assets/img/avatar/1483556517.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                              @endif
+
+                            </div>
+                          </td>
+                          <td>{{$employees->name}}</td>
+                          <td>{{$employees->phone}}</td>
+
+
+                        </tr>
+                        @endforeach
+                      @endif
+                    </tbody>
+                </table>
+
+
                   </div>
                 </div>
   </div>
 
-  <div class="section section-basic ">
-                <div class="container">
 
-                  <div class="col-md-10 ml-auto mr-auto">
-
-
-
-
-
-
-
-                  <br>
-
-
-
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="nav-align-center">
-                                <ul class="nav nav-pills nav-pills-primary" role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#profile" role="tablist">
-                                            <i class="now-ui-icons design_image"></i>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#home" role="tablist">
-                                            <i class="now-ui-icons business_badge"></i>
-                                        </a>
-                                    </li>
-
-
-                                    <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#link" role="tablist">
-                                        <i class="fa fa-suitcase"></i>
-                                    </a>
-                                </li>
-
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Tab panes -->
-                        <div class="col-md-12">
-                            <div class="space-50"></div>
-                        <div class="tab-content gallery">
-
-                          <div class="tab-pane" id="link" role="tabpanel">
-                              <div class="col-md-10 ml-auto mr-auto">
-                                <h6>สินค้า ทั้งหมด</h6>
-                                <hr>
-
-                                  <div class="row collections">
-
-                                    @if($product)
-                                      @foreach($product as $products)
-
-                                      <div class="col-6 col-md-3">
-
-                                        <a href="{{url('product/'.$products->ids)}}" class="ab">
-                                          <h5 class="h5-set">{{$products->product_name}} </h5>
-                                          <p class="text-muted"> <?php echo DateThai($products->created_at); ?></p>
-                                          <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class="img-raised mar-bot">
-                                        </a>
-                                        <br><br>
-                                      </div>
-                                      @endforeach
-                                    @endif
-
-                                  </div>
-                              </div>
-                          </div>
-
-
-                            <div class="tab-pane active" id="home" role="tabpanel">
-                                <div class="col-md-10 ml-auto mr-auto">
-                                  <h6>ข้อมูลของ {{$objs->shop_name}}</h6>
-
-                                  <table class="table">
-
-                                    <tbody>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">ชื่อ Shop</h5>
-                                          <p class="category-1">{{$objs->shop_name}}</p>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">รหัส Shop</h5>
-                                          <p class="category-1">{{$objs->shop_code}}</p>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">เบอร์โทร</h5>
-                                          <p class="category-1">{{$objs->shop_phone}}</p>
-                                        </th>
-                                      </tr>
-
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">อีเมล shop</h5>
-                                          <p class="category-1">{{$objs->shop_email}}</p>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">กลุ่มสินค้า</h5>
-                                          <p class="category-1">{{$objs->branders_group}}</p>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">ร้านค้าประเภท</h5>
-                                          <p class="category-1">{{$objs->branders_type}}</p>
-                                        </th>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">ที่อยู่</h5>
-                                          <p class="category-1">{{$objs->shop_address}}</p>
-                                        </th>
-                                      </tr>
-
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">จังหวัด</h5>
-                                          <p class="category-1">{{$objs->PROVINCE_NAME}}</p>
-                                        </th>
-                                      </tr>
-
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">Channel</h5>
-                                          <p class="category-1">{{$objs->channel}}</p>
-                                        </th>
-                                      </tr>
-
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">ยอดขายรายเดือน</h5>
-                                          <p class="category-1">{{$objs->shop_sale}}</p>
-                                        </th>
-                                      </tr>
-
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">จำนวนสินค้า</h5>
-                                          <p class="category-1">{{number_format($total_product)}}</p>
-                                        </th>
-                                      </tr>
-
-                                      <tr>
-                                        <th scope="row">
-                                          <h5 class="h5-set">รายละเอียด</h5>
-                                          <p class="category-1">{{$objs->detail_shop}}</p>
-                                        </th>
-                                      </tr>
-                                    </tbody>
-                                    </table>
-                                    <h5>Location</h5>
-                                    <div id="map" style="width:100%; border:0; height:316px;" frameborder="0"></div>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="profile" role="tabpanel">
-                                <div class="col-md-10 ml-auto mr-auto">
-                                  <h6>album ทั้งหมด</h6>
-                                  <hr>
-                                  <br>
-                                    <div class="row collections">
-                                      <div class="col-12 text-center">
-                                          <a href="{{url('new_album/'.$objs->p_id)}}" class="btn btn-primary btn-round btn-white" >สร้าง album ใหม่</a>
-                                          <br><br>
-                                      </div>
-
-
-                                      @if($albums)
-                                        @foreach($albums as $album)
-
-                                        <div class="col-12 col-md-3">
-                                          <a href="{{url('album/'.$album->id)}}" class="ab">
-                                            <h5 class="h5-set">{{$album->name}} </h5>
-                                            <p class="text-muted"> <?php echo DateThai($album->created_at); ?></p>
-                                            <img src="{{url('admin/assets/gallery_shop/'.$album->sum_album->image)}}" alt="" class="img-raised mar-bot">
-                                          </a>
-                                        </div>
-                                        @endforeach
-                                      @endif
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-                        </div>
-
-
-
-
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
-            </div>
-
-
-
-            <div class="text-center visible-sm visible-xs">
-            <img src="{{url('assets/img/banner.png')}}" class="img-responsive ">
-            </div>
-
-
-            <div class="row hidden-sm hidden-xs">
-
-              <div class="col-md-8 ml-auto mr-auto" style="padding-right: 0px; padding-left: 0px;">
-                <div class="text-center">
-                <img src="{{url('assets/img/banner.png')}}" class="img-responsive ">
-                <br><br><br>
-                </div>
-              </div>
-
-            </div>
-
-
-
-
-            <div class="section section-basic " style="padding-bottom: 150px;">
-                          <div class="container">
-
-                            <br>
-
-                            <div class="row">
-
-                              <div class="col-md-10 ml-auto mr-auto">
-
-
-
-                                <div class="content table-responsive table-full-width">
-
-
-                                  <h6>รายชื่อพนักงาน</h6>
-                          <table class="table table-striped">
-                            <thead>
-                              <tr>
-                                <th>#</th>
-                                <th>ชื่อพนักงาน</th>
-
-                                <th>เบอร์โทร</th>
-
-                              </tr>
-                            </thead>
-                              <tbody>
-                                @if($employee)
-                                  @foreach($employee as $employees)
-                                  <tr id="5">
-                                    <td>
-                                      <div class="avatar2">
-                                        @if($employees->sex == 1)
-                                          <img src="{{url('admin/assets/img/avatar/1483537975.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                        @else
-                                          <img src="{{url('admin/assets/img/avatar/1483556517.png')}}" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                        @endif
-
-                                      </div>
-                                    </td>
-                                    <td>{{$employees->name}}</td>
-                                    <td>{{$employees->phone}}</td>
-
-
-                                  </tr>
-                                  @endforeach
-                                @endif
-                              </tbody>
-                          </table>
-
-                      </div>
-
-
-                                </div>
-
-                                </div>
-
-                                </div>
-
-                                </div>
 
 @endsection
 
