@@ -170,6 +170,43 @@ return "$strDay $strMonthThai $strYear";
 
                       </div>
 
+
+                      <div class="row hidden-sm hidden-xs">
+
+                        <div class="col-md-8 ml-auto mr-auto" style="padding-right: 0px; padding-left: 0px;">
+                          <div class="text-center">
+                          <img src="{{url('assets/img/banner.png')}}" class="img-responsive ">
+                          <br><br><br>
+                          </div>
+                        </div>
+
+                      </div>
+
+
+
+                      <h6>สินค้า ทั้งหมด</h6>
+                      <hr>
+
+                        <div class="row collections">
+
+                          @if($product)
+                            @foreach($product as $products)
+
+                            <div class="col-6 col-md-3">
+
+                              <a href="{{url('product/'.$products->ids)}}" class="ab">
+                                <h5 class="h5-set">{{$products->product_name}} </h5>
+                                <p class="text-muted"> <?php echo DateThai($products->created_at); ?></p>
+                                <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class="img-raised mar-bot">
+                              </a>
+                              <br><br>
+                            </div>
+                            @endforeach
+                          @endif
+
+                        </div>
+
+
                   </div>
                 </div>
   </div>
@@ -227,7 +264,7 @@ return "$strDay $strMonthThai $strYear";
                               <div class="col-md-10 ml-auto mr-auto">
                                 <h6>สินค้า ทั้งหมด</h6>
                                 <hr>
-                                <br>
+
                                   <div class="row collections">
 
                                     @if($product)
