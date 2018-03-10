@@ -120,8 +120,8 @@ return "$strDay $strMonthThai $strYear";
                                 รายละเอียดของร้านค้า
                                 <p class="document-subtitle" style="margin-top: 10px;"><b><i class="fa fa-circle-o-notch" ></i> {{$objs->shop_code}}, {{$objs->branders_group}}, {{$objs->branders_type}}</b></p>
                                 <hr style="color:#ddd; margin-top: 0.5rem;  margin-bottom: 0.5rem;">
-                                <p class="document-subtitle" style="font-size: 13px;"><b><i class="fa fa-phone" ></i></b> {{$objs->shop_phone}} | <b><i class="fa fa-envelope-o" ></i></b> {{$objs->shop_email}} </p>
-                                <p class="document-subtitle" style="font-size: 13px;"><b><i class="fa fa-map-marker" ></i></b>{{$objs->shop_address}}, {{$objs->PROVINCE_NAME}}</p>
+                                <p class="document-subtitle" style="font-size: 13px;"><b><i class="fa fa-phone" ></i></b> {{$objs->shop_phone}} , <b><i class="fa fa-envelope-o" ></i></b> {{$objs->shop_email}} </p>
+                                <p class="document-subtitle" style="font-size: 13px;"><b><i class="fa fa-map-marker" ></i></b> {{$objs->shop_address}}, {{$objs->PROVINCE_NAME}}</p>
                                 <span class="badge badge-primary">ยอดขายรายเดือน {{number_format($objs->shop_sale,2)}}</span>
                               </div>
 
