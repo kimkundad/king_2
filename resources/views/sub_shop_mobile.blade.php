@@ -57,6 +57,10 @@ font-weight: 500;
 a.ab {
       text-decoration: none;
 }
+.document-subtitle {
+  margin-bottom: 0.5rem;
+}
+
 .document-subtitle i {
   color: #b2cb39;
 }
@@ -101,9 +105,9 @@ return "$strDay $strMonthThai $strYear";
 
 
                               <div class="hidden-sm hidden-xs">
-                                <p class="document-subtitle" style="margin-top: 10px;"><b><i class="fa fa-circle-o-notch" ></i> {{$objs->shop_code}}</b></p>
+                                <p class="document-subtitle" style="margin-top: 10px;"><b><i class="fa fa-circle-o-notch" ></i> {{$objs->shop_code}}, {{$objs->branders_group}}, {{$objs->branders_type}}</b></p>
                                 <p class="document-subtitle"><b><i class="fa fa-phone" ></i> {{$objs->shop_phone}}</b></p>
-                                <p class="document-subtitle"><b><i class="fa fa-envelope-o" ></i> {{$objs->shop_phone}}</b></p>
+                                <p class="document-subtitle"><b><i class="fa fa-envelope-o" ></i> {{$objs->shop_email}}</b></p>
                               </div>
 
 
