@@ -9,7 +9,6 @@ use App\album_photo;
 use App\fileshop;
 use App\stock;
 use App\product;
-use Jenssegers\Agent\Agent;
 use File;
 use Auth;
 
@@ -24,7 +23,6 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $agent = new Agent();
     }
 
     /**
@@ -289,12 +287,8 @@ class HomeController extends Controller
       $data['total_product'] = $total;
       $data['template'] = 2;
 
-      if($agent->isMobile()){
-        return view('sub_shop_mobile', $data);
-      }else{
-        return view('sub_shop', $data);
-      }
-
+      
+      return view('sub_shop', $data);
     }
 
 
