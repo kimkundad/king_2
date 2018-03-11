@@ -152,12 +152,12 @@ return "$strDay $strMonthThai $strYear";
             @foreach($shop as $u)
 
                 <div class="col-6 col-md-3">
-                  <a class="example-image-link" href="{{url('')}}" >
+                  <a class="example-image-link" href="{{url('sub_shop/'.$u->ids)}}" >
                   <div class="card">
                     <div class="card-body">
                       <img src="{{url('admin/assets/blog/'.$u->image_shop)}}" alt="" class=" mar-bot ">
                       <h6 class="title1">{{$u->shop_name}}</h6>
-                      <span class="display-price">{{$u->cat_name}}</span>
+                      <span class="display-price">{{$u->branders_name}}</span>
                     </div>
                   </div>
                   </a>

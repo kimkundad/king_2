@@ -85,9 +85,11 @@ class HomeController extends Controller
     public function my_shop(){
 
       $shop = DB::table('shops')->select(
-          'shops.*'
+          'shops.*',
+          'shops.id as ids',
+          'branders.*'
           )
-          ->orderBy('shops.id', 'desc')
+          ->leftjoin('branders','branders.id', 'shops.branders_id')
           ->get();
 
     $data['shop'] = $shop;
