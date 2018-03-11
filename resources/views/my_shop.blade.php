@@ -79,6 +79,11 @@ a.ab {
     margin-top: 5px;
     border-radius: 0.875rem;
 }
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
 </style>
 <?php
 function DateThai($strDate)
@@ -109,7 +114,16 @@ return "$strDay $strMonthThai $strYear";
                 <h5>Shop ของฉัน</h5>
                 <hr>
 
-                
+
+                <div class="col-6 col-md-3">
+                  <a class="example-image-link" href="{{url('')}}" >
+                  <div class="card">
+                    <div class="card-body">
+                      <img src="https://lh3.googleusercontent.com/lwr6G_ATC66LavAnNEcg8sRSoX-z8v3d97hrCEL8DOkQOmy82tUmcVqBhVCuOvJfAQ=w170-rw" alt="" class="img-raised mar-bot ">
+                    </div>
+                  </div>
+                  </a>
+                </div>
 
 
               </div>
