@@ -84,6 +84,33 @@ a.ab {
     flex: 1 1 auto;
     padding: 1rem;
 }
+.title1 {
+    color: #212121;
+    display: block;
+    font-size: 16px;
+    line-height: 18px;
+    max-height: 36px;
+    min-height: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+    white-space: nowrap;
+}
+.display-price {
+    color: #689f38;
+}
+.display-price{
+    background: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 17px;
+    padding-left: 2px;
+    position: relative;
+    text-align: right;
+    text-transform: uppercase;
+}
 </style>
 <?php
 function DateThai($strDate)
@@ -122,6 +149,8 @@ return "$strDay $strMonthThai $strYear";
                   <div class="card">
                     <div class="card-body">
                       <img src="https://lh3.googleusercontent.com/lwr6G_ATC66LavAnNEcg8sRSoX-z8v3d97hrCEL8DOkQOmy82tUmcVqBhVCuOvJfAQ=w170-rw" alt="" class=" mar-bot ">
+                      <h6 class="title1">BNK48 Jigsaw</h6>
+                      <span class="display-price">เครื่องไฟฟ้า</span>
                     </div>
                   </div>
                   </a>
