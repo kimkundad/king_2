@@ -82,12 +82,12 @@ a.ab {
 .card-body {
     -ms-flex: 1 1 auto;
     flex: 1 1 auto;
-    padding: 1rem;
+    padding: 0.8rem;
 }
 .title1 {
     color: #212121;
     display: block;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 18px;
     max-height: 36px;
     min-height: 18px;
@@ -95,11 +95,14 @@ a.ab {
     text-decoration: none;
     position: relative;
     white-space: nowrap;
+        margin-bottom: .3rem;
 }
 .display-price {
     color: #689f38;
 }
-.display-price{
+.display-price {
+    margin-bottom: 5px;
+    float: right;
     background: #fff;
     cursor: pointer;
     display: inline-block;
@@ -110,6 +113,9 @@ a.ab {
     position: relative;
     text-align: right;
     text-transform: uppercase;
+}
+.mar-bot {
+    margin-bottom: 10px;
 }
 </style>
 <?php
@@ -142,19 +148,23 @@ return "$strDay $strMonthThai $strYear";
               <div class="row collections">
 
 
-
+                @if($shop)
+            @foreach($shop as $u)
 
                 <div class="col-6 col-md-3">
                   <a class="example-image-link" href="{{url('')}}" >
                   <div class="card">
                     <div class="card-body">
-                      <img src="https://lh3.googleusercontent.com/lwr6G_ATC66LavAnNEcg8sRSoX-z8v3d97hrCEL8DOkQOmy82tUmcVqBhVCuOvJfAQ=w170-rw" alt="" class=" mar-bot ">
-                      <h6 class="title1">BNK48 Jigsaw</h6>
-                      <span class="display-price">เครื่องไฟฟ้า</span>
+                      <img src="{{url('admin/assets/blog/'.$u->image_shop)}}" alt="" class=" mar-bot ">
+                      <h6 class="title1">{{$u->shop_name}}</h6>
+                      <span class="display-price">{{$u->cat_name}}</span>
                     </div>
                   </div>
                   </a>
                 </div>
+
+                @endforeach
+          @endif
 
 
               </div>
