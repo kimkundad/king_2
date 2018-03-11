@@ -42,13 +42,13 @@
                   <li class="nav-item">
                       <a class="nav-link" rel="tooltip" title="Shop ของฉัน" data-placement="bottom" >
                           <i class="now-ui-icons shopping_shop"></i>
-                          <p>Shop ของฉัน</p>
+                          <p>Shop</p>
                       </a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" rel="tooltip" title="สินค้าของฉัน" data-placement="bottom" >
                           <i class="now-ui-icons objects_spaceship"></i>
-                          <p>สินค้าของฉัน</p>
+                          <p>Product</p>
                       </a>
                   </li>
 
