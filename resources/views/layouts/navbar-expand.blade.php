@@ -35,7 +35,7 @@
                   </li> -->
                   <li class="nav-item">
                       <a class="nav-link btn btn-neutral" href="{{url('admin/dashboard')}}">
-                          <i class="now-ui-icons arrows-1_share-66"></i>
+                          <i class="now-ui-icons design_app"></i>
                           <p>Administration</p>
                       </a>
                   </li>
