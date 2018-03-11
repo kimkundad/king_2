@@ -74,17 +74,7 @@ class ShopController extends Controller
       $this->validate($request, [
        'image' => 'required|mimes:jpg,jpeg,png,gif|max:8048',
        'shop_name' => 'required',
-       'branders_id' => 'required',
-       'shop_email' => 'required',
-       'address' => 'required',
-       'shop_phone' => 'required',
-       'provience_id' => 'required',
-       'lat' => 'required',
-       'lng' => 'required',
-       'shop_sale' => 'required',
-       'shop_code' => 'required',
-       'channel' => 'required',
-       'shop_area' => 'required'
+       'branders_id' => 'required'
       ]);
 
       $image = $request->file('image');
