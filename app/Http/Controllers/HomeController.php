@@ -105,13 +105,15 @@ class HomeController extends Controller
       $product = DB::table('products')->select(
             'products.*',
             'products.id as ids',
-            'categories.*'
+            'categories.*',
+            'shops.*'
             )
             ->leftjoin('categories','categories.id', 'products.cat_id')
+            ->leftjoin('shops','shops.id', 'products.shop_id')
             ->orderBy('products.id', 'desc')
             ->get();
 
-    $data['shop'] = $product;
+    $data['product'] = $product;
 
       $data['template'] = 2;
       return view('my_product', $data);

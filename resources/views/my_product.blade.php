@@ -79,6 +79,44 @@ a.ab {
     margin-top: 5px;
     border-radius: 0.875rem;
 }
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0.8rem;
+}
+.title1 {
+    color: #212121;
+    display: block;
+    font-size: 15px;
+    line-height: 18px;
+    max-height: 36px;
+    min-height: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    position: relative;
+    white-space: nowrap;
+        margin-bottom: .3rem;
+}
+.display-price {
+    color: #689f38;
+}
+.display-price {
+    margin-bottom: 5px;
+    float: right;
+    background: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 17px;
+    padding-left: 2px;
+    position: relative;
+    text-align: right;
+    text-transform: uppercase;
+}
+.mar-bot {
+    margin-bottom: 10px;
+}
 </style>
 <?php
 function DateThai($strDate)
@@ -105,7 +143,31 @@ return "$strDay $strMonthThai $strYear";
           <div id="images" class="col-md-10 ml-auto mr-auto">
 
 
+            <h5>Product ของฉัน</h5>
+            <hr>
+              <div class="row collections">
 
+
+                @if($product)
+                  @foreach($product as $products)
+
+                <div class="col-6 col-md-3">
+                  <a class="example-image-link" href="{{url('product/'.$products->ids)}}" >
+                  <div class="card">
+                    <div class="card-body">
+                      <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class=" mar-bot ">
+                      <h6 class="title1">{{$products->product_name}}</h6>
+                      <span class="display-price">{{$products->shop_name}}</span>
+                    </div>
+                  </div>
+                  </a>
+                </div>
+
+                @endforeach
+              @endif
+
+
+              </div>
 
                     </div>
 
