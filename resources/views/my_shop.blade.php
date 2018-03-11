@@ -106,7 +106,7 @@ a.ab {
     background: #fff;
     cursor: pointer;
     display: inline-block;
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 400;
     line-height: 17px;
     padding-left: 2px;
