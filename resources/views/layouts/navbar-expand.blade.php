@@ -40,23 +40,18 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" >
-                          <i class="fa fa-twitter"></i>
-                          <p class="d-lg-none d-xl-none">Twitter</p>
+                      <a class="nav-link" rel="tooltip" title="Shop ของฉัน" data-placement="bottom" >
+                          <i class="now-ui-icons shopping_shop"></i>
+                          <p class="d-lg-none d-xl-none">Shop ของฉัน</p>
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" >
-                          <i class="fa fa-facebook-square"></i>
-                          <p class="d-lg-none d-xl-none">Facebook</p>
+                      <a class="nav-link" rel="tooltip" title="สินค้าของฉัน" data-placement="bottom" >
+                          <i class="now-ui-icons objects_spaceship"></i>
+                          <p class="d-lg-none d-xl-none">สินค้าของฉัน</p>
                       </a>
                   </li>
-                  <li class="nav-item">
-                      <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" >
-                          <i class="fa fa-instagram"></i>
-                          <p class="d-lg-none d-xl-none">Instagram</p>
-                      </a>
-                  </li>
+
                   <li class="nav-item">
                       <a class="nav-link" href="{{url('logout')}}" >
                           <i class="now-ui-icons ui-1_lock-circle-open"></i>
