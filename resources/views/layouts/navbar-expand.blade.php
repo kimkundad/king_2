@@ -40,13 +40,13 @@
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" rel="tooltip" title="Shop ของฉัน" data-placement="bottom" >
+                      <a class="nav-link" href="{{url('my_shop')}}" rel="tooltip" title="Shop ของฉัน" data-placement="bottom" >
                           <i class="now-ui-icons shopping_shop"></i>
                           <p>Shop</p>
                       </a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" rel="tooltip" title="สินค้าของฉัน" data-placement="bottom" >
+                      <a class="nav-link" href="{{url('my_product')}}" rel="tooltip" title="สินค้าของฉัน" data-placement="bottom" >
                           <i class="now-ui-icons objects_spaceship"></i>
                           <p>Product</p>
                       </a>

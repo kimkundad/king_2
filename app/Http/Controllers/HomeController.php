@@ -82,6 +82,40 @@ class HomeController extends Controller
 
     }
 
+    public function my_shop(){
+
+      $shop = DB::table('shops')->select(
+          'shops.*'
+          )
+          ->orderBy('shops.id', 'desc')
+          ->get();
+
+    $data['shop'] = $shop;
+
+      $data['template'] = 2;
+      return view('my_shop', $data);
+
+    }
+
+
+    public function my_product(){
+
+      $product = DB::table('products')->select(
+            'products.*',
+            'products.id as ids',
+            'categories.*'
+            )
+            ->leftjoin('categories','categories.id', 'products.cat_id')
+            ->orderBy('products.id', 'desc')
+            ->get();
+
+    $data['shop'] = $product;
+
+      $data['template'] = 2;
+      return view('my_product', $data);
+
+    }
+
     public function add_num_stock(Request $request){
 
       $this->validate($request, [

@@ -46,6 +46,9 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('new_album/{id}', 'HomeController@new_album')->name('new_album');
   Route::post('add_new_albums', 'HomeController@add_new_albums');
   Route::post('add_num_stock', 'HomeController@add_num_stock');
+  Route::get('/my_shop', 'HomeController@my_shop')->name('my_shop');
+  Route::get('/my_product', 'HomeController@my_product')->name('my_product');
+
 
 
   Route::get('admin/dashboard', 'DashboardController@index');
