@@ -288,6 +288,10 @@ return "$strDay $strMonthThai $strYear";
                                     <h6>รูปภาพประกอบสินค้า</h6>
                                     <hr>
 
+
+                                    </div>
+
+
                                     @if($img_all)
                                     @foreach($img_all as $img_u)
                                     <div class="col-6 col-md-6">
@@ -297,7 +301,6 @@ return "$strDay $strMonthThai $strYear";
                                     </div>
                                     @endforeach
                                     @endif
-                                    </div>
 
 
 
