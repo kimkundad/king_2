@@ -160,10 +160,12 @@ return "$strDay $strMonthThai $strYear";
                             <br><br>
 
                             <div class="row">
-                              <br>
-                              <h6>ข้อมูลการตัดสินค้า</h6>
+
 
                               <div class="col-md-10 ml-auto mr-auto">
+
+                                <br>
+                                <h6>ข้อมูลการตัดสินค้า</h6>
 
                                 <button class="btn btn-info pull-right" data-toggle="modal" data-target="#myModal">
                                     เพิ่มรายการ
@@ -284,7 +286,7 @@ return "$strDay $strMonthThai $strYear";
 
                                   <div class="col-md-10 ml-auto mr-auto">
                                     <h6>รูปภาพประกอบสินค้า</h6>
-                                    </div>
+                                    <hr>
 
                                     @if($img_all)
                                     @foreach($img_all as $img_u)
@@ -295,6 +297,9 @@ return "$strDay $strMonthThai $strYear";
                                     </div>
                                     @endforeach
                                     @endif
+                                    </div>
+
+
 
 
 
