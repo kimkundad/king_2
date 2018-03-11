@@ -287,16 +287,17 @@ return "$strDay $strMonthThai $strYear";
                                   <div class="col-md-10 ml-auto mr-auto">
                                     <h6>รูปภาพประกอบสินค้า</h6>
                                     <hr>
-
+                                    <div class="row collections">
                                     @if($img_all)
                                     @foreach($img_all as $img_u)
-                                    <div class="col-5 col-md-5">
+                                    <div class="col-6 col-md-6">
                                       <a class="example-image-link" href="{{url('admin/assets/gallery_product/'.$img_u->image)}}" >
                                       <img src="{{url('admin/assets/gallery_product/'.$img_u->image)}}" alt="{{$product->product_name}}" class="img-raised mar-bot ">
                                       </a>
                                     </div>
                                     @endforeach
                                     @endif
+                                    </div>
                                     </div>
 
 
