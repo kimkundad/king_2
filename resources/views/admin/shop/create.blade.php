@@ -200,7 +200,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group{{ $errors->has('provience_id') ? ' has-error' : '' }}">
                                                 <label>จังหวัด/ PROVIENCE*</label>
-                                                <select name="provience_id" class="form-control border-input js-example-basic-single" required="">
+                                                <select name="provience_id" class="form-control border-input js-example-basic-single" >
                                                     <option value="">-- เลือกจังหวัด --</option>
 
 
@@ -234,14 +234,14 @@
                                         <div class="col-md-6" style="padding: 12px;">
                                             <div class="form-group{{ $errors->has('lat') ? ' has-error' : '' }}">
                                                 <label>latitude*</label>
-                                                <input type="text" class="form-control border-input" name="lat" id="lat" size="10" value="{{ old('lat') }}" required>
+                                                <input type="text" class="form-control border-input" name="lat" id="lat" size="10" value="{{ old('lat') }}" >
 
                                             </div>
                                         </div>
                                         <div class="col-md-6" style="padding: 12px;">
                                             <div class="form-group{{ $errors->has('lng') ? ' has-error' : '' }}">
                                                 <label>longitude*</label>
-                                                <input type="text" class="form-control border-input" name="lng" id="lng" size="10" value="{{ old('lng') }}" required>
+                                                <input type="text" class="form-control border-input" name="lng" id="lng" size="10" value="{{ old('lng') }}" >
 
                                             </div>
                                        </div>
