@@ -109,17 +109,19 @@ return "$strDay $strMonthThai $strYear";
 
           <div id="images" class="col-md-10 ml-auto mr-auto">
 
+
+            <h5>Shop ของฉัน</h5>
+            <hr>
               <div class="row collections">
 
-                <h5>Shop ของฉัน</h5>
-                <hr>
+
 
 
                 <div class="col-6 col-md-3">
                   <a class="example-image-link" href="{{url('')}}" >
                   <div class="card">
                     <div class="card-body">
-                      <img src="https://lh3.googleusercontent.com/lwr6G_ATC66LavAnNEcg8sRSoX-z8v3d97hrCEL8DOkQOmy82tUmcVqBhVCuOvJfAQ=w170-rw" alt="" class="img-raised mar-bot ">
+                      <img src="https://lh3.googleusercontent.com/lwr6G_ATC66LavAnNEcg8sRSoX-z8v3d97hrCEL8DOkQOmy82tUmcVqBhVCuOvJfAQ=w170-rw" alt="" class=" mar-bot ">
                     </div>
                   </div>
                   </a>
