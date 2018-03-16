@@ -89,9 +89,14 @@ font-weight: 500;
             <div class="row">
               <div class="col-md-12" style="padding-right: 15px;">
                             <div class="form-group">
+  
+
+
+
+
                 <label for="exampleInputFile">เลือกรูปภาพ (*2รูปขึ้นไป)</label>
 
-                <input type="file" name="img" class="form-control" multiple>
+                <input type="file" name="product_image[]" class="form-control" accept="image/*" multiple>
 
                 </div>
                 <div class="">
