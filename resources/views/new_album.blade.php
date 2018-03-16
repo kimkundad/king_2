@@ -91,7 +91,7 @@ font-weight: 500;
                             <div class="form-group">
                 <label for="exampleInputFile">Image input</label>
 
-                <input id="file-0a" class="file" type="file" name="product_image[]" accept="image/*" multiple>
+                <input type="file" name="img" class="form-control" multiple>
 
                 </div>
                 <div class="">
