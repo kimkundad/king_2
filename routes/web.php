@@ -60,11 +60,17 @@ Route::group(['middleware' => 'auth'], function () {
   Route::get('admin/category/del/{id}', 'CategoryController@del_cat');
   Route::post('property_image_del', 'ProductController@property_image_del');
   Route::post('api/post_status', 'ProductController@post_status');
+  Route::post('api/post_status_shop', 'ProductController@post_status_shop');
 
   Route::resource('admin/albums', 'AlbumController');
   Route::get('admin/new_album/{id}', 'AlbumController@new_album');
 
   Route::get('admin/new_file/{id}', 'AlbumController@new_file');
+
+
+
+  Route::resource('admin/order', 'OrderController');
+  Route::get('admin/new_order/{id}', 'OrderController@new_order');
 
   Route::post('admin/add_file', 'AlbumController@add_file');
 

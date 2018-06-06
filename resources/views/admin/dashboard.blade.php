@@ -20,8 +20,8 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Capacity</p>
-                                            105GB
+                                            <p>สินค้าทั้งหมด</p>
+                                            {{number_format($count_pro)}}
                                         </div>
                                     </div>
                                 </div>
@@ -45,8 +45,9 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Revenue</p>
-                                            $1,345
+                                            <p>จำนวน Shop</p>
+                                            {{number_format($count_shop)}}
+
                                         </div>
                                     </div>
                                 </div>
@@ -70,8 +71,8 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Errors</p>
-                                            23
+                                            <p>รายการเบิก</p>
+                                            {{$count_stock}}
                                         </div>
                                     </div>
                                 </div>
@@ -95,8 +96,8 @@
                                     </div>
                                     <div class="col-xs-7">
                                         <div class="numbers">
-                                            <p>Followers</p>
-                                            +45
+                                            <p>หมวดหมู่</p>
+                                            {{$count_cat}}
                                         </div>
                                     </div>
                                 </div>

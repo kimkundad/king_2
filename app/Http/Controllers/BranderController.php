@@ -98,6 +98,17 @@ class BranderController extends Controller
           ->orderBy('shops.id', 'desc')
           ->get();
 
+          $product = DB::table('products')->select(
+                'products.*',
+                'products.id as ids',
+                'categories.*'
+                )
+                ->leftjoin('categories','categories.id', 'products.cat_id')
+                ->where('products.shop_id', $id)
+                ->where('products.user_id', Auth::user()->id)
+                ->orderBy('products.id', 'desc')
+                ->paginate(15);
+
 
           foreach ($shop as $obj) {
 
@@ -123,7 +134,7 @@ class BranderController extends Controller
           ->where('id', $id)
           ->where('user_id', Auth::user()->id)
           ->first();
-
+      $data['product'] = $product;
       $data['brander'] = $brander;
       $data['url'] = url('admin/brander/'.$id);
       $data['method'] = "put";

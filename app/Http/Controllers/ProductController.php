@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\product;
+use App\shop;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\ImageManagerStatic as Image;
 use \Milon\Barcode\DNS1D;
@@ -135,6 +136,7 @@ class ProductController extends Controller
            $constraint->aspectRatio();
          })->save('admin/assets/product/'.$input['imagename']);
 
+
          $package = new product;
          $package->user_id = Auth::user()->id;
          $package->cat_id = $request['product_cat'];
@@ -187,8 +189,10 @@ class ProductController extends Controller
               'stocks.id as st_id',
               'stocks.created_at as created_stock',
               'products.*',
+              'shops.*',
               'users.*'
               )
+              ->leftjoin('shops','shops.id', 'stocks.shop_id')
               ->leftjoin('products','products.id', 'stocks.product_id')
               ->leftjoin('users','users.id', 'stocks.user_id')
               ->where('products.id', $id)
@@ -225,6 +229,31 @@ class ProductController extends Controller
 
 
     }
+
+
+
+    public function post_status_shop(Request $request){
+
+      $user = shop::findOrFail($request->product_id);
+
+              if($user->shop_status == 1){
+                  $user->shop_status = 0;
+              } else {
+                  $user->shop_status = 1;
+              }
+
+
+      return response()->json([
+      'data' => [
+        'success' => $user->save(),
+      ]
+    ]);
+
+
+    }
+
+
+
 
 
 

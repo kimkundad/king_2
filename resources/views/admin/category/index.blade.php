@@ -60,7 +60,7 @@ return "$strDay $strMonthThai $strYear";
                                         <td>{{$u->id}}</td>
                                         <td>{{$u->cat_name}}</td>
                                         <td>{{$u->options}}</td>
-                                        <td>{{$u->options2}}</td>
+                                        <td>{{number_format($u->options2)}}</td>
                                         <td><?php echo DateThai($u->created_at); ?></td>
                                         <td>
 

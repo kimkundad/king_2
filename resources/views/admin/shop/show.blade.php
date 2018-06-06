@@ -219,80 +219,7 @@ h5, .h5 {
 
 
 
-                    <div class=" col-lg-8 col-md-7">
-                      <div class="card">
-                          <div class="header">
 
-                              <div class="col-md-6" style="padding-left: 0px;">
-                              <h4 class="title">สินค้าของ {{$objs->shop_name}}</h4>
-                              <br>
-                              </div>
-
-                              <div class="col-md-6" style="padding-left: 0px; ">
-                                <a class="btn btn-default btn-sm" href="{{url('admin/product_new/'.$objs->p_id)}}" role="button" style="padding-left: 0px; ">
-                                <i class="fa fa-plus"></i> เพิ่ม สินค้าใหม่</a>
-                                </div>
-
-                          </div>
-                          <div class="content table-responsive table-full-width" style="min-height:350px; padding-bottom: 120px;">
-
-                            <table class="table table-striped">
-                              <thead>
-                                <tr>
-                                  <th>ID</th>
-                                  <th>ชื่อสินค้า</th>
-                                  <th>หมวดหมู่</th>
-                                  <th>คงเหลือ</th>
-                                  <th>ปิด/เปิด</th>
-                                  <th>จัดการ</th>
-                                </tr>
-                              </thead>
-                                <tbody>
-
-
-            @if($product)
-              @foreach($product as $products)
-                                    <tr id="{{$products->ids}}">
-                                      <td>{{$products->product_code}}</td>
-                                      <td>{{$products->product_name}}</td>
-                                      <td>{{$products->cat_name}}</td>
-                                      <td>{{number_format($products->product_sum)}}</td>
-                                      <td>
-
-                                        <input type="checkbox" name="my-checkbox" id="switch-size" data-size="mini"
-                       @if($products->product_status == 1)
-                        checked="checked"
-                        @endif
-                        />
-                                      </td>
-                                      <td>
-
-                                        <div class="dropdown">
-                                              <a href="#" class="btn dropdown-toggle btn-sm" data-toggle="dropdown">
-                                                  จัดการ
-                                                  <b class="caret"></b>
-                                              </a>
-                                              <ul class="dropdown-menu">
-                                                <li><a href="{{url('admin/product/'.$products->ids)}}">ดูข้อมูล</a></li>
-                                                <li><a href="{{url('admin/product/'.$products->ids.'/edit')}}">แก้ไข</a></li>
-                                                <li><a href="{{url('admin/product/del/'.$products->ids)}}">ลบข้อมูล</a></li>
-                                              </ul>
-                                        </div>
-
-                                        </td>
-                                    </tr>
-              @endforeach
-            @endif
-
-                                </tbody>
-                            </table>
-
-                                {{ $product->links() }}
-
-
-                          </div>
-                      </div>
-                    </div>
 
 
 
@@ -377,6 +304,86 @@ h5, .h5 {
                             </table>
 
                                 {{ $product->links() }}
+
+
+                          </div>
+                      </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class=" col-lg-8 col-md-7">
+                      <div class="card">
+                          <div class="header">
+
+                              <div class="col-md-6" style="padding-left: 0px;">
+                              <h4 class="title">รายการเบิกสินค้า</h4>
+                              <br>
+                              </div>
+
+                              <div class="col-md-6" style="padding-left: 0px; ">
+                                <a class="btn btn-default btn-sm" href="{{url('admin/new_order/'.$objs->p_id)}}" role="button" style="padding-left: 0px; ">
+                                <i class="fa fa-plus"></i> ทำรายการใหม่</a>
+                                </div>
+
+                          </div>
+                          <div class="content table-responsive table-full-width" style=" padding-bottom: 70px;">
+
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>ชื่อสินค้า</th>
+                                  <th>จำนวนเบิก</th>
+                                  <th>คนเบิก</th>
+                                  <th>วันที่เบิก</th>
+
+                                  <th>จัดการ</th>
+                                </tr>
+                              </thead>
+                                <tbody>
+
+
+
+                                  @if($order)
+                                    @foreach($order as $orders)
+                                                          <tr id="{{$orders->id_o}}">
+
+                                                            <td>{{$orders->product_name}}</td>
+                                                            <td>{{$orders->product_total}}</td>
+                                                            <td>{{$orders->name}}</td>
+                                                            <td><?php echo DateThai($orders->created_ats); ?></td>
+
+
+                                                            <td>
+
+                                                              <div class="dropdown">
+                                                                    <a href="#" class="btn dropdown-toggle btn-sm" data-toggle="dropdown">
+                                                                        จัดการ
+                                                                        <b class="caret"></b>
+                                                                    </a>
+                                                                    <ul class="dropdown-menu">
+
+                                                                      <li><a href="{{url('admin/order/'.$orders->id_o.'/edit')}}">แก้ไข</a></li>
+                                                                      <li><a href="{{url('admin/order/del/'.$orders->id_o)}}">ลบข้อมูล</a></li>
+                                                                    </ul>
+                                                              </div>
+
+                                                              </td>
+                                                          </tr>
+                                    @endforeach
+                                  @endif
+
+
+
+
+                                </tbody>
+                            </table>
+
+                            {{ $order->links() }}
 
 
                           </div>

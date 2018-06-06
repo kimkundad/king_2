@@ -32,7 +32,7 @@ class ShopController extends Controller
 
     $data['objs'] = $shop;
 
-    $data['objs'] = $shop;
+
     $data['header'] = "Shop";
     return view('admin.shop.index', $data);
     }
@@ -195,8 +195,32 @@ class ShopController extends Controller
               $album->sum_album = $options;
             }
 
+
+
+
+            $order = DB::table('stocks')->select(
+                'stocks.*',
+                'stocks.id as id_o',
+                'stocks.created_at as created_ats',
+                'products.*',
+                'users.*'
+                )
+                ->leftjoin('users', 'users.id', '=', 'stocks.user_id')
+                ->leftjoin('products', 'products.id', '=', 'stocks.product_id')
+                ->where('stocks.shop_id', $id)
+                ->orderBy('stocks.id', 'desc')
+                ->paginate(10);
+
+
+
+
+
+
             //dd($albums);
 
+
+
+    $data['order'] = $order;
     $data['employee'] = $employee;
     $data['file_shop'] = $file_shop;
     $data['albums'] = $albums;

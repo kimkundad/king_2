@@ -40,9 +40,16 @@ class StockController extends Controller
               ->get();
 
 
+              $shop = DB::table('shops')->select(
+                  'shops.*'
+                  )
+                  ->where('user_id', Auth::user()->id)
+                  ->get();
+
+
         $data['id_pro'] = $id;
         $data['products'] = $products;
-
+        $data['shop'] = $shop;
         $data['method'] = "post";
         $data['url'] = url('admin/stock_add');
         $data['header'] = "สร้างรายการ ของคุณใหม่";
@@ -161,7 +168,8 @@ class StockController extends Controller
 
       $this->validate($request, [
        'product_id' => 'required',
-       'product_total' => 'required'
+       'product_total' => 'required',
+       'shop_id' => 'required'
       ]);
 
       $product = DB::table('products')->select(
@@ -175,6 +183,7 @@ class StockController extends Controller
       $package = new stock;
       $package->user_id = Auth::user()->id;
       $package->product_id = $request['product_id'];
+      $package->shop_id = $request['shop_id'];
       $package->product_total = $request['product_total'];
       $package->detail = $request['product_detail'];
       $package->save();

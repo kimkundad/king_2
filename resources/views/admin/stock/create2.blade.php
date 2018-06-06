@@ -105,6 +105,28 @@ img {
                                                       @endif
                                                   </div>
 
+                                                  <div class="form-group{{ $errors->has('shop_id') ? ' has-error' : '' }}">
+                                                      <label>เลือก shop*</label>
+
+                                                      <select name="shop_id" class="form-control border-input js-example-basic-single" required="">
+                                                          <option value="">-- เลือก shop --</option>
+
+
+                                                          @if(isset($shop))
+                                                            @foreach($shop as $u)
+                                                                <option value="{{$u->id}}">{{$u->shop_name}}</option>
+                                                            @endforeach
+                                                          @endif
+
+                                                  </select>
+
+                                                      @if ($errors->has('shop_id'))
+                                                          <span class="help-block">
+                                                              <strong>กรุณาเลือก shop ของคุณด้วย</strong>
+                                                          </span>
+                                                      @endif
+                                                  </div>
+
 
 
 

@@ -51,7 +51,7 @@
                                         <td>{{$u->product_code}}</td>
                                         <td>{{$u->product_name}}</td>
                                         <td>{{$u->cat_name}}</td>
-                                        <td>{{$u->product_sum}}</td>
+                                        <td>{{number_format($u->product_sum)}}</td>
                                         <td>
 
                                           <input type="checkbox" name="my-checkbox" id="switch-size" data-size="mini"

@@ -1,6 +1,7 @@
 @extends('admin.layouts.template')
 @section('stylesheet')
 <link href="{{URL::asset('assets/vendor/jstree/themes/default/style.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('admin/assets/bootstrap-switch-master/css/bootstrap3/bootstrap-switch.css')}}" />
 <style>
 .jstree-default .colored {
     color: #0088cc !important;
@@ -48,7 +49,7 @@ border-radius: 5px 5px 5px 5px;
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-4">
                       <div class="card">
 
 
@@ -136,82 +137,8 @@ border-radius: 5px 5px 5px 5px;
                   </div>
 
 
-                  <div class="col-md-6">
-                      <div class="card">
-                          <div class="header">
-                              <h4 class="title">Tree-view</h4>
 
-                          </div>
-
-
-                          <div class="content">
-                                          <div class="row">
-                                              <div class="col-md-12" >
-
-                                                <div id="treeBasic">
-                                                  <ul>
-                                                    <li class="colored" data-jstree='{ "opened" : true }'>
-                                                       {{$brander->branders_name}}
-                                                      <ul>
-
-                                                        @if($shop)
-                                                        @foreach($shop as $u)
-                                                        <li data-jstree='{ "opened" : true }'>
-                                                           Shop : {{$u->shop_name}}
-
-                                                           <ul>
-                                                             @if($u->options)
-                                                             @foreach($u->options as $j)
-
-                                                             <li data-jstree='{ "icon" : "{{url('img/icon.png')}}" }'>
-                                   														 {{$j}}
-                                   													</li>
-
-                                                             @endforeach
-                                                           @endif
-
-                               														</ul>
-
-
-
-
-                                                        </li>
-                                                        @endforeach
-                                                      @endif
-
-
-                                                    <!--    <li data-jstree='{ "opened" : true }'>
-                                                           Shop {{$brander->branders_name}} 2
-                                                          <ul>
-                                                            <li data-jstree='{ "disabled" : true }'>
-                                                               Product 1
-                                                            </li>
-                                                            <li data-jstree='{ "type" : "file" }'>
-                                                               Child Node
-                                                            </li>
-                                                            <li data-jstree='{ "icon" : "fa fa-picture-o" }'>
-                                                               Custom Icon
-                                                            </li>
-                                                          </ul>
-                                                        </li> -->
-
-
-                                                      </ul>
-                                                    </li>
-
-                                                  </ul>
-                                                </div>
-
-
-                                              </div>
-                                          </div>
-                          </div>
-
-                      </div>
-                  </div>
-
-
-                  <div class="col-md-6">
+                  <div class="col-md-8">
                       <div class="card">
 
                           <div class="content">
@@ -240,6 +167,93 @@ border-radius: 5px 5px 5px 5px;
 
                       </div>
                   </div>
+
+
+
+                  <div class=" col-lg-8 col-md-7">
+                    <div class="card">
+                        <div class="header">
+
+                            <div class="col-md-6" style="padding-left: 0px;">
+                            <h4 class="title">สินค้าของ {{$brander->branders_name}}</h4>
+                            <br>
+                            </div>
+
+                            <div class="col-md-6" style="padding-left: 0px; ">
+                              <a class="btn btn-default btn-sm" href="{{url('admin/product_new/'.$brander->id)}}" role="button" style="padding-left: 0px; ">
+                              <i class="fa fa-plus"></i> เพิ่ม สินค้าใหม่</a>
+                              </div>
+
+                        </div>
+                        <div class="content table-responsive table-full-width" style="min-height:350px; padding-bottom: 120px;">
+
+                          <table class="table table-striped">
+                            <thead>
+                              <tr>
+
+                                <th>ชื่อสินค้า</th>
+                                <th>หมวดหมู่</th>
+                                <th>คงเหลือ</th>
+                                <th>ปิด/เปิด</th>
+                                <th>จัดการ</th>
+                              </tr>
+                            </thead>
+                              <tbody>
+
+
+          @if($product)
+            @foreach($product as $products)
+
+                    <tr id="{{$products->id}}">
+
+                                    <td>{{$products->product_code}}</td>
+                                    <td>{{$products->product_name}}</td>
+                                    <td>{{$products->cat_name}}</td>
+                                    <td>{{number_format($products->product_sum)}}</td>
+                                    <td>
+
+                                      <input type="checkbox" name="my-checkbox" id="switch-size" data-size="mini"
+                     @if($products->product_status == 1)
+                      checked="checked"
+                      @endif
+                      />
+                                    </td>
+                                    <td>
+
+                                      <div class="dropdown">
+                                            <a href="#" class="btn dropdown-toggle btn-sm" data-toggle="dropdown">
+                                                จัดการ
+                                                <b class="caret"></b>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                              <li><a href="{{url('admin/product/'.$products->ids)}}">ดูข้อมูล</a></li>
+                                              <li><a href="{{url('admin/product/'.$products->ids.'/edit')}}">แก้ไข</a></li>
+                                              <li><a href="{{url('admin/product/del/'.$products->ids)}}">ลบข้อมูล</a></li>
+                                            </ul>
+                                      </div>
+
+                                      </td>
+                                  </tr>
+            @endforeach
+          @endif
+
+                              </tbody>
+                          </table>
+
+                              {{ $product->links() }}
+
+
+                        </div>
+                    </div>
+                  </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -274,5 +288,48 @@ border-radius: 5px 5px 5px 5px;
 @section('scripts')
 <script src="{{URL::asset('assets/vendor/jstree/jstree.js')}}"></script>
 <script src="{{URL::asset('assets/js/examples/examples.treeview.js')}}"></script>
+
+<script src="{{url('admin/assets/js/bootstrap-notify.js')}}"></script>
+<script src="{{asset('admin/assets/bootstrap-switch-master/js/bootstrap-switch.js')}}"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("[name='my-checkbox']").bootstrapSwitch();
+//  $("input:checkbox").change(function() {
+
+$("[name='my-checkbox']").on('switchChange.bootstrapSwitch',function(){
+    var product_id = $(this).closest('tr').attr('id');
+
+    $.ajax({
+            type:'POST',
+            url:'{{asset('api/post_status')}}',
+            headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+            data: { "product_id" : product_id },
+            success: function(data){
+              if(data.data.success){
+
+
+                type = ['success'];
+                color = Math.floor((Math.random() * 4) + 1);
+                $.notify({
+                    icon: "ti-gift",
+                    message: "ยินดีด้วย ได้ทำการแก้ไขข้อมูล สำเร็จเรียบร้อยแล้วค่ะ"
+
+                  },{
+                      type: type[color],
+                      timer: 2000,
+                      placement: {
+                          from: 'top',
+                          align: 'right'
+                      }
+                  });
+
+//http://localhost/king_2/public/api/post_status
+
+              }
+            }
+        });
+    });
+});
+</script>
 
 @stop('scripts')

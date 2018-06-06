@@ -132,7 +132,8 @@ h5, .h5 {
                     <div class=" col-lg-8 col-md-7">
                       <div class="card">
                           <div class="header">
-
+                              <h4 class="title">ข้อมูลการเบิกสินค้ามายัง Shop</h4>
+                              <hr>
                               <div class="col-md-6" style="padding-left: 0px;">
                               <h4 class="title">จำนวนสินค้า {{number_format($product->product_sum)}} </h4>
                               <br>
@@ -165,8 +166,8 @@ h5, .h5 {
                                   <th>วันที่</th>
                                     <th>ชื่อสินค้า</th>
                                     <th>จำนวนตัด</th>
-                                    <th>คงเหลือ</th>
-                                    <th>ผู้ใช้งาน</th>
+
+                                    <th>shop</th>
                                     <th>จัดการ</th>
                                 </tr>
                               </thead>
@@ -180,8 +181,8 @@ h5, .h5 {
                                                               <td><?php echo DateThai($u->created_stock); ?> </td>
                                                               <td>{{$u->product_name}}</td>
                                                               <td>{{$u->product_total}}</td>
-                                                              <td>{{$u->product_sum}}</td>
-                                                              <td>{{$u->name}}</td>
+
+                                                              <td>{{$u->shop_name}}</td>
 
                                                               <td>
 
