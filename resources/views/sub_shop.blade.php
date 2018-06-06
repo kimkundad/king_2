@@ -155,7 +155,7 @@ return "$strDay $strMonthThai $strYear";
                             <div class="space-50"></div>
                         <div class="tab-content gallery">
 
-                          <div class="tab-pane" id="link" role="tabpanel">
+                          <div class="tab-pane active" id="link" role="tabpanel">
                               <div class="col-md-10 ml-auto mr-auto">
                                 <h6>สินค้า ทั้งหมด</h6>
                                 <hr>
@@ -182,7 +182,7 @@ return "$strDay $strMonthThai $strYear";
                           </div>
 
 
-                            <div class="tab-pane active" id="home" role="tabpanel">
+                            <div class="tab-pane " id="home" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
                                   <h6>ข้อมูลของ {{$objs->shop_name}}</h6>
 
