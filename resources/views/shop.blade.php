@@ -194,7 +194,7 @@ font-weight: 500;
 
                                         <div class="row">
 
-                                          <div class="col-md-12 ml-auto mr-auto">
+                                          <div class="col-md-10 ml-auto mr-auto">
 
                                             <h6>Shop ที่เกี่ยวข้าง</h6>
                                             <hr>
@@ -268,25 +268,23 @@ font-weight: 500;
 }
 </style>
 
-                                          <div class="col-md-11 ml-auto mr-auto">
+                                          <div class="col-md-11 ml-auto mr-auto" style="padding-right: 5px; padding-left: 5px;">
 
                                             <h6>สินค้า ทั้งหมด</h6>
                                             <hr>
 
-                                              <div class="row collections">
+                                              <div class="row collections" style="    margin-right: -5px; margin-left: -5px;">
 
                                                 @if($product)
                                                   @foreach($product as $products)
 
-                                                  <div class="col-6 col-md-3">
+                                                  <div class="col-6 col-md-3" style="padding-right: 5px; padding-left: 5px;">
 
-                                                    <a href="{{url('product/'.$products->ids)}}" class="ab">
+                                                    <a href="{{url('product/'.$products->ids)}}" class="ab img-raised">
+                                                      <p class="text-muted" style="margin-bottom: 5px; font-size: 12px;">{{$products->product_name}}</p>
+                                                      <div style="max-height: 195px; min-height: 195px; overflow: hidden; position: relative;" >
+                                                      <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class=" mar-bot" >
 
-                                                      <div style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
-                                                      <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class="img-raised mar-bot">
-                                                      <div class="short_info">
-                                      									{{$products->product_name}}
-                                      								</div>
                                                     </div>
                                                     </a>
 
