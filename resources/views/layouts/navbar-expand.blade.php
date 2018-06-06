@@ -8,8 +8,8 @@
     @endif
       <div class="container">
           <div class="navbar-translate">
-              <a class="navbar-brand" href="{{url('home')}}" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" >
-                APP LinChak
+              <a class="navbar-brand" href="{{url('home')}}" rel="tooltip" title="Designed by Invision. Coded by Creative Tim" data-placement="bottom" style="padding-top: .0rem;  padding-bottom: .0rem; display: unset;">
+                <img src="{{url('assets/img/logo/linchak-logo.png')}}" style="height:55px;">
               </a>
               <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-bar bar1"></span>
