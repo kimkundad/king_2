@@ -196,7 +196,7 @@ font-weight: 500;
 
                                         <div class="row">
 
-                                          <div class="col-md-10 ml-auto mr-auto">
+                                          <div class="col-md-12 ml-auto mr-auto">
 
                                             <h6>Shop ที่เกี่ยวข้าง</h6>
                                             <hr>
