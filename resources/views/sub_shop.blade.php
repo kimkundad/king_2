@@ -129,12 +129,12 @@ return "$strDay $strMonthThai $strYear";
                             <div class="nav-align-center">
                                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="tab" href="#profile" role="tablist">
+                                        <a class="nav-link active" data-toggle="tab" href="#profile" role="tablist">
                                             <i class="now-ui-icons design_image"></i>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="tab" href="#home" role="tablist">
+                                        <a class="nav-link " data-toggle="tab" href="#home" role="tablist">
                                             <i class="now-ui-icons business_badge"></i>
                                         </a>
                                     </li>
@@ -155,7 +155,7 @@ return "$strDay $strMonthThai $strYear";
                             <div class="space-50"></div>
                         <div class="tab-content gallery">
 
-                          <div class="tab-pane active" id="link" role="tabpanel">
+                          <div class="tab-pane " id="link" role="tabpanel">
                               <div class="col-md-10 ml-auto mr-auto">
                                 <h6>สินค้า ทั้งหมด</h6>
                                 <hr>
