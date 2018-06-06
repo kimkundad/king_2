@@ -202,7 +202,7 @@ font-weight: 500;
                                             <div class="row">
                                                       @if($shop)
                                                   @foreach($shop as $u)
-                                                        <div class="col-6 col-md-3">
+                                                        <div class="col-6 col-md-3" style="padding-right: 2px; padding-left: 2px;">
                                                           <a href="{{url('sub_shop/'.$u->id)}}">
                                                             <p class="text-muted" style="margin-bottom: 5px; font-size: 12px;">{{$u->shop_name}}</p>
 

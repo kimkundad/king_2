@@ -65,7 +65,7 @@ font-weight: 500;
                             @foreach($img_all as $img_u)
                             <div class="col-4" style="padding-right: 2px; padding-left: 2px;">
                               <a class="example-image-link" href="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" >
-                              <img src="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" alt="{{$shop_id->name}}" class="img-raised mar-bot ">
+                              <img src="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" alt="{{$shop_id->name}}" class="img-raised " style="margin-bottom: 4px;">
                               </a>
                             </div>
                             @endforeach
