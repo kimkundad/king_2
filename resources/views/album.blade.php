@@ -85,7 +85,6 @@ font-weight: 500;
                                     </div>
                                     <div class="modal-footer">
                                       <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
-                                      <div class="fb-share-button" data-href="{{url('album/'.$shop_id->id.'#image/'.$img_u->id)}}" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url('album/'.$shop_id->id.'#image/'.$img_u->id)}}" class="fb-xfbml-parse-ignore">แชร์</a></div>
                                     </div>
                                   </div>
                                 </div>
