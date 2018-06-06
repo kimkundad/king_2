@@ -56,7 +56,7 @@ font-weight: 500;
           <br><br>
           <div id="images">
 
-                        <div class="row magnific-gallery">
+                        <div class="row ">
 
                             <div class="col-12">
                               <p class="category" style="color: #2c2c2c;">{{$shop_id->name}}</p>
@@ -64,10 +64,32 @@ font-weight: 500;
                             @if($img_all)
                             @foreach($img_all as $img_u)
                             <div class="col-4" style="padding-right: 2px; padding-left: 2px;">
-                              <a class="example-image-link" href="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" >
+                              <a data-toggle="modal" data-target="#myModal-{{$img_u->id}}" >
                               <img src="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" alt="{{$shop_id->name}}" class="img-raised " style="margin-bottom: 4px;">
                               </a>
                             </div>
+
+
+                            <div class="modal fade" id="myModal-{{$img_u->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header" style="padding-top: 0px;">
+                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size:30px;top: 10px;"> &times;</button>
+                                      <br>
+                                    </div>
+                                    <div class="modal-body">
+
+                                      <img src="{{url('admin/assets/gallery_shop/'.$img_u->image)}}" alt="{{$shop_id->name}}" >
+                                      <br>
+                                      <div class="fb-comments" data-width="100%" data-href="{{url('album/'.$shop_id->id.'#image/'.$img_u->id)}}" data-numposts="5"></div>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+                                      <div class="fb-share-button" data-href="{{url('album/'.$shop_id->id.'#image/'.$img_u->id)}}" data-layout="button" data-size="large" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{url('album/'.$shop_id->id.'#image/'.$img_u->id)}}" class="fb-xfbml-parse-ignore">แชร์</a></div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                             @endforeach
                             @endif
 
@@ -105,6 +127,14 @@ $(this).magnificPopup({
 });
 </script>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v3.0&appId=203219603796007&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 @stop('scripts')
