@@ -273,7 +273,7 @@ return "$strDay $strMonthThai $strYear";
                                     <div id="map" style="width:100%; border:0; height:316px;" frameborder="0"></div>
                                 </div>
                             </div>
-                            <div class="tab-pane" id="profile" role="tabpanel">
+                            <div class="tab-pane active" id="profile" role="tabpanel">
                                 <div class="col-md-10 ml-auto mr-auto">
                                   <h6>album ทั้งหมด</h6>
                                   <hr>
