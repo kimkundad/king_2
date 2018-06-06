@@ -2,9 +2,9 @@
 
 
     @if($template == 1)
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400" style="    padding-top: 0.425rem; padding-bottom: 0.325rem;">
     @else
-    <nav class="navbar navbar-expand-lg bg-primary fixed-top" >
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top" style="    padding-top: 0.425rem; padding-bottom: 0.325rem;">
     @endif
       <div class="container">
           <div class="navbar-translate">
