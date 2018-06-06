@@ -243,6 +243,8 @@ font-weight: 500;
 
                                           <div class="text-center visible-sm visible-xs">
                                           <img src="{{url('assets/img/cr-banner_2.jpg')}}" class="img-responsive ">
+                                          <br>
+                                          <br>
                                           </div>
                                           <br>
 
@@ -267,6 +269,7 @@ font-weight: 500;
 </style>
 
                                           <div class="col-md-11 ml-auto mr-auto">
+
                                             <h6>สินค้า ทั้งหมด</h6>
                                             <hr>
 
