@@ -95,7 +95,7 @@ font-weight: 500;
                               </div>
 
                               <div class="hidden-sm hidden-xs">
-                                <p class="document-subtitle" style="margin-top: 10px;"><b>กลุ่มสินค้า : {{$brander->branders_group}}</b> , ร้านค้าประเภท : {{$brander->branders_type}} , วันที่สร้าง : <?php echo DateThai($brander->created_at); ?></p>
+                                <p class="document-subtitle" style="margin-top: 10px;"><b>กลุ่มสินค้า : {{$brander->branders_group}}</b> , ร้านค้าประเภท : {{$brander->branders_type}} </p>
                               </div>
 
 
@@ -145,20 +145,7 @@ font-weight: 500;
                               <p class="category-1">{{$brander->branders_group}}</p>
                             </th>
                           </tr>
-                          <tr>
-                            <th scope="row">
-                              <h5 class="h5-set">ร้านค้าประเภท</h5>
-                              <p class="category-1">{{$brander->branders_type}}</p>
-                            </th>
-                          </tr>
 
-
-                          <tr>
-                            <th scope="row">
-                              <h5 class="h5-set">วันที่สร้าง</h5>
-                              <p class="category-1"><?php echo DateThai($brander->created_at); ?></p>
-                            </th>
-                          </tr>
                         </tbody>
                         </table>
                     </div>
@@ -254,6 +241,51 @@ font-weight: 500;
 
                                           </div>
 
+                                          <hr>
+
+<style>
+
+.short_info {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    background: url(../img/shadow_tour.png) left bottom repeat-x;
+    width: 100%;
+    padding: 10px 10px 8px 5px;
+    color: #fff;
+    font-size: 13px;
+}
+</style>
+
+                                          <div class="col-md-11 ml-auto mr-auto">
+                                            <h6>สินค้า ทั้งหมด</h6>
+                                            <hr>
+
+                                              <div class="row collections">
+
+                                                @if($product)
+                                                  @foreach($product as $products)
+
+                                                  <div class="col-6 col-md-3">
+
+                                                    <a href="{{url('product/'.$products->ids)}}" class="ab">
+
+                                                      <div style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
+                                                      <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class="img-raised mar-bot">
+                                                      <div class="short_info">
+                                      									{{$products->product_name}}
+                                      								</div>
+                                                    </div>
+                                                    </a>
+
+                                                    <br>
+                                                  </div>
+                                                  @endforeach
+                                                @endif
+
+                                              </div>
+                                          </div>
+
 
 
 
@@ -275,7 +307,7 @@ font-weight: 500;
 
 
 
-                                  
+
 
 
 

@@ -184,27 +184,7 @@ return "$strDay $strMonthThai $strYear";
 
 
 
-                      <h6>สินค้า ทั้งหมด</h6>
-                      <hr>
-
-                        <div class="row collections">
-
-                          @if($product)
-                            @foreach($product as $products)
-
-                            <div class="col-6 col-md-3">
-
-                              <a href="{{url('product/'.$products->ids)}}" class="ab">
-                                <h5 class="h5-set">{{$products->product_name}} </h5>
-                                <p class="text-muted"> <?php echo DateThai($products->created_at); ?></p>
-                                <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class="img-raised mar-bot">
-                              </a>
-                              <br><br>
-                            </div>
-                            @endforeach
-                          @endif
-
-                        </div>
+                    
 
 
                         <h6>รายชื่อพนักงาน</h6>

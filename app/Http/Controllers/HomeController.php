@@ -62,6 +62,30 @@ class HomeController extends Controller
           ->where('id', $id)
           ->first();
 
+
+          $product = DB::table('products')->select(
+                'products.*',
+                'products.id as ids',
+                'categories.*'
+                )
+                ->leftjoin('categories','categories.id', 'products.cat_id')
+                ->where('products.shop_id', $id)
+                ->orderBy('products.id', 'desc')
+                ->get();
+
+
+          $total = DB::table('products')->select(
+                'products.*',
+                'categories.*'
+                )
+                ->leftjoin('categories','categories.id', 'products.cat_id')
+                ->where('products.shop_id', $id)
+                ->orderBy('products.id', 'desc')
+                ->sum('products.product_sum');
+
+          $data['product'] = $product;
+          $data['total'] = $total;
+
       $data['brander'] = $brander;
 
 
