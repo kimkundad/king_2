@@ -175,9 +175,7 @@ font-weight: 500;
 
 
 
-<div class="text-center visible-sm visible-xs">
-<img src="{{url('assets/img/cr-banner_2.jpg')}}" class="img-responsive ">
-</div>
+
 
 
                         <div class="section section-basic " style="padding-bottom: 15px;">
@@ -241,7 +239,18 @@ font-weight: 500;
 
                                           </div>
 
+
+
+                                          <div class="text-center visible-sm visible-xs">
+                                          <img src="{{url('assets/img/cr-banner_2.jpg')}}" class="img-responsive ">
+                                          </div>
+                                          <br>
+
                                           <hr>
+
+
+
+
 
 <style>
 
