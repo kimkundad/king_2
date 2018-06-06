@@ -46,6 +46,13 @@ font-weight: 500;
     border-radius: 50%;
     margin-right: 5px;
 }
+._50f7{
+  font-size: 14px;
+}
+._50f7 {
+    font-weight: 600;
+    font-size: 14px;
+}
 </style>
 
   <div class="section section-tabs" style="padding: 20px 0;">
@@ -73,7 +80,7 @@ font-weight: 500;
                             <div class="modal fade" id="myModal-{{$img_u->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
-                                    <div class="modal-header" style="padding-top: 0px;">
+                                    <div class="modal-header" style="padding-top: 15px;">
                                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="font-size:30px;top: 10px;"> &times;</button>
                                       <br>
                                     </div>
