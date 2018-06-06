@@ -194,19 +194,19 @@ font-weight: 500;
 
                                         <div class="row">
 
-                                          <div class="col-md-12 ml-auto mr-auto">
+                                          <div class="col-md-11 ml-auto mr-auto">
 
                                             <h6>Shop ที่เกี่ยวข้าง</h6>
                                             <hr>
 
-                                            <div class="row">
+                                            <div class="row collections">
                                                       @if($shop)
                                                   @foreach($shop as $u)
                                                         <div class="col-6 col-md-3" style="padding-right: 2px; padding-left: 2px;">
                                                           <a href="{{url('sub_shop/'.$u->id)}}">
                                                             <p class="text-muted" style="margin-bottom: 5px; font-size: 13px; font-weight: 600;">{{$u->shop_name}}</p>
 
-                                                            <img src="{{url('admin/assets/blog/'.$u->image_shop)}}" alt="{{$u->shop_name}}" class="img-raised mar-bot">
+                                                            <img src="{{url('admin/assets/blog/'.$u->image_shop)}}" alt="{{$u->shop_name}}" class=" mar-bot">
                                                           </a>
 
                                                         </div>
