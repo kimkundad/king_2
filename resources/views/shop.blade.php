@@ -204,7 +204,7 @@ font-weight: 500;
                                                   @foreach($shop as $u)
                                                         <div class="col-6 col-md-3" style="padding-right: 2px; padding-left: 2px;">
                                                           <a href="{{url('sub_shop/'.$u->id)}}">
-                                                            <p class="text-muted" style="margin-bottom: 5px; font-size: 12px;">{{$u->shop_name}}</p>
+                                                            <p class="text-muted" style="margin-bottom: 5px; font-size: 13px;">{{$u->shop_name}}</p>
 
                                                             <img src="{{url('admin/assets/blog/'.$u->image_shop)}}" alt="{{$u->shop_name}}" class="img-raised mar-bot">
                                                           </a>
