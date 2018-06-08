@@ -116,6 +116,7 @@ class HomeController extends Controller
           )
           ->leftjoin('branders','branders.id', 'shops.branders_id')
           ->leftjoin('province','province.PROVINCE_ID', 'shops.provience_id')
+          ->where('shops.user_id', Auth::user()->id)
           ->get();
 
     $data['shop'] = $shop;
@@ -136,6 +137,7 @@ class HomeController extends Controller
             )
             ->leftjoin('categories','categories.id', 'products.cat_id')
             ->leftjoin('branders','branders.id', 'products.shop_id')
+            ->where('products.user_id', Auth::user()->id)
             ->orderBy('products.id', 'desc')
             ->get();
 
