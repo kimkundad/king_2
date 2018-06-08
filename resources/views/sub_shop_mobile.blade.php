@@ -170,6 +170,33 @@ return "$strDay $strMonthThai $strYear";
 
                       </div>
 
+
+                      <br><br>
+                      <h6>สินค้า ที่เกี่ยวข้อง</h6>
+                      <hr>
+
+                        <div class="row collections" style="    margin-right: -5px; margin-left: -5px;">
+
+                          @if($order)
+                            @foreach($order as $products)
+
+                            <div class="col-6 col-md-3" style="padding-right: 5px; padding-left: 5px;">
+
+                              <a href="{{url('product/'.$products->ids)}}" class="ab img-raised">
+                                <p class="text-muted" style="margin-bottom: 5px; font-size: 12px;">{{$products->product_name}}</p>
+                                <div style="max-height: 195px; min-height: 195px; overflow: hidden; position: relative;" >
+                                <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class=" mar-bot" >
+
+                              </div>
+                              </a>
+
+                              <br>
+                            </div>
+                            @endforeach
+                          @endif
+
+                        </div>
+
                       <br><br>
                       <div class="row hidden-sm hidden-xs">
 

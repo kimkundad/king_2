@@ -164,6 +164,22 @@ return "$strDay $strMonthThai $strYear";
 
                               <div class="col-md-10 ml-auto mr-auto">
 
+                                @if($errors->all())
+                                <div class="alert alert-danger" role="alert">
+                                	<div class="container">
+                                		<div class="alert-icon">
+                                			<i class="now-ui-icons objects_support-17"></i>
+                                		</div>
+                                		<strong>เกิดความผิดพลาด!</strong> ต้องกรอกข้อมูลให้ครบ ก่อนเพิ่มรายการ
+                                		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                			<span aria-hidden="true">
+                                				<i class="now-ui-icons ui-1_simple-remove"></i>
+                                			</span>
+                                		</button>
+                                	</div>
+                                </div>
+                                @endif
+
                                 <br>
                                 <h6>ข้อมูลการตัดสินค้า</h6>
 
@@ -188,6 +204,21 @@ return "$strDay $strMonthThai $strYear";
                                               <div class="form-group">
                                                   <input type="number" placeholder="ใส่จำนวน ตัวเลข" name="number_stock" class="form-control" required>
                                                   <input type="hidden" name="product_id" value="{{$product->idp}}" class="form-control">
+                                              </div>
+
+
+                                              <div class="form-group{{ $errors->has('shop_name') ? ' has-error' : '' }}">
+
+                                                  <select name="shop_name" class="form-control "  >
+
+                                                      <option value="">-- เลือกร้านค้า --</option>
+                                                      @if($shop_id)
+                                                      @foreach($shop_id as $shop)
+                                            <option value="{{$shop->id}}">{{$shop->shop_name}}</option>
+                                            @endforeach
+                                            @endif
+                                                    </select>
+
                                               </div>
 
                                               <div class="form-group">
@@ -227,8 +258,8 @@ return "$strDay $strMonthThai $strYear";
                           <table class="table table-striped">
                             <tr>
                                 <th>วันที่</th>
-
-                                <th>จำหน่าย</th>
+                                <th>shop</th>
+                                <th>จำนวนสินค้า</th>
 
                                 <th>ผู้ใช้งาน</th>
                             </tr>
@@ -239,7 +270,7 @@ return "$strDay $strMonthThai $strYear";
                                                           <tr id="{{$u->st_id}}">
 
                                                             <td><?php echo DateThai($u->created_stock); ?> </td>
-
+                                                            <td>{{$u->shop_name}}</td>
                                                             <td>{{$u->product_total}}</td>
 
                                                             <td>{{$u->name}}</td>

@@ -111,9 +111,11 @@ class HomeController extends Controller
       $shop = DB::table('shops')->select(
           'shops.*',
           'shops.id as ids',
-          'branders.*'
+          'branders.*',
+          'province.*'
           )
           ->leftjoin('branders','branders.id', 'shops.branders_id')
+          ->leftjoin('province','province.PROVINCE_ID', 'shops.provience_id')
           ->get();
 
     $data['shop'] = $shop;
@@ -130,10 +132,10 @@ class HomeController extends Controller
             'products.*',
             'products.id as ids',
             'categories.*',
-            'shops.*'
+            'branders.*'
             )
             ->leftjoin('categories','categories.id', 'products.cat_id')
-            ->leftjoin('shops','shops.id', 'products.shop_id')
+            ->leftjoin('branders','branders.id', 'products.shop_id')
             ->orderBy('products.id', 'desc')
             ->get();
 
@@ -148,6 +150,7 @@ class HomeController extends Controller
 
       $this->validate($request, [
            'number_stock' => 'required',
+           'shop_name' => 'required',
            'product_id' => 'required'
        ]);
 
@@ -163,6 +166,7 @@ class HomeController extends Controller
        $package = new stock;
        $package->user_id = Auth::user()->id;
        $package->product_id = $request['product_id'];
+       $package->shop_id = $request['product_id'];
        $package->product_total = $request['number_stock'];
        $package->detail = $request['product_detail'];
        $package->save();
@@ -263,13 +267,26 @@ class HomeController extends Controller
             'stocks.id as st_id',
             'stocks.created_at as created_stock',
             'products.*',
-            'users.*'
+            'users.*',
+            'shops.*',
+            'shops.id as ids'
             )
             ->leftjoin('products','products.id', 'stocks.product_id')
             ->leftjoin('users','users.id', 'stocks.user_id')
+            ->leftjoin('shops','shops.id', 'stocks.shop_id')
             ->where('products.id', $id)
             ->orderBy('stocks.id', 'desc')
             ->paginate(15);
+
+
+            $shop_id = DB::table('shops')->select(
+                  'shops.*'
+                  )
+                  ->where('user_id', Auth::user()->id)
+                  ->orderBy('id', 'desc')
+                  ->get();
+
+            $data['shop_id'] = $shop_id;
 
 
           $data['objs'] = $shop;
@@ -355,6 +372,33 @@ class HomeController extends Controller
             ->where('products.shop_id', $id)
             ->orderBy('products.id', 'desc')
             ->sum('products.product_sum');
+
+
+
+            $order = DB::table('stocks')->select(
+                'stocks.*',
+                'stocks.id as id_o',
+                'stocks.created_at as created_ats',
+                'products.*',
+                'products.id as ids',
+                'users.*'
+                )
+                ->leftjoin('users', 'users.id', '=', 'stocks.user_id')
+                ->leftjoin('products', 'products.id', '=', 'stocks.product_id')
+                ->where('stocks.shop_id', $id)
+                ->groupBy('stocks.product_id')
+                ->get();
+
+
+
+
+
+
+          //  dd($order);
+
+
+
+    $data['order'] = $order;
 
       $data['product'] = $product;
       $data['albums'] = $albums;

@@ -222,6 +222,20 @@ return "$strDay $strMonthThai $strYear";
                                                   <input type="hidden" name="product_id" value="{{$product->idp}}" class="form-control">
                                               </div>
 
+                                              <div class="form-group{{ $errors->has('shop_name') ? ' has-error' : '' }}">
+
+                                                  <select name="shop_name" class="form-control "  >
+
+                                                      <option value="">-- เลือกร้านค้า --</option>
+                                                      @if($shop_id)
+                                                      @foreach($shop_id as $shop)
+                                            <option value="{{$shop->id}}">{{$shop->shop_name}}</option>
+                                            @endforeach
+                                            @endif
+                                                    </select>
+
+                                              </div>
+
                                               <div class="form-group">
                                               <textarea class="form-control" name="detail_stock" placeholder="ใส่รายละเอียด ที่นี่" rows="3"></textarea>
                                               </div>
@@ -256,34 +270,35 @@ return "$strDay $strMonthThai $strYear";
 
 
                                   <h6>จำนวนสินค้า <span class="text-primary">{{$product->product_sum}}</span></h6>
-                          <table class="table table-striped">
-                            <tr>
-                                <th>วันที่</th>
+                                  <div class="table-responsive">
+                                  <table class="table table-striped ">
+                                    <tr>
+                                        <th>วันที่</th>
+                                        <th>shop</th>
+                                        <th>จำนวนสินค้า</th>
 
-                                <th>จำหน่าย</th>
+                                        <th>ผู้ใช้งาน</th>
+                                    </tr>
+                                      <tbody>
 
-                                <th>ผู้ใช้งาน</th>
-                            </tr>
-                              <tbody>
+                                        @if($objs)
+                                            @foreach($objs as $u)
+                                                                  <tr id="{{$u->st_id}}">
 
-                                @if($objs)
-                                    @foreach($objs as $u)
-                                                          <tr id="{{$u->st_id}}">
+                                                                    <td><?php echo DateThai($u->created_stock); ?> </td>
+                                                                    <td>{{$u->shop_name}}</td>
+                                                                    <td>{{$u->product_total}}</td>
 
-                                                            <td><?php echo DateThai($u->created_stock); ?> </td>
-
-                                                            <td>{{$u->product_total}}</td>
-
-                                                            <td>{{$u->name}}</td>
+                                                                    <td>{{$u->name}}</td>
 
 
-                                                          </tr>
-                                    @endforeach
-                                  @endif
+                                                                  </tr>
+                                            @endforeach
+                                          @endif
 
-                              </tbody>
-                          </table>
-
+                                      </tbody>
+                                  </table>
+                                  </div>
                       </div>
 
 

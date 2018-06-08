@@ -117,6 +117,42 @@ a.ab {
 .mar-bot {
     margin-bottom: 10px;
 }
+.thumbnail {
+    border-radius: 5px;
+    display: block;
+    padding: 0px;
+}
+.thumbnail {
+    display: block;
+    padding: 0px;
+    margin-bottom: 20px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: border .2s ease-in-out;
+    -o-transition: border .2s ease-in-out;
+    transition: border .2s ease-in-out;
+}
+.thumbnail a>img, .thumbnail>img {
+    border-radius: 5px 5px 0px 0px;
+}
+.thumbnail .caption {
+    padding: 9px;
+    color: #333;
+}
+.descript a {
+    color: #000;
+    /* text-decoration: none; */
+}
+.descript {
+    /* height: 35px; */
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 6px;
+    line-height: 1.2em;
+    /* margin-bottom: 12px !important; */
+}
 </style>
 <?php
 function DateThai($strDate)
@@ -151,17 +187,33 @@ return "$strDay $strMonthThai $strYear";
                 @if($product)
                   @foreach($product as $products)
 
-                <div class="col-6 col-md-3">
-                  <a class="example-image-link" href="{{url('product/'.$products->ids)}}" >
-                  <div class="card">
-                    <div class="card-body">
-                      <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class=" mar-bot ">
-                      <h6 class="title1">{{$products->product_name}}</h6>
-                      <span class="display-price">{{$products->shop_name}}</span>
-                    </div>
-                  </div>
-                  </a>
-                </div>
+
+
+
+                <div class="col-12 col-md-3" style="padding-right: 4px; padding-left: 4px;">
+
+                        <div class="thumbnail a_sd_move">
+                          <div style="max-height: 184px; min-height: 184px; overflow: hidden; position: relative;">
+                          <a href="{{url('product/'.$products->ids)}}" >
+                          <img src="{{url('admin/assets/product/'.$products->product_image)}}" >
+
+                          </a></div>
+                          <div class="caption" style="padding: 3px;">
+                            <div class="descript bold">
+                                <a href="{{url('product/'.$products->ids)}}">{{$products->product_name}}</a>
+                            </div>
+                            <div class="descript" style="padding-bottom: 5px;color: #777; font-size: 12px;border-bottom: 1px dashed #dff0d8;">
+                              จำนวนสินค้า : {{$products->product_sum}}
+                            </div>
+
+                            <div class="descript" style="height: 20px;">
+                              <span style="color: #e03753; font-size: 12px;"><i class="fa fa-map-marker"></i> shop:{{$products->branders_name}} </span>
+
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
 
                 @endforeach
               @endif

@@ -157,27 +157,30 @@ return "$strDay $strMonthThai $strYear";
 
                           <div class="tab-pane " id="link" role="tabpanel">
                               <div class="col-md-10 ml-auto mr-auto">
-                                <h6>สินค้า ทั้งหมด</h6>
+                                <h6>สินค้า ที่เกี่ยวข้อง</h6>
                                 <hr>
                                 <br>
-                                  <div class="row collections">
+                                <div class="row collections" style="    margin-right: -5px; margin-left: -5px;">
 
-                                    @if($product)
-                                      @foreach($product as $products)
+                                  @if($order)
+                                    @foreach($order as $products)
 
-                                      <div class="col-6 col-md-3">
+                                    <div class="col-6 col-md-3" style="padding-right: 5px; padding-left: 5px;">
 
-                                        <a href="{{url('product/'.$products->ids)}}" class="ab">
-                                          <h5 class="h5-set">{{$products->product_name}} </h5>
-                                          <p class="text-muted"> <?php echo DateThai($products->created_at); ?></p>
-                                          <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class="img-raised mar-bot">
-                                        </a>
-                                        <br><br>
+                                      <a href="{{url('product/'.$products->ids)}}" class="ab img-raised">
+                                        <p class="text-muted" style="margin-bottom: 5px; font-size: 12px;">{{$products->product_name}}</p>
+                                        <div style="max-height: 195px; min-height: 195px; overflow: hidden; position: relative;" >
+                                        <img src="{{url('admin/assets/product/'.$products->product_image)}}" alt="" class=" mar-bot" >
+
                                       </div>
-                                      @endforeach
-                                    @endif
+                                      </a>
 
-                                  </div>
+                                      <br>
+                                    </div>
+                                    @endforeach
+                                  @endif
+
+                                </div>
                               </div>
                           </div>
 
@@ -191,44 +194,44 @@ return "$strDay $strMonthThai $strYear";
                                     <tbody>
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">ชื่อ Shop</h5>
+                                          <h5 class="h5-set">ชื่อ / Name</h5>
                                           <p class="category-1">{{$objs->shop_name}}</p>
                                         </th>
                                       </tr>
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">รหัส Shop</h5>
+                                          <h5 class="h5-set">รหัส / Code</h5>
                                           <p class="category-1">{{$objs->shop_code}}</p>
                                         </th>
                                       </tr>
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">เบอร์โทร</h5>
+                                          <h5 class="h5-set">เบอร์โทร / Phone</h5>
                                           <p class="category-1">{{$objs->shop_phone}}</p>
                                         </th>
                                       </tr>
 
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">อีเมล shop</h5>
+                                          <h5 class="h5-set">อีเมล / Email</h5>
                                           <p class="category-1">{{$objs->shop_email}}</p>
                                         </th>
                                       </tr>
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">กลุ่มสินค้า</h5>
+                                          <h5 class="h5-set">กลุ่มสินค้า / Group</h5>
                                           <p class="category-1">{{$objs->branders_group}}</p>
                                         </th>
                                       </tr>
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">ร้านค้าประเภท</h5>
+                                          <h5 class="h5-set">ประเภทสินค้า / Product Category</h5>
                                           <p class="category-1">{{$objs->branders_type}}</p>
                                         </th>
                                       </tr>
                                       <tr>
                                         <th scope="row">
-                                          <h5 class="h5-set">ที่อยู่</h5>
+                                          <h5 class="h5-set">ที่อยู่ / Address</h5>
                                           <p class="category-1">{{$objs->shop_address}}</p>
                                         </th>
                                       </tr>
