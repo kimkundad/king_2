@@ -89,8 +89,10 @@ class ProductController extends Controller
         $data['objs'] = $shop;
 
 
+        $id_s = $id
 
-    
+
+        $data['id_s'] = $id_s;
 
 
         $data['method'] = "post";
@@ -115,7 +117,7 @@ class ProductController extends Controller
          'product_cat' => 'required',
          'product_sum' => 'required',
          'product_detail' => 'required',
-         'shop_name' => 'required'
+         'brande_id' => 'required'
         ]);
 
           $image = $request->file('image');
@@ -136,7 +138,7 @@ class ProductController extends Controller
          $package->product_sum = $request['product_sum'];
          $package->product_image = $input['imagename'];
          $package->product_status = 0;
-         $package->shop_id = $request['shop_name'];
+         $package->shop_id = $request['brande_id'];
          $package->save();
 
          $the_id = $package->id;

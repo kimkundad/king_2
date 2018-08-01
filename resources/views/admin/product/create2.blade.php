@@ -83,7 +83,7 @@ img {
                                                   <div class="form-group{{ $errors->has('product_name') ? ' has-error' : '' }}">
                                                       <label>ชื่อสินค้า*</label>
                                                       <input type="text" class="form-control border-input" name="product_name" value="{{ old( 'product_name') }}">
-                                                      <input type="hidden" name="shop_name" class="form-control" value="{{$id_s}}" required>
+                                                      <input type="hidden" name="brande_id" class="form-control" value="{{$id_s}}" required>
                                                       @if ($errors->has('product_name'))
                                                           <span class="help-block">
                                                               <strong>กรุณาใส่ ชื่อสินค้า ของคุณด้วย</strong>
