@@ -44,7 +44,7 @@ h5, .h5 {
             <div class="container-fluid">
                 <div class="row">
                   <div class="col-md-12">
-                    <a href="{{url('admin/shop/'.$product->ids)}}" class="btn btn-danger btn-fill ">กลับสู่ shop</a>
+                    <!-- <a href="{{url('admin/shop/'.$product->ids)}}" class="btn btn-danger btn-fill ">กลับสู่ shop</a> -->
                     <a href="{{url('admin/product/'.$product->idp.'/edit')}}" class="btn btn-info btn-fill ">แก้ไขข้อมูล</a>
                     <br><br>
                   </div>
