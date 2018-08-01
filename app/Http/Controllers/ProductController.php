@@ -89,7 +89,7 @@ class ProductController extends Controller
         $data['objs'] = $shop;
 
 
-        $id_s = $id
+        $id_s = $id;
 
 
         $data['id_s'] = $id_s;
