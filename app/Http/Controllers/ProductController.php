@@ -90,17 +90,7 @@ class ProductController extends Controller
 
 
 
-        $shop_id = DB::table('shops')->select(
-              'shops.*'
-              )
-              ->where('user_id', Auth::user()->id)
-              ->where('id', $id)
-              ->first();
-
-        $id_s = $shop_id->id;
-
-        $data['shop_id'] = $shop_id;
-        $data['id_s'] = $id_s;
+    
 
 
         $data['method'] = "post";
